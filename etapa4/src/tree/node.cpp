@@ -1,15 +1,15 @@
 #include "node.h"
 #include <iostream>
 
-Node::Node(): parent(NULL), flexOut(yyout) {
+Node::Node(): parent(NULL), flexOut(yyout), isNewScope(false), hashTable(NULL) {
   this->children = new std::vector<Node*>();	
 }
 
-Node::Node(const std::string& name): name(name), parent(NULL), flexOut(yyout) {
+Node::Node(const std::string& name): name(name), parent(NULL), flexOut(yyout), isNewScope(false), hashTable(NULL) {
   this->children = new std::vector<Node*>();	
 }
 
-Node::Node(const std::string& name, std::vector<Node*>* children): name(name), children(children), parent(NULL), flexOut(yyout) {
+Node::Node(const std::string& name, std::vector<Node*>* children): name(name), children(children), parent(NULL), flexOut(yyout), isNewScope(false), hashTable(NULL) {
 	for (std::vector<Node*>::iterator it = this->children->begin(); it != this->children->end(); it++)
 		(*it)->setParent(this);
 }
@@ -32,6 +32,21 @@ Node* Node::getParent() const {
 
 void Node::setParent(Node* parent) {
 	this->parent = parent;
+}
+
+bool Node::getIsNewScope() const {
+	return isNewScope;
+}
+
+void Node::setIsNewScope(bool value) {
+	isNewScope = value;
+}
+
+Node* Node::getParentWithScope() const {
+	if (parent->getIsNewScope())
+		return parent;
+	else
+		return parent->getParentWithScope();
 }
 
 void Node::print(int level) {
