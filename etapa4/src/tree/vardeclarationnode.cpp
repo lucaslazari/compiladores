@@ -2,7 +2,10 @@
 #include <stdio.h>
 
 VarDeclarationNode::VarDeclarationNode(const std::string &varName, Common::DataType dataType):
-  Node("Declaracao de variavel"), varName(varName), dataType(dataType) {}
+	Node("Declaracao de variavel"), varName(varName), dataType(dataType) {
+	Node* parentWithScope = this->getParentWithScope();
+	int i = 0;
+}
 
 void VarDeclarationNode::printSourceCode(const std::string& end) {
   fprintf(this->flexOut, "%s", this->varName.c_str());

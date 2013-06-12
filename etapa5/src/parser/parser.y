@@ -40,6 +40,7 @@ typedef std::vector<Node*> CommandList;
   std::vector<Node*>* nodes;
   Common::DataType dataType;
   Symbol* symbol;
+	int integer;
 }
 
 /* Declaração dos tokens da gramática da Linguagem K */
@@ -91,6 +92,8 @@ typedef std::vector<Node*> CommandList;
 %type <nodes> decl_local
 %type <node> decl_var
 %type <node> decl_vetor
+//%type <node> decl_vetor_dimensao
+%type <integer> decl_vetor_dimensao_tamanho
 %type <dataType> tipo_var
 %type <node> def_funcao
 %type <node> chamada_funcao
@@ -135,8 +138,16 @@ decl_local: decl_local decl_var ';' { $$->push_back($2); }
 decl_var: TK_IDENTIFICADOR ':' tipo_var { $$ = new VarDeclarationNode($1->getText(), $3); }
 	;
 
-decl_vetor: TK_IDENTIFICADOR ':' tipo_var '[' TK_LIT_INTEIRO ']' { $$ = new VectorDeclarationNode($1->getText(), $3, atoi($5->getText().c_str())); }
+decl_vetor: TK_IDENTIFICADOR ':' tipo_var decl_vetor_dimensao_tamanho { $$ = new VectorDeclarationNode($1->getText(), $3, $4); }
 	;
+
+/*decl_vetor_dimensao: '[' decl_vetor_dimensao_tamanho ']' decl_vetor_dimensao { $$ = $4; }
+        |
+				;
+*/
+
+decl_vetor_dimensao_tamanho: TK_LIT_INTEIRO { $$ = atoi($1->getText().c_str()); }
+        ;
 
 tipo_var: TK_PR_INTEIRO { $$ = Common::INT; }
 	| TK_PR_FLUTUANTE { $$ = Common::FLOAT; }
