@@ -21,6 +21,7 @@ ${BASE_SOURCE_DIR}/main.cpp
 ${FLEX_scanner_OUTPUTS}
 ${BISON_parser_OUTPUTS}
 ${BASE_SOURCE_DIR}/symbol.cpp
+${BASE_SOURCE_DIR}/scope.cpp
 ${BASE_SOURCE_DIR}/tree/node.cpp
 ${BASE_SOURCE_DIR}/tree/programnode.cpp
 ${BASE_SOURCE_DIR}/tree/vardeclarationnode.cpp

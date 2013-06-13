@@ -2,6 +2,9 @@
 #define COMMON_H
 
 #include <string>
+#include <tr1/unordered_map>
+
+class Symbol;
 
 namespace Common {
 
@@ -42,6 +45,8 @@ typedef enum OperationType {
 	OP_OR,
 	OP_PAREN
 } OperationType;
+
+typedef std::tr1::unordered_map<std::string, Symbol*> HashTable;
 
 }
 

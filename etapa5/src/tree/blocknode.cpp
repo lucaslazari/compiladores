@@ -3,7 +3,7 @@
 
 BlockNode::BlockNode(std::vector<Node*>* children): Node("Bloco", children) {
 	this->isNewScope = true;
-	this->hashTable = new std::tr1::unordered_map<std::string, Symbol*>();
+	this->hashTable = new Common::HashTable();
 }
 
 void BlockNode::printSourceCode(const std::string& end) {
