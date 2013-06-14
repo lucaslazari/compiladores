@@ -1,9 +1,12 @@
 #include "vardeclarationnode.h"
 #include <stdio.h>
 
-VarDeclarationNode::VarDeclarationNode(const std::string &varName, Common::DataType dataType):
-	Node("Declaracao de variavel"), varName(varName), dataType(dataType) {
-	//Node* parentWithScope = this->getParentWithScope();
+VarDeclarationNode::VarDeclarationNode(const std::string& varName, Common::DataType dataType):
+	Node("Declaracao de variavel"), varName(varName), dataType(dataType) {	
+  if (Scope::isTokenInClosestScope(varName))
+    yyerror("Variavel ja declarada neste escopo.");
+  else
+    Scope::addSymbol(new Symbol(varName, dataType));
 }
 
 void VarDeclarationNode::printSourceCode(const std::string& end) {

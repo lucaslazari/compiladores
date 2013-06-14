@@ -3,6 +3,7 @@
 #include <vector>
 #include "../tree/common.h"
 #include "../symbol.h"
+#include "../scope.h"
 #include "../tree/node.h"
 #include "../tree/programnode.h"
 #include "../tree/vardeclarationnode.h"
@@ -142,13 +143,14 @@ decl_var: TK_IDENTIFICADOR ':' tipo_var { $$ = new VarDeclarationNode($1->getTex
 decl_vetor: TK_IDENTIFICADOR ':' tipo_var decl_vetor_dimensao_tamanho { $$ = new VectorDeclarationNode($1->getText(), $3, $4); }
 	;
 
-/*decl_vetor_dimensao: '[' decl_vetor_dimensao_tamanho ']' decl_vetor_dimensao { $$ = $4; }
-        |
-				;
+/*
+decl_vetor_dimensao: '[' decl_vetor_dimensao_tamanho ']' decl_vetor_dimensao { $$ = $4; }
+	|
+	;
 */
 
 decl_vetor_dimensao_tamanho: TK_LIT_INTEIRO { $$ = atoi($1->getText().c_str()); }
-        ;
+	;
 
 tipo_var: TK_PR_INTEIRO { $$ = Common::INT; }
 	| TK_PR_FLUTUANTE { $$ = Common::FLOAT; }
@@ -193,7 +195,7 @@ comando: bloco_comando { $$ = $1; }
 	| chamada_funcao ';' { $$ = $1; }
 	;
 
-bloco_comando: { $<node>$ = new BlockNode(); } '{' seq_comando '}' { $<node>$ = $<node>1; $<node>$->addChildren($3); }
+bloco_comando: { $<node>$ = new BlockNode(); } '{' seq_comando '}' { $<node>$ = $<node>1; $<node>$->addChildren($3); Scope::popScope(); }
 	;
   
 seq_comando: seq_comando comando { $1->push_back($2); }

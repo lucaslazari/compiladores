@@ -9,6 +9,7 @@
 #include "../scope.h"
 
 extern FILE* yyout;
+void yyerror(const char *message);
 
 class Node {
 
