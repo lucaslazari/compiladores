@@ -1,6 +1,8 @@
 #include "functiondefinitionnode.h"
 #include <stdio.h>
 #include "headernode.h"
+#include "blocknode.h"
+#include "vardeclarationnode.h"
 
 FunctionDefinitionNode::FunctionDefinitionNode(Node* header, Node* block) : Node("Definicao de funcao") {
   this->addChild(header);
@@ -18,6 +20,23 @@ FunctionDefinitionNode::FunctionDefinitionNode(Node* header, std::vector<Node*>*
   this->addChild(header);
   this->addChildren(locals);
   this->addChild(block);
+
+  HeaderNode* headerNode = dynamic_cast<HeaderNode*>(header);
+  BlockNode* blockNode = dynamic_cast<BlockNode*>(block);
+
+  if (Scope::isTokenInClosestScope(headerNode->getFunctionName()))
+    yyerror("Funcao ja declarada.");
+  else
+    Scope::addSymbol(new Symbol(headerNode->getFunctionName(), headerNode->getDataType()));
+
+  // TODO
+  /*for (unsigned int i = 1; i < (this->children->size() - 1); i++) {
+    VarDeclarationNode* varDeclaration = dynamic_cast<varDeclaration*>(this->children->at(i));
+    if (Scope::isTokenInClosestScope(varDeclaration->getVarName()))
+      yyerror("Variavel local ja declarada no escopo.");
+    else
+      Scope::addSymbol(new Symbol(varDeclaration->getVarName(), varDeclaration->getDataType()));
+  }*/
 }
 
 void FunctionDefinitionNode::printSourceCode(const std::string& end) {
