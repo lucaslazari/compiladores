@@ -1,7 +1,24 @@
 #include "functiondefinitionnode.h"
 #include <stdio.h>
+#include "headernode.h"
 
-FunctionDefinitionNode::FunctionDefinitionNode() : Node("Definicao de funcao") {}
+FunctionDefinitionNode::FunctionDefinitionNode(Node* header, Node* block) : Node("Definicao de funcao") {
+  this->addChild(header);
+  this->addChild(block);
+
+  HeaderNode* headerNode = dynamic_cast<HeaderNode*>(header);
+
+  if (Scope::isTokenInClosestScope(headerNode->getFunctionName()))
+    yyerror("Funcao ja declarada.");
+  else
+    Scope::addSymbol(new Symbol(headerNode->getFunctionName(), headerNode->getDataType()));
+}
+
+FunctionDefinitionNode::FunctionDefinitionNode(Node* header, std::vector<Node*>* locals, Node* block): Node("Definicao de funcao") {
+  this->addChild(header);
+  this->addChildren(locals);
+  this->addChild(block);
+}
 
 void FunctionDefinitionNode::printSourceCode(const std::string& end) {
   Node* header = this->children->at(0);

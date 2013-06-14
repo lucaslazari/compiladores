@@ -159,8 +159,8 @@ tipo_var: TK_PR_INTEIRO { $$ = Common::INT; }
 	| TK_PR_CADEIA { $$ = Common::STRING; }
 	;
 
-def_funcao: cabecalho decl_local bloco_comando { $$ = new FunctionDefinitionNode(); $$->addChild($1); $$->addChildren($2); $$->addChild($3); delete $2; }
-	| cabecalho bloco_comando { $$ = new FunctionDefinitionNode(); $$->addChild($1); $$->addChild($2); }
+def_funcao: cabecalho decl_local bloco_comando { $$ = new FunctionDefinitionNode($1, $2, $3); delete $2; }
+	| cabecalho bloco_comando { $$ = new FunctionDefinitionNode($1, $2); }
 	;
   
 chamada_funcao: TK_IDENTIFICADOR '(' lista_expressoes ')' { $$ = new FunctionCallNode($1->getText(), $3); }

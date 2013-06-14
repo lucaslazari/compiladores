@@ -2,8 +2,13 @@
 #include <stdio.h>
 #include <sstream>
 
-VectorDeclarationNode::VectorDeclarationNode(const std::string &vectorName, Common::DataType dataType, int size):
-  Node("Declaracao de vetor"), vectorName(vectorName), dataType(dataType), size(size) {}
+VectorDeclarationNode::VectorDeclarationNode(const std::string& vectorName, Common::DataType& dataType, int size):
+  Node("Declaracao de vetor"), vectorName(vectorName), dataType(dataType), size(size) {
+  if (Scope::isTokenInClosestScope(vectorName))
+    yyerror("Vetor ja declarado neste escopo.");
+  else
+    Scope::addSymbol(new Symbol(vectorName, dataType));
+}
 
 void VectorDeclarationNode::printSourceCode(const std::string& end) {
   std::stringstream sizeStr;
