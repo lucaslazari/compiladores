@@ -1,9 +1,10 @@
 #include "blocknode.h"
 #include <stdio.h>
 
-BlockNode::BlockNode(std::vector<Node*>* children): Node("Bloco", children) {
+BlockNode::BlockNode(): Node("Bloco") {
 	this->isNewScope = true;
 	this->hashTable = new Common::HashTable();
+  Scope::pushScope(this->hashTable);
 }
 
 void BlockNode::printSourceCode(const std::string& end) {
