@@ -2,6 +2,9 @@
 #define COMMON_H
 
 #include <string>
+#include <tr1/unordered_map>
+
+class Symbol;
 
 namespace Common {
 
@@ -93,6 +96,7 @@ typedef enum ILOC_OperationType {
     ILOC_CMP_NE
 } ILOC_OperationType;
 
+typedef std::tr1::unordered_map<std::string, Symbol*> HashTable;
 
 }
 

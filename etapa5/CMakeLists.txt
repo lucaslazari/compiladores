@@ -21,9 +21,13 @@ ${BASE_SOURCE_DIR}/main.cpp
 ${FLEX_scanner_OUTPUTS}
 ${BISON_parser_OUTPUTS}
 ${BASE_SOURCE_DIR}/symbol.cpp
+<<<<<<< HEAD
 ${BASE_SOURCE_DIR}/iloc_node.cpp
 ${BASE_SOURCE_DIR}/parser/parser.y
 ${BASE_SOURCE_DIR}/scanner/scanner.l
+=======
+${BASE_SOURCE_DIR}/scope.cpp
+>>>>>>> 8daccc7149bf4eb3c0d0424f82198491fae0e889
 ${BASE_SOURCE_DIR}/tree/node.cpp
 ${BASE_SOURCE_DIR}/tree/programnode.cpp
 ${BASE_SOURCE_DIR}/tree/vardeclarationnode.cpp

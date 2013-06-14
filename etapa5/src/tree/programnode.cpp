@@ -3,7 +3,7 @@
 
 ProgramNode::ProgramNode(): Node("Programa") {
 	this->isNewScope = true;
-	this->hashTable = new std::tr1::unordered_map<std::string, Symbol*>();
+	this->hashTable = new Common::HashTable();
 }
 
 void ProgramNode::printSourceCode(const std::string& end) {

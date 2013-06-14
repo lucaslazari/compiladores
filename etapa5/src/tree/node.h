@@ -33,7 +33,7 @@ protected:
 	Node* parent;
   FILE* flexOut;
 	bool isNewScope;
-	std::tr1::unordered_map<std::string, Symbol*>* hashTable;
+	Common::HashTable* hashTable;
 
 private:
   void printSpaces(int level);
