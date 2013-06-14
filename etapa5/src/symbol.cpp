@@ -1,9 +1,10 @@
 #include "symbol.h"
 
-Symbol::Symbol(const std::string &text, const Common::TokenType &tokenType) {
-	this->text = text;
-	this->tokenType = tokenType;
-}
+Symbol::Symbol(const std::string& text, const Common::TokenType& tokenType): text(text), tokenType(tokenType) {}
+
+Symbol::Symbol(const std::string& text, const Common::TokenType& tokenType, const Common::DataType& dataType): text(text), tokenType(tokenType), dataType(dataType) {}
+
+Symbol::Symbol(const std::string& text, const Common::DataType& dataType): text(text), dataType(dataType) {}
 
 std::string Symbol::getText() const {
 	return text;

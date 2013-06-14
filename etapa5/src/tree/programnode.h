@@ -7,7 +7,7 @@
 class ProgramNode : public Node {
 
 public:
-	ProgramNode();
+  ProgramNode();
   void printSourceCode(const std::string& end);
 };
 

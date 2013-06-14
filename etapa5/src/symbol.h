@@ -8,6 +8,8 @@ class Symbol {
 
 public:
   Symbol(const std::string& text, const Common::TokenType& tokenType);
+  Symbol(const std::string& text, const Common::TokenType& tokenType, const Common::DataType& dataType);
+  Symbol(const std::string& text, const Common::DataType& dataType);
   Common::TokenType getTokenType() const;
   void setTokenType(const Common::TokenType& value);
   Common::DataType getDataType() const;
@@ -18,10 +20,10 @@ public:
   void setText(const std::string& value);
 
 private:
-	Common::TokenType tokenType;
+  std::string text;
+  Common::TokenType tokenType;
 	Common::DataType dataType;
 	int count;
-	std::string text;
 	Symbol* value;
 	Symbol* next;
 };
