@@ -4,6 +4,7 @@
 ProgramNode::ProgramNode(): Node("Programa") {
 	this->isNewScope = true;
 	this->hashTable = new Common::HashTable();
+  Scope::pushScope(this->hashTable);
 }
 
 void ProgramNode::printSourceCode(const std::string& end) {
