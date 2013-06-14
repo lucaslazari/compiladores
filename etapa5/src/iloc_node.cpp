@@ -14,7 +14,18 @@ ILOC::ILOC(int type, Symbol *src1, Symbol *src2, Symbol *dst1, Symbol *dst2) {
 
 }
 
-void join(ILOC *n1) {
+static void join(ILOC *n1, ILOC *n2) {
+
+    /*
+    ILOC *t = *this;
+
+    while (this->prev) {
+        t = t->prev;
+    }
+
+    t->prev = n1;
+    n1->next = *this;
+    */
 
 }
 
