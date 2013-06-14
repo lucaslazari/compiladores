@@ -40,7 +40,7 @@ typedef std::vector<Node*> CommandList;
   std::vector<Node*>* nodes;
   Common::DataType dataType;
   Symbol* symbol;
-	int integer;
+  int integer;
 }
 
 /* Declaração dos tokens da gramática da Linguagem K */
@@ -119,12 +119,13 @@ typedef std::vector<Node*> CommandList;
 /* Regras (e ações) da gramática da Linguagem K */
 
 // criada a regra s para conseguir chamar a impressão da árvore
-s : programa { $$ = $1; $$->print(0); $$->printSourceCode(""); }
+s : { $<node>$ = new ProgramNode(); } programa { $$ = $<node>1; $$->print(0); $$->printSourceCode(""); }
 	;
 
-programa: programa decl_global { $1->addChild($2); }
-	| programa def_funcao { $1->addChild($2); }
-	| { $$ = new ProgramNode(); }
+programa: programa decl_global { $<node>0->addChild($2); }
+	| programa def_funcao { $<node>0->addChild($2); }
+	| decl_global { $<node>0->addChild($1); }
+	| def_funcao { $<node>0->addChild($1); }
 	;
 
 decl_global: decl_var ';' { $$ = $1; }
@@ -192,7 +193,7 @@ comando: bloco_comando { $$ = $1; }
 	| chamada_funcao ';' { $$ = $1; }
 	;
 
-bloco_comando: '{' seq_comando '}' { $$ = new BlockNode($2); }
+bloco_comando: { $<node>$ = new BlockNode(); } '{' seq_comando '}' { $<node>$ = $<node>1; $<node>$->addChildren($3); }
 	;
   
 seq_comando: seq_comando comando { $1->push_back($2); }

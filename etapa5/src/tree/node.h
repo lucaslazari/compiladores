@@ -6,6 +6,7 @@
 #include <string>
 #include "common.h"
 #include "symbol.h"
+#include "../scope.h"
 
 extern FILE* yyout;
 

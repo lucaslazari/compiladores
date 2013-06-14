@@ -7,7 +7,7 @@
 class BlockNode : public Node {
 
 public:
-  BlockNode(std::vector<Node*>* children);
+  BlockNode();
   void printSourceCode(const std::string& end);
 };
 
