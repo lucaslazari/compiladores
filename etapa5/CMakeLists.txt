@@ -22,6 +22,8 @@ ${FLEX_scanner_OUTPUTS}
 ${BISON_parser_OUTPUTS}
 ${BASE_SOURCE_DIR}/symbol.cpp
 ${BASE_SOURCE_DIR}/iloc_node.cpp
+${BASE_SOURCE_DIR}/parser/parser.y
+${BASE_SOURCE_DIR}/scanner/scanner.l
 ${BASE_SOURCE_DIR}/tree/node.cpp
 ${BASE_SOURCE_DIR}/tree/programnode.cpp
 ${BASE_SOURCE_DIR}/tree/vardeclarationnode.cpp
