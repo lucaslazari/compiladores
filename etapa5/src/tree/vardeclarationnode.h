@@ -10,6 +10,7 @@ class VarDeclarationNode : public Node {
 public:
   VarDeclarationNode(const std::string& varName, Common::DataType dataType);
   void printSourceCode(const std::string& end);
+  void generateILOCCode();
 
 private:
 	std::string varName;

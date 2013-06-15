@@ -9,6 +9,7 @@ class ProgramNode : public Node {
 public:
   ProgramNode();
   void printSourceCode(const std::string& end);
+  void generateILOCCode();
 };
 
 #endif // PROGRAMNODE_H

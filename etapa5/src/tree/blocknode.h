@@ -9,6 +9,7 @@ class BlockNode : public Node {
 public:
   BlockNode();
   void printSourceCode(const std::string& end);
+  void generateILOCCode();
 };
 
 #endif // BLOCONODE_H

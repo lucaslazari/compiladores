@@ -10,6 +10,7 @@ public:
   AssignmentNode(const std::string& varName, Node* expressionAssigned);
   AssignmentNode(const std::string& varName, Node* expressionIndex, Node* expressionAssigned);
   void printSourceCode(const std::string& end);
+  void generateILOCCode();
 
 private:
   std::string varName;

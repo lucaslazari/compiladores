@@ -10,6 +10,7 @@ class HeaderNode : public Node {
 public:
   HeaderNode(const std::string& functionName, Common::DataType dataType, std::vector<Node*>* children);
   void printSourceCode(const std::string& end);
+  void generateILOCCode();
 
 private:
 	std::string functionName;

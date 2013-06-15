@@ -10,3 +10,7 @@ void ReturnNode::printSourceCode(const std::string& end) {
 	this->children->at(0)->printSourceCode("");
 	fprintf(this->flexOut, "%s", ";\n");
 }
+
+void ReturnNode::generateILOCCode() {
+    this->children->at(0)->generateILOCCode();
+}

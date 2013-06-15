@@ -12,3 +12,11 @@ void WhileNode::printSourceCode(const std::string& end) {
 	fprintf(this->flexOut, "%s", ")\n");
 	this->children->at(1)->printSourceCode(";\n");
 }
+
+void WhileNode::generateILOCCode() {
+    // while condição
+    this->children->at(0)->generateILOCCode();
+    // faça...
+    this->children->at(1)->generateILOCCode();
+
+}
