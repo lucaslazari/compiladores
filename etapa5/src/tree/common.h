@@ -47,6 +47,9 @@ typedef enum OperationType {
 } OperationType;
 
 typedef enum ILOC_OperationType {
+    ILOC_VAR,
+    ILOC_VEC,
+    ILOC_LIT,
     ILOC_NOP,
     ILOC_ADD,
     ILOC_SUB,
