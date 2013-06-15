@@ -22,3 +22,9 @@ void IdentifierNode::printSourceCode(const std::string& end) {
 		fprintf(this->flexOut, "%s", "]");
 	}
 }
+
+void IdentifierNode::generateILOCCode() {
+    if (this->children->size() == 1) {
+        this->children->at(0)->generateILOCCode();
+    }
+}

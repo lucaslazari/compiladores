@@ -122,7 +122,7 @@ class FunctionDefinitionNode;
 /* Regras (e ações) da gramática da Linguagem K */
 
 // criada a regra s para conseguir chamar a impressão da árvore
-s : { $<node>$ = new ProgramNode(); } programa { $$ = $<node>1; $$->print(0); $$->printSourceCode(""); }
+s : { $<node>$ = new ProgramNode(); } programa { $$ = $<node>1; $$->print(0); $$->generateILOCCode(); $$->printSourceCode(""); }
 	;
 
 programa: programa decl_global { $<node>0->addChild($2); }

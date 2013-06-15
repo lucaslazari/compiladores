@@ -50,3 +50,22 @@ void FunctionDefinitionNode::printSourceCode(const std::string& end) {
 		block->printSourceCode("\n");
   }
 }
+
+void FunctionDefinitionNode::generateILOCCode() {
+    Node* header = this->children->at(0);
+    header->generateILOCCode();
+
+    if (this->children->size() == 2) {
+        Node* block = this->children->at(1);
+        block->generateILOCCode();
+    } else if (this->children->size() > 2) {
+        Node* block = this->children->at(this->children->size()-1);
+        int childrenSize = this->children->size() - 2 + 1;
+
+        for (int i = 1; i < childrenSize; i++) {
+            this->children->at(i)->generateILOCCode();
+        }
+
+        block->generateILOCCode();
+    }
+}

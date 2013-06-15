@@ -8,3 +8,7 @@ void InputNode::printSourceCode(const std::string& end) {
   fprintf(this->flexOut, "%s", this->varName.c_str());
   fprintf(this->flexOut, "%s", ";\n");
 }
+
+void InputNode::generateILOCCode() {
+    // ...
+}

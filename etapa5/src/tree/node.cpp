@@ -112,3 +112,7 @@ void Node::printSpaces(int level) {
   for (int i = 0; i < level; i++)
     std::cout << "  ";
 }
+
+std::string Node::getName() {
+    return this->name;
+}

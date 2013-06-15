@@ -37,3 +37,11 @@ void HeaderNode::printSourceCode(const std::string& end) {
   }
   fprintf(this->flexOut, "%s", ")");
 }
+
+void HeaderNode::generateILOCCode() {
+
+    for (unsigned int i = 0; i < this->children->size(); i++) {
+      this->children->at(i)->generateILOCCode();
+    }
+
+}

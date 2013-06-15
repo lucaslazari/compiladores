@@ -7,3 +7,7 @@ LiteralNode::LiteralNode(const std::string& literal, const Common::DataType& dat
 void LiteralNode::printSourceCode(const std::string& end) {
   fprintf(this->flexOut, "%s", literal.c_str());
 }
+
+void LiteralNode::generateILOCCode() {
+    // ...
+}

@@ -29,3 +29,7 @@ void OperationNode::printSourceCode(const std::string& end) {
 		}
 	}
 }
+
+void OperationNode::generateILOCCode() {
+
+}

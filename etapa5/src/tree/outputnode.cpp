@@ -12,3 +12,9 @@ void OutputNode::printSourceCode(const std::string& end) {
 	}
 	fprintf(this->flexOut, "%s", ";\n");
 }
+
+void OutputNode::generateILOCCode() {
+    for (unsigned int i = 0; i < this->children->size(); i++) {
+        this->children->at(i)->generateILOCCode();
+    }
+}

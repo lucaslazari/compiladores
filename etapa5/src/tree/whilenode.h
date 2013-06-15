@@ -8,6 +8,7 @@ class WhileNode : public Node {
 public:
   WhileNode(Node* expression, Node* command);
   void printSourceCode(const std::string& end);
+  void generateILOCCode();
 };
 
 #endif // WHILENODE_H

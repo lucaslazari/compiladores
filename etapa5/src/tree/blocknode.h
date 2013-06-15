@@ -10,6 +10,7 @@ public:
   BlockNode();
   BlockNode(bool isNewScope);
   void printSourceCode(const std::string& end);
+  void generateILOCCode();
 };
 
 #endif // BLOCONODE_H

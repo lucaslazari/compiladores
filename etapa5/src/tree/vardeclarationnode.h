@@ -14,6 +14,7 @@ public:
   Common::DataType getDataType() const;
   void setDataType(const Common::DataType& value);
   void printSourceCode(const std::string& end);
+  void generateILOCCode();
 
 private:
   std::string varName;

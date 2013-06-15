@@ -22,3 +22,14 @@ void IfNode::printSourceCode(const std::string& end) {
 		this->children->at(2)->printSourceCode("");
 	}
 }
+
+void IfNode::generateILOCCode() {
+    // if condição
+    this->children->at(0)->generateILOCCode();
+    // então
+    this->children->at(1)->generateILOCCode();
+    if (this->children->size() == 3) {
+        // else...
+        this->children->at(2)->generateILOCCode();
+    }
+}
