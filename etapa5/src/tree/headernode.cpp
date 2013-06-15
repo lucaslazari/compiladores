@@ -1,8 +1,12 @@
 #include "headernode.h"
 #include <stdio.h>
 
-HeaderNode::HeaderNode(const std::string &functionName, Common::DataType dataType, std::vector<Node *> *children):
-  Node("Cabecalho", children), functionName(functionName), dataType(dataType) {}
+HeaderNode::HeaderNode(const std::string &functionName, Common::DataType dataType):
+  Node("Cabecalho"), functionName(functionName), dataType(dataType) {
+  this->isNewScope = true;
+  this->hashTable = new Common::HashTable();
+  Scope::pushScope(this->hashTable);
+}
 
 Common::DataType HeaderNode::getDataType() const {
   return dataType;

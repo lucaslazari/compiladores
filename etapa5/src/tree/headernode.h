@@ -8,7 +8,7 @@
 
 class HeaderNode : public Node {
 public:
-  HeaderNode(const std::string& functionName, Common::DataType dataType, std::vector<Node*>* children);
+  HeaderNode(const std::string& functionName, Common::DataType dataType);
   std::string getFunctionName() const;
   void setFunctionName(const std::string& value);
   Common::DataType getDataType() const;
