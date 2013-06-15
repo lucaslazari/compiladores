@@ -138,7 +138,7 @@ decl_global: decl_var ';' { $$ = $1; }
 decl_local: decl_local decl_var ';' { $$->push_back($2); }
 	| decl_var ';' { $$ = new VariableList(); $$->push_back($1); }
 	;
-  
+
 decl_var: TK_IDENTIFICADOR ':' tipo_var { $$ = new VarDeclarationNode($1->getText(), $3); }
 	;
 
@@ -164,14 +164,14 @@ tipo_var: TK_PR_INTEIRO { $$ = Common::INT; }
 def_funcao: cabecalho decl_local '{' seq_comando '}' { $$ = new FunctionDefinitionNode(); $$->setHeader($1); $$->setLocals($2); Node* b = new BlockNode(false); b->addChildren($4); $$->setBlock(b); delete $2; Scope::popScope(); }
 		| cabecalho '{' seq_comando '}' { $$ = new FunctionDefinitionNode(); $$->setHeader($1); Node* b = new BlockNode(false); b->addChildren($3); $$->setBlock(b); Scope::popScope(); }
 		;
-  
+
 chamada_funcao: TK_IDENTIFICADOR '(' lista_expressoes ')' { $$ = new FunctionCallNode($1->getText(), $3); }
 	;
 
 /* Function header - begin */
 cabecalho: TK_IDENTIFICADOR ':' tipo_var '(' { $<node>$ = new HeaderNode($1->getText(), $3); } lista_parametros ')' { $$ = $<node>5; $$->addChildren($6); }
 	;
-	
+
 lista_parametros: lista_parametros_nao_vazia { $$ = $1; }
 	| { $$ = new ParameterList(); }
 	;
@@ -199,7 +199,7 @@ comando: bloco_comando { $$ = $1; }
 
 bloco_comando: '{' { $<node>$ = new BlockNode(); } seq_comando '}' { $<node>$ = $<node>2; $<node>$->addChildren($3); Scope::popScope(); }
 	;
-  
+
 seq_comando: seq_comando comando { $1->push_back($2); }
 	| seq_comando comando ';' { $1->push_back($2); }
 	| { $$ = new CommandList(); }
@@ -225,7 +225,7 @@ lista_expressoes: lista_expressoes_nao_vazia { $$ = $1; }
 lista_expressoes_nao_vazia: lista_expressoes_nao_vazia ',' expressao { $1->push_back($3); }
 	| expressao { $$ = new ExpressionList(); $$->push_back($1); }
 	;
-  
+
 controle_fluxo: TK_PR_SE '(' expressao ')' TK_PR_ENTAO comando { $$ = new IfNode($3, $6); }
 	| TK_PR_SE '(' expressao ')' TK_PR_ENTAO comando TK_PR_SENAO comando { $$ = new IfNode($3, $6, $8); }
 	| TK_PR_ENQUANTO '(' expressao ')' comando { $$ = new WhileNode($3, $5); }

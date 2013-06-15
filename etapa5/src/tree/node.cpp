@@ -2,11 +2,11 @@
 #include <iostream>
 
 Node::Node(): parent(NULL), flexOut(yyout), isNewScope(false), hashTable(NULL) {
-  this->children = new std::vector<Node*>();	
+	this->children = new std::vector<Node*>();
 }
 
 Node::Node(const std::string& name): name(name), parent(NULL), flexOut(yyout), isNewScope(false), hashTable(NULL) {
-  this->children = new std::vector<Node*>();	
+	this->children = new std::vector<Node*>();
 }
 
 Node::Node(const std::string& name, std::vector<Node*>* children): name(name), children(children), parent(NULL), flexOut(yyout), isNewScope(false), hashTable(NULL) {
@@ -50,29 +50,29 @@ Node* Node::getParentWithScope() const {
 }
 
 void Node::print(int level) {
-  this->printSpaces(level);
-  std::cout << this->name << "\n";
-  for (std::vector<Node*>::iterator it = children->begin(); it != children->end(); it++)
-    (*it)->print(level+1);
+	this->printSpaces(level);
+	std::cout << this->name << "\n";
+	for (std::vector<Node*>::iterator it = children->begin(); it != children->end(); it++)
+		(*it)->print(level+1);
 }
 
 std::string Node::dataTypeToString(const Common::DataType& dataType) {
-  switch (dataType) {
-  case Common::BOOL:
-    return "booleano";
-  case Common::INT:
-    return "inteiro";
-  case Common::FLOAT:
-    return "flutuante";
-  case Common::CHAR:
-    return "caractere";
-  case Common::STRING:
-    return "cadeia";
-  default:
-    break;
-  }
+	switch (dataType) {
+	case Common::BOOL:
+		return "booleano";
+	case Common::INT:
+		return "inteiro";
+	case Common::FLOAT:
+		return "flutuante";
+	case Common::CHAR:
+		return "caractere";
+	case Common::STRING:
+		return "cadeia";
+	default:
+		break;
+	}
 
-  return "ERROR!";
+	return "ERROR!";
 }
 
 std::string Node::operationTypeToString(const Common::OperationType& operationType) {
@@ -109,10 +109,10 @@ std::string Node::operationTypeToString(const Common::OperationType& operationTy
 }
 
 void Node::printSpaces(int level) {
-  for (int i = 0; i < level; i++)
-    std::cout << "  ";
+	for (int i = 0; i < level; i++)
+		std::cout << "  ";
 }
 
 std::string Node::getName() {
-    return this->name;
+		return this->name;
 }

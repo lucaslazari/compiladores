@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 ReturnNode::ReturnNode(Node* expression): Node("Retorna") {
-  this->addChild(expression);
+	this->addChild(expression);
 }
 
 void ReturnNode::printSourceCode(const std::string& end) {
@@ -12,5 +12,5 @@ void ReturnNode::printSourceCode(const std::string& end) {
 }
 
 void ReturnNode::generateILOCCode() {
-    this->children->at(0)->generateILOCCode();
+		this->children->at(0)->generateILOCCode();
 }
