@@ -8,6 +8,7 @@ class BlockNode : public Node {
 
 public:
   BlockNode();
+  BlockNode(bool isNewScope);
   void printSourceCode(const std::string& end);
   void generateILOCCode();
 };

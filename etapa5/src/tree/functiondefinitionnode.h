@@ -8,8 +8,10 @@
 class FunctionDefinitionNode : public Node {
 
 public:
-  FunctionDefinitionNode(Node* header, Node* block);
-  FunctionDefinitionNode(Node* header, std::vector<Node*>* locals, Node* block);
+  FunctionDefinitionNode();
+  void setHeader(Node* header);
+  void setLocals(std::vector<Node*>* locals);
+  void setBlock(Node* block);
   void printSourceCode(const std::string& end);
   void generateILOCCode();
 };

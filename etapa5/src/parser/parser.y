@@ -33,11 +33,13 @@ typedef std::vector<Node*> CommandList;
 
 %}
 
-/*%code requires {
-}*/
+%code requires {
+class FunctionDefinitionNode;
+}
 
 %union {
   Node* node;
+  FunctionDefinitionNode* funcNode;
   std::vector<Node*>* nodes;
   Common::DataType dataType;
   Symbol* symbol;
@@ -96,7 +98,7 @@ typedef std::vector<Node*> CommandList;
 //%type <node> decl_vetor_dimensao
 %type <integer> decl_vetor_dimensao_tamanho
 %type <dataType> tipo_var
-%type <node> def_funcao
+%type <funcNode> def_funcao
 %type <node> chamada_funcao
 %type <node> cabecalho
 %type <nodes> lista_parametros
@@ -140,7 +142,7 @@ decl_local: decl_local decl_var ';' { $$->push_back($2); }
 decl_var: TK_IDENTIFICADOR ':' tipo_var { $$ = new VarDeclarationNode($1->getText(), $3); }
 	;
 
-decl_vetor: TK_IDENTIFICADOR ':' tipo_var decl_vetor_dimensao_tamanho { $$ = new VectorDeclarationNode($1->getText(), $3, $4); }
+decl_vetor: TK_IDENTIFICADOR ':' tipo_var '[' decl_vetor_dimensao_tamanho ']' { $$ = new VectorDeclarationNode($1->getText(), $3, $5); }
 	;
 
 /*
@@ -159,15 +161,15 @@ tipo_var: TK_PR_INTEIRO { $$ = Common::INT; }
 	| TK_PR_CADEIA { $$ = Common::STRING; }
 	;
 
-def_funcao: cabecalho decl_local bloco_comando { $$ = new FunctionDefinitionNode($1, $2, $3); delete $2; }
-	| cabecalho bloco_comando { $$ = new FunctionDefinitionNode($1, $2); }
-	;
+def_funcao: cabecalho decl_local '{' seq_comando '}' { $$ = new FunctionDefinitionNode(); $$->setHeader($1); $$->setLocals($2); Node* b = new BlockNode(false); b->addChildren($4); $$->setBlock(b); delete $2; Scope::popScope(); }
+		| cabecalho '{' seq_comando '}' { $$ = new FunctionDefinitionNode(); $$->setHeader($1); Node* b = new BlockNode(false); b->addChildren($3); $$->setBlock(b); Scope::popScope(); }
+		;
   
 chamada_funcao: TK_IDENTIFICADOR '(' lista_expressoes ')' { $$ = new FunctionCallNode($1->getText(), $3); }
 	;
 
 /* Function header - begin */
-cabecalho: TK_IDENTIFICADOR ':' tipo_var '(' lista_parametros ')' { $$ = new HeaderNode($1->getText(), $3, $5); }
+cabecalho: TK_IDENTIFICADOR ':' tipo_var '(' { $<node>$ = new HeaderNode($1->getText(), $3); } lista_parametros ')' { $$ = $<node>5; $$->addChildren($6); }
 	;
 	
 lista_parametros: lista_parametros_nao_vazia { $$ = $1; }
@@ -195,7 +197,7 @@ comando: bloco_comando { $$ = $1; }
 	| chamada_funcao ';' { $$ = $1; }
 	;
 
-bloco_comando: { $<node>$ = new BlockNode(); } '{' seq_comando '}' { $<node>$ = $<node>1; $<node>$->addChildren($3); Scope::popScope(); }
+bloco_comando: '{' { $<node>$ = new BlockNode(); } seq_comando '}' { $<node>$ = $<node>2; $<node>$->addChildren($3); Scope::popScope(); }
 	;
   
 seq_comando: seq_comando comando { $1->push_back($2); }
