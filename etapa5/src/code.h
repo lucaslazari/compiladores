@@ -5,18 +5,13 @@
 #include "tree/common.h"
 #include "tree/node.h"
 
-
 class Code {
 
-    public:
-        Code();
-        static Node * generateCode(Node * root);
+public:
+	Code();
+	static Node * generateCode(Node * root);
 
-    private:
-
-
-
-
+private:
 };
 
 #endif // CODE_H

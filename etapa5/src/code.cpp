@@ -1,11 +1,5 @@
 #include "code.h"
 
-Code::Code() {
+Code::Code() {}
 
-
-}
-
-
-static Node * generateCode(Node * root) {
-
-}
+Node* generateCode(Node * root) {}
