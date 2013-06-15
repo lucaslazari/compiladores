@@ -2,12 +2,12 @@
 #include <stdio.h>
 
 LiteralNode::LiteralNode(const std::string& literal, const Common::DataType& dataType):
-  ExpressionNode("Expressao literal", dataType), literal(literal) {}
+	ExpressionNode("Expressao literal", dataType), literal(literal) {}
 
 void LiteralNode::printSourceCode(const std::string& end) {
-  fprintf(this->flexOut, "%s", literal.c_str());
+	fprintf(this->flexOut, "%s", literal.c_str());
 }
 
 void LiteralNode::generateILOCCode() {
-    // ...
+		// ...
 }

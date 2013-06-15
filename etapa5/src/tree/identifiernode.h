@@ -8,13 +8,13 @@
 class IdentifierNode : public ExpressionNode {
 
 public:
-  IdentifierNode(Symbol* symbol);
-  IdentifierNode(Symbol* symbol, Node* expression);
-  void printSourceCode(const std::string& end);
-  void generateILOCCode();
+	IdentifierNode(Symbol* symbol);
+	IdentifierNode(Symbol* symbol, Node* expression);
+	void printSourceCode(const std::string& end);
+	void generateILOCCode();
 
 private:
-  Symbol* symbol;
+	Symbol* symbol;
 };
 
 #endif // IDENTIFIERNODE_H

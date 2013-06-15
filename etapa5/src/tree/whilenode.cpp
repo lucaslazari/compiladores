@@ -2,8 +2,8 @@
 #include <stdio.h>
 
 WhileNode::WhileNode(Node *expression, Node *command): Node("Enquanto") {
-  this->addChild(expression);
-  this->addChild(command);
+	this->addChild(expression);
+	this->addChild(command);
 }
 
 void WhileNode::printSourceCode(const std::string& end) {
@@ -14,9 +14,8 @@ void WhileNode::printSourceCode(const std::string& end) {
 }
 
 void WhileNode::generateILOCCode() {
-    // while condição
-    this->children->at(0)->generateILOCCode();
-    // faça...
-    this->children->at(1)->generateILOCCode();
-
+		// while condição
+		this->children->at(0)->generateILOCCode();
+		// faça...
+		this->children->at(1)->generateILOCCode();
 }

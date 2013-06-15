@@ -8,12 +8,12 @@
 class LiteralNode : public ExpressionNode {
 
 public:
-  LiteralNode(const std::string& literal, const Common::DataType& dataType);
-  void printSourceCode(const std::string& end);
-  void generateILOCCode();
+	LiteralNode(const std::string& literal, const Common::DataType& dataType);
+	void printSourceCode(const std::string& end);
+	void generateILOCCode();
 
 private:
-  std::string literal;
+	std::string literal;
 };
 
 #endif // LITERALNODE_H
