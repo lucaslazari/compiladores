@@ -8,7 +8,7 @@
 class VectorDeclarationNode : public Node {
 
 public:
-  VectorDeclarationNode(const std::string& vectorName, Common::DataType dataType, int size);
+  VectorDeclarationNode(const std::string& vectorName, Common::DataType& dataType, int size);
   void printSourceCode(const std::string& end);
   void generateILOCCode();
 

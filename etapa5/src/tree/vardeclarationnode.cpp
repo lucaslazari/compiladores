@@ -9,6 +9,22 @@ VarDeclarationNode::VarDeclarationNode(const std::string& varName, Common::DataT
     Scope::addSymbol(new Symbol(varName, dataType));
 }
 
+Common::DataType VarDeclarationNode::getDataType() const {
+  return dataType;
+}
+
+void VarDeclarationNode::setDataType(const Common::DataType& value) {
+  dataType = value;
+}
+
+std::string VarDeclarationNode::getVarName() const {
+  return varName;
+}
+
+void VarDeclarationNode::setVarName(const std::string& value) {
+  varName = value;
+}
+
 void VarDeclarationNode::printSourceCode(const std::string& end) {
   fprintf(this->flexOut, "%s", this->varName.c_str());
   fprintf(this->flexOut, "%s", ": ");

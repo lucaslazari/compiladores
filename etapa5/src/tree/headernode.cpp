@@ -4,6 +4,23 @@
 HeaderNode::HeaderNode(const std::string &functionName, Common::DataType dataType, std::vector<Node *> *children):
   Node("Cabecalho", children), functionName(functionName), dataType(dataType) {}
 
+Common::DataType HeaderNode::getDataType() const {
+  return dataType;
+}
+
+void HeaderNode::setDataType(const Common::DataType& value) {
+  dataType = value;
+}
+
+std::string HeaderNode::getFunctionName() const {
+  return functionName;
+}
+
+void HeaderNode::setFunctionName(const std::string& value) {
+  functionName = value;
+}
+
+
 void HeaderNode::printSourceCode(const std::string& end) {
   fprintf(this->flexOut, "%s", this->functionName.c_str());
   fprintf(this->flexOut, "%s", ": ");
