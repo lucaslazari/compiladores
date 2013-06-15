@@ -17,15 +17,6 @@ void FunctionDefinitionNode::setHeader(Node* header) {
 
 void FunctionDefinitionNode::setLocals(std::vector<Node*>* locals) {
   this->addChildren(locals);
-  // TODO: Check declarations
-
-  /*for (unsigned int i = 1; i < (this->children->size() - 1); i++) {
-    VarDeclarationNode* varDeclaration = dynamic_cast<varDeclaration*>(this->children->at(i));
-    if (Scope::isTokenInClosestScope(varDeclaration->getVarName()))
-      yyerror("Variavel local ja declarada no escopo.");
-    else
-      Scope::addSymbol(new Symbol(varDeclaration->getVarName(), varDeclaration->getDataType()));
-  }*/
 }
 
 void FunctionDefinitionNode::setBlock(Node* block) {
