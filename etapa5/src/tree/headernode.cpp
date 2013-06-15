@@ -39,9 +39,7 @@ void HeaderNode::printSourceCode(const std::string& end) {
 }
 
 void HeaderNode::generateILOCCode() {
-
-		for (unsigned int i = 0; i < this->children->size(); i++) {
-			this->children->at(i)->generateILOCCode();
-		}
-
+	for (unsigned int i = 0; i < this->children->size(); i++) {
+		this->children->at(i)->generateILOCCode();
+	}
 }
