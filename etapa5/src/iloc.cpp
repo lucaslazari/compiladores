@@ -1,4 +1,4 @@
-#include "iloc_node.h"
+#include "iloc.h"
 
 ILOC::ILOC(int type, Symbol *src1, Symbol *src2, Symbol *dst1, Symbol *dst2) {
 

@@ -21,7 +21,8 @@ ${BASE_SOURCE_DIR}/main.cpp
 ${FLEX_scanner_OUTPUTS}
 ${BISON_parser_OUTPUTS}
 ${BASE_SOURCE_DIR}/symbol.cpp
-${BASE_SOURCE_DIR}/iloc_node.cpp
+${BASE_SOURCE_DIR}/iloc.cpp
+${BASE_SOURCE_DIR}/code.cpp
 ${BASE_SOURCE_DIR}/parser/parser.y
 ${BASE_SOURCE_DIR}/scanner/scanner.l
 ${BASE_SOURCE_DIR}/scope.cpp
