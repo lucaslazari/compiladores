@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 OperationNode::OperationNode(const Common::OperationType& operationType, Node* leftSide, Node* rightSide):
-  ExpressionNode("Expressao operation"), operationType(operationType) {
+	ExpressionNode("Expressao operation"), operationType(operationType) {
 
 	if (leftSide != NULL)
 		this->addChild(leftSide);

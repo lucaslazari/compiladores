@@ -11,7 +11,7 @@ int getLineNumber(void) {
 }
 
 void yyerror(char const *mensagem) {
-  fprintf(stderr, "Error on line %d, %s\n", getLineNumber(), mensagem);
+	fprintf(stderr, "Error on line %d, %s\n", getLineNumber(), mensagem);
 	exit(1);
 }
 

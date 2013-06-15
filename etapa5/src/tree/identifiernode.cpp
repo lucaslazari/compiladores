@@ -2,13 +2,13 @@
 #include <stdio.h>
 
 IdentifierNode::IdentifierNode(Symbol* symbol):
-  ExpressionNode("Expressao idenficador"), symbol(symbol) {
-  // TODO check the data type
+	ExpressionNode("Expressao idenficador"), symbol(symbol) {
+	// TODO check the data type
 }
 
 IdentifierNode::IdentifierNode(Symbol* symbol, Node* expression):
-  ExpressionNode("Expressao idenficador"), symbol(symbol) {
-  // TODO check the data type
+	ExpressionNode("Expressao idenficador"), symbol(symbol) {
+	// TODO check the data type
 	this->addChild(expression);
 }
 
@@ -24,7 +24,7 @@ void IdentifierNode::printSourceCode(const std::string& end) {
 }
 
 void IdentifierNode::generateILOCCode() {
-    if (this->children->size() == 1) {
-        this->children->at(0)->generateILOCCode();
-    }
+		if (this->children->size() == 1) {
+				this->children->at(0)->generateILOCCode();
+		}
 }

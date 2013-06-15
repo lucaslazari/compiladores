@@ -9,13 +9,13 @@
 class ExpressionNode : public Node {
 
 public:
-  ExpressionNode();
-  ExpressionNode(const std::string& name);
-  ExpressionNode(const std::string& name, const Common::DataType& dataType);
-  virtual void printSourceCode(const std::string& end) = 0;
+	ExpressionNode();
+	ExpressionNode(const std::string& name);
+	ExpressionNode(const std::string& name, const Common::DataType& dataType);
+	virtual void printSourceCode(const std::string& end) = 0;
 
 protected:
-  Common::DataType dataType;
+	Common::DataType dataType;
 };
 
 #endif // EXPRESSIONNODE_H
