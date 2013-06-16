@@ -8,15 +8,15 @@
 class ILOC {
 
 public:
-	ILOC(int type, Symbol *src1, Symbol *src2, Symbol *dst1,  Symbol *dst2);
+    ILOC(int type, std::string src1, std::string src2, std::string dst1, std::string dst2);
     std::string codeline();
 
 private:
 	int type;
-	Symbol *src1;
-	Symbol *src2;
-	Symbol *dst1;
-	Symbol *dst2;
+    std::string src1;
+    std::string src2;
+    std::string dst1;
+    std::string dst2;
 };
 
 #endif // SYMBOL_H

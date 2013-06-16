@@ -16,7 +16,7 @@ public:
 	void setDataType(const Common::DataType& value);
 	int getCount() const;
 	void setCount(int value);
-    std::string getText();
+    std::string getText() const;
 	void setText(const std::string& value);
 
 private:
