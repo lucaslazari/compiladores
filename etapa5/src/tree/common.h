@@ -110,6 +110,23 @@ namespace Common {
 		EX_OPERATION
 	} ExpressionType;
 
+	typedef enum NodeType {
+		NT_PROGRAM,
+		NT_VAR_DECLARATION,
+		NT_VECTOR_DECLARATION,
+		NT_FUNCTION_DEFINITION,
+		NT_HEADER,
+		NT_BLOCK,
+		NT_ASSIGNMENT,
+		NT_OUTPUT,
+		NT_INPUT,
+		NT_RETURN,
+		NT_FUNCTION_CALL,
+		NT_WHILE,
+		NT_IF,
+		NT_EXPRESSION
+	} NodeType;
+
 	typedef std::tr1::unordered_map<std::string, Symbol*> HashTable;
 }
 

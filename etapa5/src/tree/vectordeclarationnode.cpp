@@ -3,7 +3,7 @@
 #include <sstream>
 
 VectorDeclarationNode::VectorDeclarationNode(const std::string& vectorName, Common::DataType& dataType, std::vector<int>* dimensions):
-	Node("Declaracao de vetor"), vectorName(vectorName), dataType(dataType), dimensions(dimensions) {
+	Node("Declaracao de vetor", Common::NT_VECTOR_DECLARATION), vectorName(vectorName), dataType(dataType), dimensions(dimensions) {
 	if (Scope::isTokenInClosestScope(vectorName))
 		yyerror("Vetor ja declarado neste escopo.");
 	else

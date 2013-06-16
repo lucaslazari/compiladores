@@ -1,13 +1,13 @@
 #include "blocknode.h"
 #include <stdio.h>
 
-BlockNode::BlockNode(): Node("Bloco") {
+BlockNode::BlockNode(): Node("Bloco", Common::NT_BLOCK) {
 	this->isNewScope = true;
 	this->hashTable = new Common::HashTable();
     Scope::pushScope(this);
 }
 
-BlockNode::BlockNode(bool isNewScope): Node("Bloco") {
+BlockNode::BlockNode(bool isNewScope): Node("Bloco", Common::NT_BLOCK) {
 	this->isNewScope = isNewScope;
 	if (this->isNewScope) {
 		this->hashTable = new Common::HashTable();

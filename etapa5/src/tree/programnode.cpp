@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <sstream>
 
-ProgramNode::ProgramNode(): Node("Programa"), initialAddress(1024) {
+ProgramNode::ProgramNode(): Node("Programa", Common::NT_PROGRAM), initialAddress(1024) {
 	this->isNewScope = true;
     this->hashTable = new Common::HashTable();
     Scope::pushScope(this);

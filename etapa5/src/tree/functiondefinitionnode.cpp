@@ -4,7 +4,8 @@
 #include "blocknode.h"
 #include "vardeclarationnode.h"
 
-FunctionDefinitionNode::FunctionDefinitionNode() : Node("Definicao de funcao") {}
+FunctionDefinitionNode::FunctionDefinitionNode():
+	Node("Definicao de funcao", Common::NT_FUNCTION_DEFINITION) {}
 
 void FunctionDefinitionNode::setHeader(Node* header) {
 	HeaderNode* headerNode = dynamic_cast<HeaderNode*>(header);

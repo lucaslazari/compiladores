@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 HeaderNode::HeaderNode(const std::string &functionName, Common::DataType dataType):
-	Node("Cabecalho"), functionName(functionName), dataType(dataType) {
+	Node("Cabecalho", Common::NT_HEADER), functionName(functionName), dataType(dataType) {
 	this->isNewScope = true;
 	this->hashTable = new Common::HashTable();
     Scope::pushScope(this);

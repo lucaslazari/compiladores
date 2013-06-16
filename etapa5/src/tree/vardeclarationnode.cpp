@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 VarDeclarationNode::VarDeclarationNode(const std::string& varName, Common::DataType dataType):
-	Node("Declaracao de variavel"), varName(varName), dataType(dataType) {	
+	Node("Declaracao de variavel", Common::NT_VAR_DECLARATION), varName(varName), dataType(dataType) {
 	if (Scope::isTokenInClosestScope(varName))
 		yyerror("Variavel ja declarada neste escopo.");
 	else
