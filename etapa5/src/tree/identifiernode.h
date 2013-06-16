@@ -13,7 +13,7 @@ public:
 	IdentifierNode(Symbol* symbol);
 	IdentifierNode(Symbol* symbol, std::vector<Node*>* expressionList);
 	void printSourceCode(const std::string& end);
-    Symbol * generateILOCCode();
+    void generateILOCCode();
 
 private:
 	Symbol* symbol;

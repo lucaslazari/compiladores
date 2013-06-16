@@ -77,7 +77,7 @@ typedef enum ILOC_OperationType {
     ILOC_CLOADA0,
     ILOC_STORE,
     ILOC_STOREAI,
-    ILOC_STOREA,
+    ILOC_STOREA0,
     ILOC_CSTORE,
     ILOC_CSTOREAI,
     ILOC_CSTOREA0,
