@@ -44,8 +44,6 @@ ${BASE_SOURCE_DIR}/tree/ifnode.cpp
 ${BASE_SOURCE_DIR}/tree/whilenode.cpp
 ${BASE_SOURCE_DIR}/tree/blocknode.cpp
 ${BASE_SOURCE_DIR}/tree/expression/expressionnode.cpp
-${BASE_SOURCE_DIR}/tree/expression/integerexpression.cpp
-${BASE_SOURCE_DIR}/tree/expression/floatexpression.cpp
 ${BASE_SOURCE_DIR}/tree/expression/identifiernode.cpp
 ${BASE_SOURCE_DIR}/tree/expression/literalnode.cpp
 ${BASE_SOURCE_DIR}/tree/expression/operationnode.cpp)

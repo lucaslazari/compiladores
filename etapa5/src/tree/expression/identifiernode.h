@@ -13,13 +13,11 @@ public:
 	IdentifierNode(Symbol* symbol);
 	IdentifierNode(Symbol* symbol, std::vector<Node*>* expressionList);
 	void printSourceCode(const std::string& end);
-	std::string evaluate();
 	void generateILOCCode();
 
 private:
 	Symbol* symbol;
 	Common::DataType dataType;
-	std::string value;
 };
 
 #endif // IDENTIFIERNODE_H

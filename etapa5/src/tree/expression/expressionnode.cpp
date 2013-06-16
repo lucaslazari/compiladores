@@ -1,6 +1,4 @@
 #include "expressionnode.h"
-#include "integerexpression.h"
-#include "floatexpression.h"
 
 ExpressionNode::ExpressionNode() {}
 
@@ -14,19 +12,4 @@ Common::DataType ExpressionNode::getDataType() const {
 
 void ExpressionNode::setDataType(const Common::DataType &value) {
 	dataType = value;
-}
-
-std::string ExpressionNode::resolveExpression(const Common::OperationType& operationType, Node* leftSide, Node* rightSide) {
-	std::string value;
-	switch (operationType) {
-	case Common::OP_SUM:
-		if (this->dataType == Common::INT)
-			value = IntegerExpression::evaluate(operationType, leftSide, rightSide);
-		else if (this->dataType == Common::FLOAT)
-			value = FloatExpression::evaluate(operationType, leftSide, rightSide);
-		break;
-	default:
-		break;
-	}
-	return value;
 }

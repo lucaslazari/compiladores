@@ -21,10 +21,8 @@ OperationNode::OperationNode(const Common::OperationType& operationType, Node* l
 	if (leftSide != NULL && rightSide != NULL) {
 		if (dataTypeExprLeft != dataTypeExprRight)
 			yyerror("tipos diferentes na expressao.");
-		else {
+		else
 			this->dataType = dataTypeExprLeft;
-			this->value = this->resolveExpression(operationType, leftSide, rightSide);
-		}
 	}
 }
 
@@ -45,10 +43,6 @@ void OperationNode::printSourceCode(const std::string& end) {
 			this->children->at(0)->printSourceCode("");
 		}
 	}
-}
-
-std::string OperationNode::evaluate() {
-	return this->value;
 }
 
 void OperationNode::generateILOCCode() {

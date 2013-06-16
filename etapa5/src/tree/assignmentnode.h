@@ -16,7 +16,6 @@ public:
 private:
 	void generateILOCInstructions();
 	std::string varName;
-	std::string value;
 };
 
 #endif // ASSIGNMENTNODE_H
