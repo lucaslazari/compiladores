@@ -23,9 +23,12 @@ ${BISON_parser_OUTPUTS}
 ${BASE_SOURCE_DIR}/symbol.cpp
 ${BASE_SOURCE_DIR}/iloc.cpp
 ${BASE_SOURCE_DIR}/code.cpp
+${BASE_SOURCE_DIR}/register.cpp
+${BASE_SOURCE_DIR}/label.cpp
 ${BASE_SOURCE_DIR}/parser/parser.y
 ${BASE_SOURCE_DIR}/scanner/scanner.l
 ${BASE_SOURCE_DIR}/scope.cpp
+${BASE_SOURCE_DIR}/tree/common.h
 ${BASE_SOURCE_DIR}/tree/node.cpp
 ${BASE_SOURCE_DIR}/tree/programnode.cpp
 ${BASE_SOURCE_DIR}/tree/vardeclarationnode.cpp

@@ -4,6 +4,7 @@
 #include <string>
 #include "expressionnode.h"
 #include "../symbol.h"
+#include "../iloc.h"
 
 class IdentifierNode : public ExpressionNode {
 
@@ -11,7 +12,7 @@ public:
 	IdentifierNode(Symbol* symbol);
 	IdentifierNode(Symbol* symbol, Node* expression);
 	void printSourceCode(const std::string& end);
-	void generateILOCCode();
+    Symbol * generateILOCCode();
 
 private:
 	Symbol* symbol;
