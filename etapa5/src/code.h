@@ -12,6 +12,7 @@ public:
 	static Node* generateCode(Node * root);
 
 private:
+
 };
 
 #endif // CODE_H

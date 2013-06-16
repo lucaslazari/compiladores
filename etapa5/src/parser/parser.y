@@ -110,6 +110,7 @@ class FunctionDefinitionNode;
 %type <node> bloco_comando
 %type <nodes> seq_comando
 %type <node> atribuicao
+%type <nodes> atribuicao_dimensoes
 %type <node> entrada
 %type <node> saida
 %type <nodes> lista_expressoes
@@ -124,7 +125,7 @@ class FunctionDefinitionNode;
 /* Regras (e ações) da gramática da Linguagem K */
 
 // criada a regra s para conseguir chamar a impressão da árvore
-s : { $<node>$ = new ProgramNode(); } programa { $$ = $<node>1; $$->print(0); /*$$->printSourceCode("");*/ $$->generateILOCCode(); }
+s : { $<node>$ = new ProgramNode(); } programa { $$ = $<node>1; $$->print(0); $$->printSourceCode(""); /*$$->generateILOCCode();*/ }
 	;
 
 programa: programa decl_global { $<node>0->addChild($2); }
@@ -151,7 +152,6 @@ decl_vetor_dimensao: decl_vetor_dimensao '[' decl_vetor_dimensao_tamanho ']' { $
 	| '[' decl_vetor_dimensao_tamanho ']' { $$ = new DimensionList(); $$->push_back($2); }
 	;
 
-
 decl_vetor_dimensao_tamanho: TK_LIT_INTEIRO { $$ = atoi($1->getText().c_str()); }
 	;
 
@@ -163,8 +163,8 @@ tipo_var: TK_PR_INTEIRO { $$ = Common::INT; }
 	;
 
 def_funcao: cabecalho decl_local '{' seq_comando '}' { $$ = new FunctionDefinitionNode(); $$->setHeader($1); $$->setLocals($2); Node* b = new BlockNode(false); b->addChildren($4); $$->setBlock(b); delete $2; Scope::popScope(); }
-		| cabecalho '{' seq_comando '}' { $$ = new FunctionDefinitionNode(); $$->setHeader($1); Node* b = new BlockNode(false); b->addChildren($3); $$->setBlock(b); Scope::popScope(); }
-		;
+	| cabecalho '{' seq_comando '}' { $$ = new FunctionDefinitionNode(); $$->setHeader($1); Node* b = new BlockNode(false); b->addChildren($3); $$->setBlock(b); Scope::popScope(); }
+	;
 
 chamada_funcao: TK_IDENTIFICADOR '(' lista_expressoes ')' { $$ = new FunctionCallNode($1->getText(), $3); }
 	;
@@ -207,7 +207,11 @@ seq_comando: seq_comando comando { $1->push_back($2); }
 	;
 
 atribuicao: TK_IDENTIFICADOR '=' expressao ';' { $$ = new AssignmentNode($1->getText(), $3); }
-	| TK_IDENTIFICADOR '[' expressao ']' '=' expressao ';' { $$ = new AssignmentNode($1->getText(), $3, $6); }
+	| TK_IDENTIFICADOR atribuicao_dimensoes '=' expressao ';' { $$ = new AssignmentNode($1->getText(), $2, $4); }
+	;
+
+atribuicao_dimensoes: atribuicao_dimensoes '[' expressao ']' { $1->push_back($3); }
+	| '[' expressao ']' { $$ = new ExpressionList(); $$->push_back($2); }
 	;
 
 entrada: TK_PR_ENTRADA TK_IDENTIFICADOR ';' { $$ = new InputNode($2->getText()); }
