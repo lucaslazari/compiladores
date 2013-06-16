@@ -20,7 +20,7 @@ public:
 	static Symbol* getSymbol(const std::string& token);
 
 private:
-    static std::deque<Node*> scopes;
+	static std::deque<Node*> scopes;
 };
 
 #endif // SCOPE_H

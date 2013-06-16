@@ -3,12 +3,12 @@
 #include <sstream>
 
 VectorDeclarationNode::VectorDeclarationNode(const std::string& vectorName, Common::DataType& dataType, std::vector<int>* dimensions):
-	Node("Declaracao de vetor"), vectorName(vectorName), dataType(dataType), dimensions(dimensions) {
+	Node("Declaracao de vetor", Common::NT_VECTOR_DECLARATION), vectorName(vectorName), dataType(dataType), dimensions(dimensions) {
+
 	if (Scope::isTokenInClosestScope(vectorName)) {
 		yyerror("Vetor ja declarado neste escopo.");
 	} else {
-
-		Symbol sym = new Symbol(vectorName, Common::VECTOR_VAR, dataType);
+		Symbol* sym = new Symbol(vectorName, Common::VECTOR_VAR, dataType);
 
 		// busca o deslocamento do escopo atual, esse será o deslocamento da nova variavel no escopo
 		sym->setOffset(this->getCurrentOffset());

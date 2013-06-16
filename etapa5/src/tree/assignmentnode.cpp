@@ -4,13 +4,13 @@
 #include "expression/expressionnode.h"
 
 AssignmentNode::AssignmentNode(const std::string& varName, Node* expressionAssigned):
-	Node("Atribuicao"), varName(varName) {
+	Node("Atribuicao", Common::NT_ASSIGNMENT), varName(varName) {
 	this->addChild(expressionAssigned);;
 	this->generateILOCInstructions();
 }
 
 AssignmentNode::AssignmentNode(const std::string& varName, std::vector<Node*>* expressionIndexList, Node* expressionAssigned):
-	Node("Atribuicao"), varName(varName) {
+	Node("Atribuicao", Common::NT_ASSIGNMENT), varName(varName) {
 	this->addChildren(expressionIndexList);
 	this->addChild(expressionAssigned);
 	this->generateILOCInstructions();

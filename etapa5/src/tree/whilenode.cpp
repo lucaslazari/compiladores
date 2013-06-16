@@ -1,7 +1,7 @@
 #include "whilenode.h"
 #include <stdio.h>
 
-WhileNode::WhileNode(Node *expression, Node *command): Node("Enquanto") {
+WhileNode::WhileNode(Node *expression, Node *command): Node("Enquanto", Common::NT_WHILE) {
 	this->addChild(expression);
 	this->addChild(command);
 }
