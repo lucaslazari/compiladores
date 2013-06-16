@@ -1,8 +1,3 @@
 #include "label.h"
 
-Label::Label() {
-
-
-}
-
-
+Label::Label() {}

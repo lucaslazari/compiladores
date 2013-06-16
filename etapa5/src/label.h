@@ -5,17 +5,12 @@
 #include "tree/common.h"
 #include "tree/node.h"
 
-
 class Label {
 
-    public:
-        Label();
+public:
+	Label();
 
-    private:
-
-
-
-
+private:
 };
 
 #endif // LABEL_H

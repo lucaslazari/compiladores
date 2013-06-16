@@ -3,7 +3,7 @@
 
 #include <string>
 #include "expressionnode.h"
-#include "common.h"
+#include "../common.h"
 
 class LiteralNode : public ExpressionNode {
 
