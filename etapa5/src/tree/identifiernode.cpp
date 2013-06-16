@@ -6,20 +6,22 @@ IdentifierNode::IdentifierNode(Symbol* symbol):
 	// TODO check the data type
 }
 
-IdentifierNode::IdentifierNode(Symbol* symbol, Node* expression):
+IdentifierNode::IdentifierNode(Symbol* symbol, std::vector<Node*>* expressionList):
 	ExpressionNode("Expressao idenficador"), symbol(symbol) {
 	// TODO check the data type
-	this->addChild(expression);
+	this->addChildren(expressionList);
 }
 
 void IdentifierNode::printSourceCode(const std::string& end) {
 	if (this->children->size() == 0)
 		fprintf(this->flexOut, "%s", symbol->getText().c_str());
-	else if (this->children->size() == 1) {
+	else {
 		fprintf(this->flexOut, "%s", symbol->getText().c_str());
-		fprintf(this->flexOut, "%s", "[");
-		this->children->at(0)->printSourceCode("");
-		fprintf(this->flexOut, "%s", "]");
+		for (unsigned int i = 0; i < this->children->size(); i++) {
+			fprintf(this->flexOut, "%s", "[");
+			this->children->at(i)->printSourceCode("");
+			fprintf(this->flexOut, "%s", "]");
+		}
 	}
 }
 
