@@ -3,6 +3,7 @@
 
 #include <string>
 #include "node.h"
+#include "scope.h"
 #include "common.h"
 
 class VarDeclarationNode : public Node {

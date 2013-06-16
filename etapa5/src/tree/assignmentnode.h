@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include "node.h"
+#include "scope.h"
 
 class AssignmentNode : public Node {
 

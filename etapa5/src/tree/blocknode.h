@@ -3,6 +3,7 @@
 
 #include <vector>
 #include "node.h"
+#include "scope.h"
 
 class BlockNode : public Node {
 

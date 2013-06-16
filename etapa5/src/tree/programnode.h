@@ -3,6 +3,7 @@
 
 #include <string>
 #include "node.h"
+#include "scope.h"
 
 class ProgramNode : public Node {
 

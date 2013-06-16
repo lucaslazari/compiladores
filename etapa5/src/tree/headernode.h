@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include "node.h"
+#include "scope.h"
 #include "common.h"
 
 class HeaderNode : public Node {

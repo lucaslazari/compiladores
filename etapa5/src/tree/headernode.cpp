@@ -5,7 +5,7 @@ HeaderNode::HeaderNode(const std::string &functionName, Common::DataType dataTyp
 	Node("Cabecalho"), functionName(functionName), dataType(dataType) {
 	this->isNewScope = true;
 	this->hashTable = new Common::HashTable();
-	Scope::pushScope(this->hashTable);
+    Scope::pushScope(this);
 }
 
 Common::DataType HeaderNode::getDataType() const {

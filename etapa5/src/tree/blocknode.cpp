@@ -4,14 +4,14 @@
 BlockNode::BlockNode(): Node("Bloco") {
 	this->isNewScope = true;
 	this->hashTable = new Common::HashTable();
-	Scope::pushScope(this->hashTable);
+    Scope::pushScope(this);
 }
 
 BlockNode::BlockNode(bool isNewScope): Node("Bloco") {
 	this->isNewScope = isNewScope;
 	if (this->isNewScope) {
 		this->hashTable = new Common::HashTable();
-		Scope::pushScope(this->hashTable);
+        Scope::pushScope(this);
 	}
 }
 

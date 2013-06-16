@@ -5,6 +5,7 @@
 #include <vector>
 #include "expressionnode.h"
 #include "../../symbol.h"
+#include "../../scope.h"
 #include "../../iloc.h"
 
 class IdentifierNode : public ExpressionNode {

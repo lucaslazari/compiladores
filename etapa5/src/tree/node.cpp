@@ -119,3 +119,7 @@ void Node::printSpaces(int level) {
 std::string Node::getName() {
 	return this->name;
 }
+
+Common::HashTable* Node::getHashTable() {
+    return this->hashTable;
+}

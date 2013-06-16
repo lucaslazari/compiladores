@@ -8,7 +8,7 @@ class Symbol;
 
 namespace DataSize {
     const int inteiro = 4;
-    const int flutuante = 8;
+    const int flutuante = 4;
     const int booleano = 1;
     const int caractere = 8;
     const int scopeSize = 1000;
