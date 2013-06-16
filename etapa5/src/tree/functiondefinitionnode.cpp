@@ -13,6 +13,8 @@ void FunctionDefinitionNode::setHeader(Node* header) {
 		yyerror("Funcao ja declarada.");
 	else
 		Scope::addSymbol(new Symbol(headerNode->getFunctionName(), Common::FUNCTION, headerNode->getDataType()));
+
+	this->addChild(header);
 }
 
 void FunctionDefinitionNode::setLocals(std::vector<Node*>* locals) {

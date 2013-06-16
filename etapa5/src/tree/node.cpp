@@ -3,13 +3,16 @@
 
 Node::Node(): parent(NULL), flexOut(yyout), isNewScope(false), hashTable(NULL) {
 	this->children = new std::vector<Node*>();
+	this->instructions = new std::vector<ILOC*>();
 }
 
 Node::Node(const std::string& name): name(name), parent(NULL), flexOut(yyout), isNewScope(false), hashTable(NULL) {
 	this->children = new std::vector<Node*>();
+	this->instructions = new std::vector<ILOC*>();
 }
 
 Node::Node(const std::string& name, std::vector<Node*>* children): name(name), children(children), parent(NULL), flexOut(yyout), isNewScope(false), hashTable(NULL) {
+	this->instructions = new std::vector<ILOC*>();
 	for (std::vector<Node*>::iterator it = this->children->begin(); it != this->children->end(); it++)
 		(*it)->setParent(this);
 }
