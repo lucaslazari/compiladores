@@ -11,7 +11,7 @@ std::string Symbol::getText() const {
 }
 
 void Symbol::setText(const std::string &value) {
-	text = value;
+	this->text = value;
 }
 
 Common::DataType Symbol::getDataType() const {
@@ -19,7 +19,7 @@ Common::DataType Symbol::getDataType() const {
 }
 
 void Symbol::setDataType(const Common::DataType &value) {
-	dataType = value;
+	this->dataType = value;
 }
 
 Common::TokenType Symbol::getTokenType() const {
@@ -27,7 +27,7 @@ Common::TokenType Symbol::getTokenType() const {
 }
 
 void Symbol::setTokenType(const Common::TokenType &value) {
-	tokenType = value;
+	this->tokenType = value;
 }
 
 int Symbol::getCount() const {
@@ -35,5 +35,13 @@ int Symbol::getCount() const {
 }
 
 void Symbol::setCount(int value) {
-	count = value;
+	this->count = value;
+}
+
+std::string Symbol::getValue() const {
+	return value;
+}
+
+void Symbol::setValue(const std::string& value) {
+	this->value = value;
 }

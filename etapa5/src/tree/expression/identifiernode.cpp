@@ -5,15 +5,17 @@ IdentifierNode::IdentifierNode(Symbol* symbol):
 	ExpressionNode("Expressao idenficador"), symbol(symbol) {	
 	// TODO check the data type
 	Symbol* sym = Scope::getSymbol(symbol->getText());
-	this->dataType = sym->dataType;
+	this->dataType = sym->getDataType();
+	this->value = sym->getValue();
 }
 
 IdentifierNode::IdentifierNode(Symbol* symbol, std::vector<Node*>* expressionList):
 	ExpressionNode("Expressao idenficador"), symbol(symbol) {
-	// TODO check the data type
-	Symbol* sym = Scope::getSymbol(symbol->getText());
-	this->dataType = sym->dataType;
+	// TODO check the data type	
 	this->addChildren(expressionList);
+	Symbol* sym = Scope::getSymbol(symbol->getText());
+	this->dataType = sym->getDataType();
+	this->value = sym->getValue();
 }
 
 void IdentifierNode::printSourceCode(const std::string& end) {
@@ -27,6 +29,10 @@ void IdentifierNode::printSourceCode(const std::string& end) {
 			fprintf(this->flexOut, "%s", "]");
 		}
 	}
+}
+
+std::string IdentifierNode::evaluate() {
+	return this->value;
 }
 
 void IdentifierNode::generateILOCCode() {

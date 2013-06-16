@@ -42,17 +42,17 @@ void Scope::addSymbol(Symbol* symbol) {
 
 Symbol* Scope::getSymbol(const std::string& token) {
 	bool tokenExist = false;
-		Common::HashTable::iterator symbolPair;
-		for (unsigned int i = 0; i < scopes.size(); i++) {
-			Common::HashTable* scope = scopes[i];
-			symbolPair = scope->find(token);
-			if (symbolPair != scope->end()) {
-				tokenExist = true;
-				break;
-			}
+	Common::HashTable::iterator symbolPair;
+	for (unsigned int i = 0; i < scopes.size(); i++) {
+		Common::HashTable* scope = scopes[i];
+		symbolPair = scope->find(token);
+		if (symbolPair != scope->end()) {
+			tokenExist = true;
+			break;
 		}
-		if (tokenExist)
-			return symbolPair->second;
-		else
-			return NULL;
+	}
+	if (tokenExist)
+		return symbolPair->second;
+	else
+		return NULL;
 }

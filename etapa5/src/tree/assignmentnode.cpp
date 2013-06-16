@@ -1,10 +1,15 @@
 #include "assignmentnode.h"
 #include <stdio.h>
 #include <sstream>
+#include "expression/expressionnode.h"
 
 AssignmentNode::AssignmentNode(const std::string& varName, Node* expressionAssigned):
 	Node("Atribuicao"), varName(varName) {
 	this->addChild(expressionAssigned);
+	ExpressionNode* expression = dynamic_cast<ExpressionNode*>(expressionAssigned);
+	this->value = expression->evaluate();
+	Symbol* symbol = Scope::getSymbol(varName);
+	symbol->setValue(this->value);
 	this->generateILOCInstructions();
 }
 
@@ -12,6 +17,10 @@ AssignmentNode::AssignmentNode(const std::string& varName, std::vector<Node*>* e
 	Node("Atribuicao"), varName(varName) {
 	this->addChildren(expressionIndexList);
 	this->addChild(expressionAssigned);
+	ExpressionNode* expression = dynamic_cast<ExpressionNode*>(expressionAssigned);
+	this->value = expression->evaluate();
+	Symbol* symbol = Scope::getSymbol(varName);
+	symbol->setValue(this->value);
 	this->generateILOCInstructions();
 }
 

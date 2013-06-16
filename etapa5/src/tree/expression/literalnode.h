@@ -3,13 +3,14 @@
 
 #include <string>
 #include "expressionnode.h"
-#include "common.h"
+#include "../common.h"
 
 class LiteralNode : public ExpressionNode {
 
 public:
 	LiteralNode(const std::string& literal, const Common::DataType& dataType);
 	void printSourceCode(const std::string& end);
+	std::string evaluate();
 	void generateILOCCode();
 
 private:

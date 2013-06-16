@@ -8,6 +8,10 @@ void LiteralNode::printSourceCode(const std::string& end) {
 	fprintf(this->flexOut, "%s", literal.c_str());
 }
 
+std::string LiteralNode::evaluate() {
+	return literal;
+}
+
 void LiteralNode::generateILOCCode() {
 	// ...
 }
