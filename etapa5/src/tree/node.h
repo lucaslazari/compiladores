@@ -7,6 +7,7 @@
 #include "common.h"
 #include "symbol.h"
 #include "../scope.h"
+#include "../iloc.h"
 
 extern FILE* yyout;
 void yyerror(const char *message);
@@ -38,6 +39,7 @@ protected:
 	FILE* flexOut;
 	bool isNewScope;
 	Common::HashTable* hashTable;
+	std::vector<ILOC*>* instructions;
 
 private:
 	void printSpaces(int level);

@@ -6,9 +6,9 @@ AssignmentNode::AssignmentNode(const std::string& varName, Node* expressionAssig
 	this->addChild(expressionAssigned);
 }
 
-AssignmentNode::AssignmentNode(const std::string& varName, Node* expressionIndex, Node* expressionAssigned):
+AssignmentNode::AssignmentNode(const std::string& varName, std::vector<Node*>* expressionIndexList, Node* expressionAssigned):
 	Node("Atribuicao"), varName(varName) {
-	this->addChild(expressionIndex);
+	this->addChildren(expressionIndexList);
 	this->addChild(expressionAssigned);
 }
 
@@ -18,13 +18,15 @@ void AssignmentNode::printSourceCode(const std::string& end) {
 		fprintf(this->flexOut, "%s", " = ");
 		this->children->at(0)->printSourceCode("");
 		fprintf(this->flexOut, "%s", end.c_str());
-	} else if (this->children->size() == 2) {
+	} else {
 		fprintf(this->flexOut, "%s", this->varName.c_str());
-		fprintf(this->flexOut, "%s", "[");
-		this->children->at(0)->printSourceCode("");
-		fprintf(this->flexOut, "%s", "]");
+		for (unsigned int i = 0; i < this->children->size() - 1; i++) {
+			fprintf(this->flexOut, "%s", "[");
+			this->children->at(0)->printSourceCode("");
+			fprintf(this->flexOut, "%s", "]");
+		}
 		fprintf(this->flexOut, "%s", " = ");
-		this->children->at(1)->printSourceCode("");
+		this->children->at(this->children->size()-1)->printSourceCode("");
 		fprintf(this->flexOut, "%s", end.c_str());
 	}
 }
