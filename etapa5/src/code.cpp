@@ -2,4 +2,4 @@
 
 Code::Code() {}
 
-Node* generateCode(Node * root) {}
+Node* Code::generateCode(Node * root) {}

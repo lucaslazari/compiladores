@@ -9,7 +9,7 @@ class Code {
 
 public:
 	Code();
-	static Node * generateCode(Node * root);
+	static Node* generateCode(Node * root);
 
 private:
 };
