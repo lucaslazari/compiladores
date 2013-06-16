@@ -110,7 +110,7 @@ class FunctionDefinitionNode;
 %type <node> bloco_comando
 %type <nodes> seq_comando
 %type <node> atribuicao
-%type <nodes> atribuicao_dimensoes
+%type <nodes> vetor_dimensoes
 %type <node> entrada
 %type <node> saida
 %type <nodes> lista_expressoes
@@ -207,10 +207,10 @@ seq_comando: seq_comando comando { $1->push_back($2); }
 	;
 
 atribuicao: TK_IDENTIFICADOR '=' expressao ';' { $$ = new AssignmentNode($1->getText(), $3); }
-	| TK_IDENTIFICADOR atribuicao_dimensoes '=' expressao ';' { $$ = new AssignmentNode($1->getText(), $2, $4); }
+	| TK_IDENTIFICADOR vetor_dimensoes '=' expressao ';' { $$ = new AssignmentNode($1->getText(), $2, $4); }
 	;
 
-atribuicao_dimensoes: atribuicao_dimensoes '[' expressao ']' { $1->push_back($3); }
+vetor_dimensoes: vetor_dimensoes '[' expressao ']' { $1->push_back($3); }
 	| '[' expressao ']' { $$ = new ExpressionList(); $$->push_back($2); }
 	;
 
@@ -237,7 +237,7 @@ controle_fluxo: TK_PR_SE '(' expressao ')' TK_PR_ENTAO comando { $$ = new IfNode
 	;
 
 expressao: TK_IDENTIFICADOR { $$ = new IdentifierNode($1); }
-	| TK_IDENTIFICADOR '[' expressao ']' { $$ = new IdentifierNode($1, $3); }
+	| TK_IDENTIFICADOR vetor_dimensoes { $$ = new IdentifierNode($1, $2); }
 	| TK_LIT_INTEIRO { $$ = new LiteralNode($1->getText(), Common::INT); }
 	| TK_LIT_FLUTUANTE { $$ = new LiteralNode($1->getText(), Common::FLOAT); }
 	| TK_LIT_FALSO { $$ = new LiteralNode($1->getText(), Common::BOOL); }

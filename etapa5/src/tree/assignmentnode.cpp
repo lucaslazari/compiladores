@@ -22,7 +22,7 @@ void AssignmentNode::printSourceCode(const std::string& end) {
 		fprintf(this->flexOut, "%s", this->varName.c_str());
 		for (unsigned int i = 0; i < this->children->size() - 1; i++) {
 			fprintf(this->flexOut, "%s", "[");
-			this->children->at(0)->printSourceCode("");
+			this->children->at(i)->printSourceCode("");
 			fprintf(this->flexOut, "%s", "]");
 		}
 		fprintf(this->flexOut, "%s", " = ");

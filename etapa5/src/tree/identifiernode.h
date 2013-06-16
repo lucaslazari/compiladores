@@ -2,6 +2,7 @@
 #define IDENTIFIERNODE_H
 
 #include <string>
+#include <vector>
 #include "expressionnode.h"
 #include "../symbol.h"
 #include "../iloc.h"
@@ -10,7 +11,7 @@ class IdentifierNode : public ExpressionNode {
 
 public:
 	IdentifierNode(Symbol* symbol);
-	IdentifierNode(Symbol* symbol, Node* expression);
+	IdentifierNode(Symbol* symbol, std::vector<Node*>* expressionList);
 	void printSourceCode(const std::string& end);
     Symbol * generateILOCCode();
 
