@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 OperationNode::OperationNode(const Common::OperationType& operationType, Node* leftSide, Node* rightSide):
-	ExpressionNode("Expressao operation"), operationType(operationType) {
+	ExpressionNode("Expressao operation", Common::EX_OPERATION), operationType(operationType) {
 
 	Common::DataType dataTypeExprLeft, dataTypeExprRight;
 
@@ -47,4 +47,7 @@ void OperationNode::printSourceCode(const std::string& end) {
 
 void OperationNode::generateILOCCode() {
 	// TODO
+	for (std::vector<Node*>::iterator it = this->children->begin(); it != this->children->end(); it++) {
+		(*it)->generateILOCCode();
+	}
 }

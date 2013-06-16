@@ -29,7 +29,7 @@ public:
 	virtual void printSourceCode(const std::string& end) = 0;
 	virtual void generateILOCCode() = 0;
 	std::string getName();
-    Common::HashTable* getHashTable();
+	Common::HashTable* getHashTable();
 
 protected:
 	std::string dataTypeToString(const Common::DataType& dataType);
@@ -39,11 +39,11 @@ protected:
 	Node* parent;
 	FILE* flexOut;
 	bool isNewScope;
-    Common::HashTable* hashTable;
-    std::vector<ILOC*>* instructions;
+	Common::HashTable* hashTable;
+	std::vector<ILOC*>* instructions;
 
 private:
-    void printSpaces(int level);
+	void printSpaces(int level);
 };
 
 #endif // NODE_H

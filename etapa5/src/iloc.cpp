@@ -1,4 +1,6 @@
 #include "iloc.h"
+#include <sstream>
+#include <algorithm>
 
 std::vector<std::string> ILOC::registersBeingUsed (MAX_REGISTERS);
 RegisterDictionary ILOC::registersByIdentifier;
@@ -169,8 +171,8 @@ std::string ILOC::codeline() {
 
 	if (!this->label.empty()) {
 		line = this->label + ": " + line;
-
 	}
+
 	return line;
 }
 
@@ -183,25 +185,32 @@ void ILOC::initRegisters() {
 	}
 }
 
-int ILOC::getRegister(const std::string& identifierName) {
+std::string ILOC::getRegister(const std::string& identifierName) {
 	int registerIndex;
+	std::stringstream registerName;
 
 	RegisterDictionary::iterator registerPair = ILOC::registersByIdentifier.find(identifierName);
-	if (registerPair != ILOC::registersByIdentifier.end())
-		return registerPair->second;
-
-	for (unsigned int i = 0; i < MAX_REGISTERS; i++) {
-		if (ILOC::registersBeingUsed.at(i).compare("") != 0) {
-			ILOC::registersByIdentifier.insert(RegisterDictionary::value_type(identifierName, i));
-			ILOC::registersBeingUsed.at(i) = identifierName;
-			registerIndex = i;
-			break;
+	if (registerPair != ILOC::registersByIdentifier.end()) {
+		registerName << 'r' << registerPair->second;
+	} else {
+		for (unsigned int i = 0; i < MAX_REGISTERS; i++) {
+			if (ILOC::registersBeingUsed.at(i).compare("") == 0) {
+				ILOC::registersByIdentifier.insert(RegisterDictionary::value_type(identifierName, i));
+				ILOC::registersBeingUsed.at(i) = identifierName;
+				registerIndex = i;
+				break;
+			}
 		}
+		registerName << 'r' << registerIndex;
 	}
-	return registerIndex;
+
+	return registerName.str();
 }
 
-void ILOC::returnRegister(int registerIndex) {
+void ILOC::returnRegister(const std::string& registerName) {
+	std::string rName = registerName;
+	rName.erase(0, 1);
+	int registerIndex = atoi(rName.c_str());
 	std::string identifierName = ILOC::registersBeingUsed.at(registerIndex);
 	ILOC::registersByIdentifier.erase(identifierName);
 	ILOC::registersBeingUsed.at(registerIndex) = "";

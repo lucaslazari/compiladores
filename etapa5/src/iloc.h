@@ -13,12 +13,12 @@ typedef std::tr1::unordered_map<std::string, int> RegisterDictionary;
 class ILOC {
 
 public:
-	ILOC(Common::ILOC_OperationType type, std::string src1, std::string src2, std::string dst1, std::string dst2);
+	ILOC(Common::ILOC_OperationType type, std::string src1, std::string src2, std::string dst1, std::string dst2);	
 	ILOC(Common::ILOC_OperationType type, std::string label, std::string src1, std::string src2, std::string dst1, std::string dst2);
 	std::string codeline();
 	static void initRegisters();
-	static int getRegister(const std::string& identifierName);
-	static void returnRegister(int registerIndex);
+	static std::string getRegister(const std::string& identifierName);
+	static void returnRegister(const std::string& registerName);
 
 private:
 	Common::ILOC_OperationType type;
