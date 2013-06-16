@@ -30,10 +30,10 @@ void AssignmentNode::printSourceCode(const std::string& end) {
 }
 
 void AssignmentNode::generateILOCCode() {
-		if (this->children->size() == 1) {
-			this->children->at(0)->generateILOCCode();
-		} else if (this->children->size() == 2) {
-			this->children->at(0)->generateILOCCode();
-			this->children->at(1)->generateILOCCode();
-		}
+	if (this->children->size() == 1) {
+		this->children->at(0)->generateILOCCode();
+	} else if (this->children->size() == 2) {
+		this->children->at(0)->generateILOCCode();
+		this->children->at(1)->generateILOCCode();
+	}
 }

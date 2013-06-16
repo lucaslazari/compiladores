@@ -10,6 +10,9 @@ public:
 	ProgramNode();
 	void printSourceCode(const std::string& end);
 	void generateILOCCode();
+
+private:
+	int initialAddress;
 };
 
 #endif // PROGRAMNODE_H

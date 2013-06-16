@@ -8,14 +8,14 @@
 class VectorDeclarationNode : public Node {
 
 public:
-	VectorDeclarationNode(const std::string& vectorName, Common::DataType& dataType, int size);
+	VectorDeclarationNode(const std::string& vectorName, Common::DataType& dataType, std::vector<int>* dimensions);
 	void printSourceCode(const std::string& end);
 	void generateILOCCode();
 
 private:
 	std::string vectorName;
 	Common::DataType dataType;
-	int size;
+	std::vector<int>* dimensions;
 };
 
 #endif // VECTORDECLARATIONNODE_H

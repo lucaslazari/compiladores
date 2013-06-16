@@ -10,5 +10,5 @@ void InputNode::printSourceCode(const std::string& end) {
 }
 
 void InputNode::generateILOCCode() {
-		// ...
+	// ...
 }

@@ -30,6 +30,7 @@ typedef std::vector<Node*> ParameterList;
 typedef std::vector<Node*> VariableList;
 typedef std::vector<Node*> ExpressionList;
 typedef std::vector<Node*> CommandList;
+typedef std::vector<int> DimensionList;
 
 %}
 
@@ -44,6 +45,7 @@ class FunctionDefinitionNode;
   Common::DataType dataType;
   Symbol* symbol;
   int integer;
+  std::vector<int>* integers;
 }
 
 /* Declaração dos tokens da gramática da Linguagem K */
@@ -95,7 +97,7 @@ class FunctionDefinitionNode;
 %type <nodes> decl_local
 %type <node> decl_var
 %type <node> decl_vetor
-//%type <node> decl_vetor_dimensao
+%type <integers> decl_vetor_dimensao
 %type <integer> decl_vetor_dimensao_tamanho
 %type <dataType> tipo_var
 %type <funcNode> def_funcao
@@ -122,7 +124,7 @@ class FunctionDefinitionNode;
 /* Regras (e ações) da gramática da Linguagem K */
 
 // criada a regra s para conseguir chamar a impressão da árvore
-s : { $<node>$ = new ProgramNode(); } programa { $$ = $<node>1; $$->print(0); $$->generateILOCCode(); $$->printSourceCode(""); }
+s : { $<node>$ = new ProgramNode(); } programa { $$ = $<node>1; $$->print(0); /*$$->printSourceCode("");*/ $$->generateILOCCode(); }
 	;
 
 programa: programa decl_global { $<node>0->addChild($2); }
@@ -142,14 +144,13 @@ decl_local: decl_local decl_var ';' { $$->push_back($2); }
 decl_var: TK_IDENTIFICADOR ':' tipo_var { $$ = new VarDeclarationNode($1->getText(), $3); }
 	;
 
-decl_vetor: TK_IDENTIFICADOR ':' tipo_var '[' decl_vetor_dimensao_tamanho ']' { $$ = new VectorDeclarationNode($1->getText(), $3, $5); }
+decl_vetor: TK_IDENTIFICADOR ':' tipo_var decl_vetor_dimensao { $$ = new VectorDeclarationNode($1->getText(), $3, $4); }
 	;
 
-/*
-decl_vetor_dimensao: '[' decl_vetor_dimensao_tamanho ']' decl_vetor_dimensao { $$ = $4; }
-	|
+decl_vetor_dimensao: decl_vetor_dimensao '[' decl_vetor_dimensao_tamanho ']' { $$->push_back($3); }
+	| '[' decl_vetor_dimensao_tamanho ']' { $$ = new DimensionList(); $$->push_back($2); }
 	;
-*/
+
 
 decl_vetor_dimensao_tamanho: TK_LIT_INTEIRO { $$ = atoi($1->getText().c_str()); }
 	;
