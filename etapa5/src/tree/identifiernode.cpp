@@ -23,9 +23,8 @@ void IdentifierNode::printSourceCode(const std::string& end) {
 	}
 }
 
-Symbol * IdentifierNode::generateILOCCode() {
-		if (this->children->size() == 1) {
-				this->children->at(0)->generateILOCCode();
-            std::cout << symbol->getText() << "\n";
-		}
+void IdentifierNode::generateILOCCode() {
+	if (this->children->size() == 1) {
+		this->children->at(0)->generateILOCCode();
+	}
 }

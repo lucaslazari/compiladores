@@ -114,5 +114,5 @@ void Node::printSpaces(int level) {
 }
 
 std::string Node::getName() {
-		return this->name;
+	return this->name;
 }
