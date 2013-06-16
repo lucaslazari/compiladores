@@ -6,6 +6,14 @@
 
 class Symbol;
 
+namespace DataSize {
+    const int inteiro = 4;
+    const int flutuante = 8;
+    const int booleano = 1;
+    const int caractere = 8;
+    const int scopeSize = 1000;
+}
+
 namespace Common {
 
 typedef enum TokenType {
@@ -97,6 +105,7 @@ typedef enum ILOC_OperationType {
 } ILOC_OperationType;
 
 typedef std::tr1::unordered_map<std::string, Symbol*> HashTable;
+
 
 }
 

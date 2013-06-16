@@ -1,6 +1,6 @@
 #include "assignmentnode.h"
 #include <stdio.h>
-
+#include <iostream>
 AssignmentNode::AssignmentNode(const std::string& varName, Node* expressionAssigned):
 	Node("Atribuicao"), varName(varName) {
 	this->addChild(expressionAssigned);

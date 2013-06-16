@@ -1,5 +1,6 @@
 #include "identifiernode.h"
 #include <stdio.h>
+#include <iostream>
 
 IdentifierNode::IdentifierNode(Symbol* symbol):
 	ExpressionNode("Expressao idenficador"), symbol(symbol) {
@@ -28,5 +29,6 @@ void IdentifierNode::printSourceCode(const std::string& end) {
 void IdentifierNode::generateILOCCode() {
 	if (this->children->size() == 1) {
 		this->children->at(0)->generateILOCCode();
-	}
+    }
+    std::cout << DataSize::flutuante << "\n";
 }
