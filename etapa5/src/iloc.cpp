@@ -1,6 +1,7 @@
 #include "iloc.h"
 
 std::vector<std::string> ILOC::registersBeingUsed (MAX_REGISTERS);
+RegisterDictionary ILOC::registersByIdentifier;
 
 ILOC::ILOC(Common::ILOC_OperationType type, std::string src1, std::string src2, std::string dst1, std::string dst2):
 	type(type), src1(src1), src2(src2), dst1(dst1), dst2(dst2) {}
@@ -182,10 +183,17 @@ void ILOC::initRegisters() {
 	}
 }
 
-int ILOC::requestRegister(const std::string& identifierName) {
-	int registerIndex = -1;
+int ILOC::getRegister(const std::string& identifierName) {
+	int registerIndex;
+
+	RegisterDictionary::iterator registerPair = ILOC::registersByIdentifier.find(identifierName);
+	if (registerPair != ILOC::registersByIdentifier.end())
+		return registerPair->second;
+
 	for (unsigned int i = 0; i < MAX_REGISTERS; i++) {
 		if (ILOC::registersBeingUsed.at(i).compare("") != 0) {
+			ILOC::registersByIdentifier.insert(RegisterDictionary::value_type(identifierName, i));
+			ILOC::registersBeingUsed.at(i) = identifierName;
 			registerIndex = i;
 			break;
 		}
@@ -194,5 +202,7 @@ int ILOC::requestRegister(const std::string& identifierName) {
 }
 
 void ILOC::returnRegister(int registerIndex) {
+	std::string identifierName = ILOC::registersBeingUsed.at(registerIndex);
+	ILOC::registersByIdentifier.erase(identifierName);
 	ILOC::registersBeingUsed.at(registerIndex) = "";
 }

@@ -46,7 +46,7 @@ void AssignmentNode::generateILOCCode() {
 
 void AssignmentNode::generateILOCInstructions() {
 	Symbol* symbol = Scope::getSymbol(varName);
-	int registerIndex = ILOC::requestRegister(varName);
+	int registerIndex = ILOC::getRegister(varName);
 	std::stringstream registerNameStream;
 	registerNameStream << registerIndex;
 	/*ILOC* instructionOne = new ILOC(Common::ILOC_LOADI, );
