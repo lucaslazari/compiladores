@@ -7,8 +7,15 @@ ILOC::ILOC(int type, std::string src1, std::string src2, std::string dst1, std::
 	this->src2 = src2;
 	this->dst1 = dst1;
 	this->dst2 = dst2;
+}
 
-    //std::cout << this->codeline() << "\n";
+ILOC::ILOC(int type, std::string label, std::string src1, std::string src2, std::string dst1, std::string dst2) {
+    this->type  = type;
+    this->label = label;
+    this->src1  = src1;
+    this->src2  = src2;
+    this->dst1  = dst1;
+    this->dst2  = dst2;
 }
 
 std::string ILOC::codeline() {
@@ -170,5 +177,9 @@ std::string ILOC::codeline() {
             break;
     }
 
+    if (!this->label.empty()) {
+        line = this->label + ": " + line;
+
+    }
     return line;
 }
