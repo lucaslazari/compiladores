@@ -1,12 +1,12 @@
 #include "ifnode.h"
 #include <stdio.h>
 
-IfNode::IfNode(Node* expression, Node* commandThen): Node("Se") {
+IfNode::IfNode(Node* expression, Node* commandThen): Node("Se", Common::NT_IF) {
 	this->addChild(expression);
 	this->addChild(commandThen);
 }
 
-IfNode::IfNode(Node* expression, Node* commandThen, Node* commandElse): Node("Se Senao") {
+IfNode::IfNode(Node* expression, Node* commandThen, Node* commandElse): Node("Se Senao", Common::NT_IF) {
 	this->addChild(expression);
 	this->addChild(commandThen);
 	this->addChild(commandElse);

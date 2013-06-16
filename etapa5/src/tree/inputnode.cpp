@@ -1,7 +1,7 @@
 #include "inputnode.h"
 #include <stdio.h>
 
-InputNode::InputNode(const std::string& varName): Node("Entrada"), varName(varName) {}
+InputNode::InputNode(const std::string& varName): Node("Entrada", Common::NT_INPUT), varName(varName) {}
 
 void InputNode::printSourceCode(const std::string& end) {
 	fprintf(this->flexOut, "%s", "entrada ");

@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 FunctionCallNode::FunctionCallNode(const std::string& functionName, std::vector<Node*>* children):
-	Node("Chamada de funcao", children), functionName(functionName) {}
+	Node("Chamada de funcao", Common::NT_FUNCTION_CALL, children), functionName(functionName) {}
 
 void FunctionCallNode::printSourceCode(const std::string& end) {
 	fprintf(this->flexOut, "%s", this->functionName.c_str());

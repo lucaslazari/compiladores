@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <sstream>
 
-ProgramNode::ProgramNode(): Node("Programa") {
+ProgramNode::ProgramNode(): Node("Programa", Common::NT_PROGRAM) {
 	this->isNewScope = true;
 	this->hashTable = new Common::HashTable();
 	this->baseAddr = 0;

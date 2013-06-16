@@ -1,7 +1,7 @@
 #include "outputnode.h"
 #include <stdio.h>
 
-OutputNode::OutputNode(std::vector<Node*>* children): Node("Saida", children) {}
+OutputNode::OutputNode(std::vector<Node*>* children): Node("Saida", Common::NT_OUTPUT, children) {}
 
 void OutputNode::printSourceCode(const std::string& end) {
 	fprintf(this->flexOut, "%s", "saida ");

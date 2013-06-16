@@ -1,7 +1,7 @@
 #include "returnnode.h"
 #include <stdio.h>
 
-ReturnNode::ReturnNode(Node* expression): Node("Retorna") {
+ReturnNode::ReturnNode(Node* expression): Node("Retorna", Common::NT_RETURN) {
 	this->addChild(expression);
 }
 

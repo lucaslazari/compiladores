@@ -14,9 +14,8 @@ void yyerror(const char *message);
 class Node {
 
 public:
-	Node();
-	Node(const std::string& name);
-	Node(const std::string& name, std::vector<Node*>* children);
+	Node(const std::string& name, const Common::NodeType& nodeType);
+	Node(const std::string& name, const Common::NodeType& nodeType, std::vector<Node*>* children);
 	void addChild(Node* child);
 	void addChildren(std::vector<Node*>* children);
 	Node* getParent() const;
@@ -38,6 +37,7 @@ protected:
 	std::string dataTypeToString(const Common::DataType& dataType);
 	std::string operationTypeToString(const Common::OperationType& operationType);
 	std::string name;
+	Common::NodeType nodeType;
 	std::vector<Node*>* children;
 	Node* parent;
 	FILE* flexOut;

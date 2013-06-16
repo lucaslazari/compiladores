@@ -18,7 +18,6 @@ public:
 
 private:
 	Symbol* symbol;
-	Common::DataType dataType;
 };
 
 #endif // IDENTIFIERNODE_H
