@@ -135,3 +135,14 @@ int Node::getCurrentOffset() {
 void Node::setCurrentOffset(int co) {
 	this->currentOffset = co;
 }
+
+void Node::printHashTable() {
+
+	for (std::tr1::unordered_map<std::string, Symbol*>::iterator it = hashTable->begin(); it != hashTable->end(); it++) {
+		Symbol * s = (Symbol*)(*it).second;
+		std::cout << s->getText() << " " << s->getDataType() << " " << s->getOffset() << "\n";
+	}
+
+}
+
+

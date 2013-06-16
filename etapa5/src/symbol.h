@@ -14,7 +14,7 @@ public:
 	void setTokenType(const Common::TokenType& value);
 	Common::DataType getDataType() const;
 	void setDataType(const Common::DataType& value);
-	std::string getText() const;
+	std::string getText();
 	void setText(const std::string& value);
 	std::string getValue() const;
 	void setValue(const std::string& value);

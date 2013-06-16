@@ -6,7 +6,7 @@ Symbol::Symbol(const std::string& text, const Common::TokenType& tokenType, cons
 
 Symbol::Symbol(const std::string& text, const Common::DataType& dataType): text(text), dataType(dataType) {}
 
-std::string Symbol::getText() const {
+std::string Symbol::getText() {
 	return text;
 }
 

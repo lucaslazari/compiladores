@@ -32,6 +32,7 @@ public:
 	int getBaseAddr();
 	int getCurrentOffset();
 	void setCurrentOffset(int co);
+	void printHashTable();
 
 protected:
 	std::string dataTypeToString(const Common::DataType& dataType);

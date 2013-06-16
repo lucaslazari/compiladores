@@ -8,12 +8,19 @@ VectorDeclarationNode::VectorDeclarationNode(const std::string& vectorName, Comm
 		yyerror("Vetor ja declarado neste escopo.");
 	} else {
 
-		Symbol sym = new Symbol(vectorName, Common::VECTOR_VAR, dataType);
+		Symbol * sym = new Symbol(vectorName, Common::VECTOR_VAR, dataType);
 
 		// busca o deslocamento do escopo atual, esse será o deslocamento da nova variavel no escopo
 		sym->setOffset(this->getCurrentOffset());
+		// calcula o deslocamento do vetor varrendo a lista de dimensões do mesmo
+		int size = 0;
+		int dtSize = Symbol::getDataTypeSize(dataType);
+		for (int i = 0; i < dimensions->size(); i++) {
+			size += dimensions->at(i) * dtSize;
+		}
+
 		// atualiza o deslocamento do escopo atual
-		this->setCurrentOffset(this->getCurrentOffset() + Symbol::getDataTypeSize(dataType));
+		this->setCurrentOffset(this->getCurrentOffset() + size);
 
 		Scope::addSymbol(sym);
 	}

@@ -9,7 +9,7 @@ class Symbol;
 namespace DataSize {
 		const int BOOL = 4;
 		const int INT = 4;
-		const int FLOAT = 1;
+		const int FLOAT = 4;
 		const int CHAR = 4;
 }
 
