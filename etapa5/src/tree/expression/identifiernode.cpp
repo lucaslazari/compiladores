@@ -34,5 +34,4 @@ void IdentifierNode::generateILOCCode() {
 	if (this->children->size() == 1) {
 		this->children->at(0)->generateILOCCode();
     }
-    std::cout << DataSize::flutuante << "\n";
 }

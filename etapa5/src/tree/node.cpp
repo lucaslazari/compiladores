@@ -121,5 +121,17 @@ std::string Node::getName() {
 }
 
 Common::HashTable* Node::getHashTable() {
-    return this->hashTable;
+	return this->hashTable;
+}
+
+int Node::getBaseAddr() {
+	return this->baseAddr;
+}
+
+int Node::getCurrentOffset() {
+	return this->currentOffset;
+}
+
+void Node::setCurrentOffset(int co) {
+	this->currentOffset = co;
 }

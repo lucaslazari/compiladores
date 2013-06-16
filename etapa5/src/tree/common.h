@@ -7,11 +7,10 @@
 class Symbol;
 
 namespace DataSize {
-    const int inteiro = 4;
-    const int flutuante = 4;
-    const int booleano = 1;
-    const int caractere = 8;
-    const int scopeSize = 1000;
+		const int BOOL = 4;
+		const int INT = 4;
+		const int FLOAT = 1;
+		const int CHAR = 4;
 }
 
 namespace Common {

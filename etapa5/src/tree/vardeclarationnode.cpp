@@ -3,10 +3,19 @@
 
 VarDeclarationNode::VarDeclarationNode(const std::string& varName, Common::DataType dataType):
 	Node("Declaracao de variavel"), varName(varName), dataType(dataType) {	
-	if (Scope::isTokenInClosestScope(varName))
+	if (Scope::isTokenInClosestScope(varName)) {
 		yyerror("Variavel ja declarada neste escopo.");
-	else
-		Scope::addSymbol(new Symbol(varName, Common::VARIABLE, dataType));
+	} else {
+
+		Symbol sym = new Symbol(varName, Common::VARIABLE, dataType);
+
+		// busca o deslocamento do escopo atual, esse será o deslocamento da nova variavel no escopo
+		sym->setOffset(this->getCurrentOffset());
+		// atualiza o deslocamento do escopo atual
+		this->setCurrentOffset(this->getCurrentOffset() + Symbol::getDataTypeSize(dataType));
+
+		Scope::addSymbol(sym);
+	}
 }
 
 Common::DataType VarDeclarationNode::getDataType() const {

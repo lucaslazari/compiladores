@@ -28,7 +28,7 @@ bool Scope::isTokenInScopes(const std::string& token) {
 }
 
 bool Scope::isTokenInClosestScope(const std::string& token) {
-    Common::HashTable* scope = (Common::HashTable*)Scope::scopes.front()->getHashTable();
+	Common::HashTable* scope = (Common::HashTable*)Scope::scopes.front()->getHashTable();
 	if (scope->find(token) != scope->end())
 		return true;
 	else
@@ -36,7 +36,7 @@ bool Scope::isTokenInClosestScope(const std::string& token) {
 }
 
 void Scope::addSymbol(Symbol* symbol) {
-    Common::HashTable* scope = (Common::HashTable*)Scope::scopes.front()->getHashTable();
+	Common::HashTable* scope = (Common::HashTable*)Scope::scopes.front()->getHashTable();
 	scope->insert(Common::HashTable::value_type(symbol->getText(), symbol));
 }
 
