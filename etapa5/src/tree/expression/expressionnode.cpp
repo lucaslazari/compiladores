@@ -1,10 +1,10 @@
 #include "expressionnode.h"
 
-ExpressionNode::ExpressionNode() {}
+ExpressionNode::ExpressionNode(const std::string& name, const Common::ExpressionType& expressionType):
+	Node(name), expressionType(expressionType) {}
 
-ExpressionNode::ExpressionNode(const std::string& name): Node(name) {}
-
-ExpressionNode::ExpressionNode(const std::string& name, const Common::DataType& dataType): Node(name), dataType(dataType) {}
+ExpressionNode::ExpressionNode(const std::string& name, const Common::ExpressionType& expressionType, const Common::DataType& dataType):
+	Node(name), expressionType(expressionType), dataType(dataType) {}
 
 Common::DataType ExpressionNode::getDataType() const {
 	return dataType;
@@ -12,4 +12,12 @@ Common::DataType ExpressionNode::getDataType() const {
 
 void ExpressionNode::setDataType(const Common::DataType &value) {
 	dataType = value;
+}
+
+Common::ExpressionType ExpressionNode::getExpressionType() const {
+	return expressionType;
+}
+
+void ExpressionNode::setExpressionType(const Common::ExpressionType& value) {
+	expressionType = value;
 }

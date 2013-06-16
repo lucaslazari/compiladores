@@ -42,5 +42,7 @@ void VarDeclarationNode::printSourceCode(const std::string& end) {
 }
 
 void VarDeclarationNode::generateILOCCode() {
-	// ...
+	for (std::vector<Node*>::iterator it = this->children->begin(); it != this->children->end(); it++) {
+		(*it)->generateILOCCode();
+	}
 }

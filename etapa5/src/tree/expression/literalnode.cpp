@@ -3,16 +3,14 @@
 #include <sstream>
 
 LiteralNode::LiteralNode(const std::string& literal, const Common::DataType& dataType):
-	ExpressionNode("Expressao literal", dataType), literal(literal) {}
+	ExpressionNode("Expressao literal", Common::EX_LITERAL, dataType), literal(literal) {}
 
 void LiteralNode::printSourceCode(const std::string& end) {
 	fprintf(this->flexOut, "%s", literal.c_str());
 }
 
 void LiteralNode::generateILOCCode() {
-	int registerIndex = ILOC::getRegister(literal);
-	std::stringstream registerName;
-	registerName << 'r' << registerIndex;
-	ILOC* instruction = new ILOC(Common::ILOC_LOADI, literal, NULL, registerName.str(), NULL);
+	std::string registerName = ILOC::getRegister(literal);
+	ILOC* instruction = new ILOC(Common::ILOC_LOADI, literal, "", registerName, "");
 	this->instructions->push_back(instruction);
 }
