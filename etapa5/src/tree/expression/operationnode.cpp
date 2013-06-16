@@ -4,11 +4,26 @@
 OperationNode::OperationNode(const Common::OperationType& operationType, Node* leftSide, Node* rightSide):
 	ExpressionNode("Expressao operation"), operationType(operationType) {
 
-	if (leftSide != NULL)
-		this->addChild(leftSide);
+	Common::DataType dataTypeExprLeft, dataTypeExprRight;
 
-	if (rightSide != NULL)
+	if (leftSide != NULL) {
+		this->addChild(leftSide);
+		ExpressionNode* left = dynamic_cast<ExpressionNode*>(leftSide);
+		dataTypeExprLeft = left->getDataType();
+	}
+
+	if (rightSide != NULL) {
 		this->addChild(rightSide);
+		ExpressionNode* right = dynamic_cast<ExpressionNode*>(rightSide);
+		dataTypeExprRight = right->getDataType();
+	}
+
+	if (leftSide != NULL && rightSide != NULL) {
+		if (dataTypeExprLeft != dataTypeExprRight)
+			yyerror("tipos diferentes na expressao.");
+		else
+			this->dataType = dataTypeExprLeft;
+	}
 }
 
 void OperationNode::printSourceCode(const std::string& end) {
@@ -31,5 +46,5 @@ void OperationNode::printSourceCode(const std::string& end) {
 }
 
 void OperationNode::generateILOCCode() {
-
+	// TODO
 }

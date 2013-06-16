@@ -1,15 +1,19 @@
 #include "assignmentnode.h"
 #include <stdio.h>
-#include <iostream>
+#include <sstream>
+#include "expression/expressionnode.h"
+
 AssignmentNode::AssignmentNode(const std::string& varName, Node* expressionAssigned):
 	Node("Atribuicao"), varName(varName) {
-	this->addChild(expressionAssigned);
+	this->addChild(expressionAssigned);;
+	this->generateILOCInstructions();
 }
 
 AssignmentNode::AssignmentNode(const std::string& varName, std::vector<Node*>* expressionIndexList, Node* expressionAssigned):
 	Node("Atribuicao"), varName(varName) {
 	this->addChildren(expressionIndexList);
 	this->addChild(expressionAssigned);
+	this->generateILOCInstructions();
 }
 
 void AssignmentNode::printSourceCode(const std::string& end) {
@@ -38,4 +42,13 @@ void AssignmentNode::generateILOCCode() {
 		this->children->at(0)->generateILOCCode();
 		this->children->at(1)->generateILOCCode();
 	}
+}
+
+void AssignmentNode::generateILOCInstructions() {
+	Symbol* symbol = Scope::getSymbol(varName);
+	int registerIndex = ILOC::getRegister(varName);
+	std::stringstream registerNameStream;
+	registerNameStream << registerIndex;
+	/*ILOC* instructionOne = new ILOC(Common::ILOC_LOADI, );
+	ILOC* instructionTwo = new ILOC();*/
 }

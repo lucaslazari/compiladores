@@ -2,7 +2,7 @@
 #define OPERATIONNODE_H
 
 #include "expressionnode.h"
-#include "common.h"
+#include "../common.h"
 
 class OperationNode : public ExpressionNode {
 

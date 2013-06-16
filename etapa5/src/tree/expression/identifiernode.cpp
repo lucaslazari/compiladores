@@ -3,14 +3,18 @@
 #include <iostream>
 
 IdentifierNode::IdentifierNode(Symbol* symbol):
-	ExpressionNode("Expressao idenficador"), symbol(symbol) {
+	ExpressionNode("Expressao idenficador"), symbol(symbol) {	
 	// TODO check the data type
+	Symbol* sym = Scope::getSymbol(symbol->getText());
+	this->dataType = sym->getDataType();
 }
 
 IdentifierNode::IdentifierNode(Symbol* symbol, std::vector<Node*>* expressionList):
 	ExpressionNode("Expressao idenficador"), symbol(symbol) {
-	// TODO check the data type
+	// TODO check the data type	
 	this->addChildren(expressionList);
+	Symbol* sym = Scope::getSymbol(symbol->getText());
+	this->dataType = sym->getDataType();
 }
 
 void IdentifierNode::printSourceCode(const std::string& end) {

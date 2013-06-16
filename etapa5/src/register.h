@@ -5,16 +5,12 @@
 #include "tree/common.h"
 #include "tree/node.h"
 
-
 class Register {
 
-    public:
-        Register();
+public:
+	Register();
 
-    private:
-
-
-
+private:
 
 };
 

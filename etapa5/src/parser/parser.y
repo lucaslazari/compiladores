@@ -18,10 +18,10 @@
 #include "../tree/ifnode.h"
 #include "../tree/whilenode.h"
 #include "../tree/blocknode.h"
-#include "../tree/expressionnode.h"
-#include "../tree/identifiernode.h"
-#include "../tree/literalnode.h"
-#include "../tree/operationnode.h"
+#include "../tree/expression/expressionnode.h"
+#include "../tree/expression/identifiernode.h"
+#include "../tree/expression/literalnode.h"
+#include "../tree/expression/operationnode.h"
 
 int yylex();
 void yyerror(const char *message);
