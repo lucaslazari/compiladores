@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "iloc.h"
 
 extern "C" FILE* yyin;
 extern "C" FILE* yyout;
@@ -26,6 +27,8 @@ int main (int argc, char **argv) {
 	// inicializa arquivos para leitura/escrita
 	yyin  = fopen(argv[1], "r");
 	yyout = fopen(argv[2], "w");
+
+	ILOC::initRegisters();
 
 	// chama o parser...
 	yyparse();

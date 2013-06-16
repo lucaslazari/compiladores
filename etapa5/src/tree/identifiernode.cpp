@@ -2,13 +2,17 @@
 #include <stdio.h>
 
 IdentifierNode::IdentifierNode(Symbol* symbol):
-	ExpressionNode("Expressao idenficador"), symbol(symbol) {
+	ExpressionNode("Expressao idenficador"), symbol(symbol) {	
 	// TODO check the data type
+	Symbol* sym = Scope::getSymbol(symbol->getText());
+	this->dataType = sym->dataType;
 }
 
 IdentifierNode::IdentifierNode(Symbol* symbol, std::vector<Node*>* expressionList):
 	ExpressionNode("Expressao idenficador"), symbol(symbol) {
 	// TODO check the data type
+	Symbol* sym = Scope::getSymbol(symbol->getText());
+	this->dataType = sym->dataType;
 	this->addChildren(expressionList);
 }
 
