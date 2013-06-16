@@ -13,7 +13,7 @@ public:
 	void generateILOCCode();
 
 private:
-	int initialAddress;
+
 };
 
 #endif // PROGRAMNODE_H

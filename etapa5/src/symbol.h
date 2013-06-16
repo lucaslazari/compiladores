@@ -14,19 +14,20 @@ public:
 	void setTokenType(const Common::TokenType& value);
 	Common::DataType getDataType() const;
 	void setDataType(const Common::DataType& value);
-	int getCount() const;
-	void setCount(int value);
 	std::string getText() const;
 	void setText(const std::string& value);
 	std::string getValue() const;
 	void setValue(const std::string& value);
+	void setOffset(int os);
+	int getOffset();
+	static int getDataTypeSize(Common::DataType dt);
 
 private:
 	std::string text;
 	Common::TokenType tokenType;
 	Common::DataType dataType;
-	int count;
 	std::string value;
+	int offset;
 };
 
 #endif // SYMBOL_H

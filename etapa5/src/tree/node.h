@@ -6,7 +6,6 @@
 #include <string>
 #include "common.h"
 #include "symbol.h"
-//#include "../scope.h"
 #include "../iloc.h"
 
 extern FILE* yyout;
@@ -29,6 +28,9 @@ public:
 	virtual void generateILOCCode() = 0;
 	std::string getName();
 	Common::HashTable* getHashTable();
+	int getBaseAddr();
+	int getCurrentOffset();
+	void setCurrentOffset(int co);
 
 protected:
 	std::string dataTypeToString(const Common::DataType& dataType);
@@ -41,6 +43,8 @@ protected:
 	bool isNewScope;
 	Common::HashTable* hashTable;
 	std::vector<ILOC*>* instructions;
+	int baseAddr;
+	int currentOffset;
 
 private:
 	void printSpaces(int level);
