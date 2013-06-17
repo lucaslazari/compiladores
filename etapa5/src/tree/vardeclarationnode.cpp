@@ -10,15 +10,11 @@ VarDeclarationNode::VarDeclarationNode(const std::string& varName, Common::DataT
 
 		Symbol * sym = new Symbol(varName, Common::VARIABLE, dataType);
 
-		printf("current offset: %d\n", this->getCurrentOffset());
-		printf("data type size: %d\n", Symbol::getDataTypeSize(dataType));
-		//printf("current offset: %d\n", this->getCurrentOffset());
-
 		// busca o deslocamento do escopo atual, esse será o deslocamento da nova variavel no escopo
-		sym->setOffset(this->getCurrentOffset());
+		int coffest = Scope::topScope()->getCurrentOffset();
+		sym->setOffset(coffest);
 		// atualiza o deslocamento do escopo atual
-		this->currentOffset =+ Symbol::getDataTypeSize(dataType);
-		//this->setCurrentOffset(this->getCurrentOffset() + Symbol::getDataTypeSize(dataType));
+		Scope::topScope()->setCurrentOffset(coffest + Symbol::getDataTypeSize(dataType));
 
 		Scope::addSymbol(sym);
 	}

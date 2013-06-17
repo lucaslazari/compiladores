@@ -15,6 +15,11 @@ Node* Scope::popScope() {
 	return scope;
 }
 
+Node* Scope::topScope() {
+	Node* scope = (Node*)Scope::scopes.front();
+	return scope;
+}
+
 bool Scope::isTokenInScopes(const std::string& token) {
 	bool tokenExist = false;
 	for (unsigned int i = 0; i < scopes.size(); i++) {

@@ -12,7 +12,8 @@ VectorDeclarationNode::VectorDeclarationNode(const std::string& vectorName, Comm
 		Symbol* sym = new Symbol(vectorName, Common::VECTOR_VAR, dataType);
 
 		// busca o deslocamento do escopo atual, esse será o deslocamento da nova variavel no escopo
-		sym->setOffset(this->getCurrentOffset());
+		int coffset = Scope::topScope()->getCurrentOffset();
+		sym->setOffset(coffset);
 		// calcula o deslocamento do vetor varrendo a lista de dimensões do mesmo
 		int size = 0;
 		int dtSize = Symbol::getDataTypeSize(dataType);
@@ -21,7 +22,7 @@ VectorDeclarationNode::VectorDeclarationNode(const std::string& vectorName, Comm
 		}
 
 		// atualiza o deslocamento do escopo atual
-		this->setCurrentOffset(this->getCurrentOffset() + size);
+		Scope::topScope()->setCurrentOffset(coffset + size);
 
 		Scope::addSymbol(sym);
 	}
