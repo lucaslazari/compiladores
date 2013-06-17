@@ -22,6 +22,8 @@ public:
 	void setParent(Node* parent);
 	bool getIsNewScope() const;
 	void setIsNewScope(bool value);
+	Common::NodeType getNodeType() const;
+	void setNodeType(const Common::NodeType& value);
 	Node* getParentWithScope() const;
 	void print(int level);
 	virtual void printSourceCode(const std::string& end) = 0;
@@ -32,6 +34,8 @@ public:
 	int getCurrentOffset();
 	void setCurrentOffset(int co);
 	void printHashTable();
+	std::string getLastRegister() const;
+	void setLastRegister(const std::string& value);
 
 protected:
 	std::string dataTypeToString(const Common::DataType& dataType);
@@ -46,6 +50,7 @@ protected:
 	std::vector<ILOC*>* instructions;
 	int baseAddr;
 	int currentOffset;
+	std::string lastRegister;
 
 private:
 	void printSpaces(int level);

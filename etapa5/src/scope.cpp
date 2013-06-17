@@ -15,7 +15,7 @@ Node* Scope::popScope() {
 	return scope;
 }
 
-Node* Scope::topScope() {
+Node* Scope::getScope() {
 	Node* scope = (Node*)Scope::scopes.front();
 	return scope;
 }

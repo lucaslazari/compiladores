@@ -14,7 +14,7 @@ public:
 	Scope();
 	static void pushScope(Node * newScopeNode);
 	static Node* popScope();
-	static Node* topScope();
+	static Node* getScope();
 	static bool isTokenInScopes(const std::string& token);
 	static bool isTokenInClosestScope(const std::string& token);
 	static void addSymbol(Symbol* symbol);

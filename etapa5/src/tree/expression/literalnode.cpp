@@ -10,7 +10,10 @@ void LiteralNode::printSourceCode(const std::string& end) {
 }
 
 void LiteralNode::generateILOCCode() {
-	std::string registerName = ILOC::getRegister(literal);
-	ILOC* instruction = new ILOC(Common::ILOC_LOADI, literal, "", registerName, "");
-	this->instructions->push_back(instruction);
+	if (this->parent->getNodeType() == Common::NT_ASSIGNMENT) {
+		std::string registerName = ILOC::getRegister(literal);
+		ILOC* instruction = new ILOC(Common::ILOC_LOADI, literal, "", registerName, "");
+		this->instructions->push_back(instruction);
+		this->setLastRegister(registerName);
+	}
 }

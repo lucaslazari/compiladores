@@ -15,7 +15,6 @@ public:
 	void generateILOCCode();
 
 private:
-	void generateILOCInstructions();
 	std::string varName;
 };
 
