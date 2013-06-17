@@ -18,11 +18,12 @@ VectorDeclarationNode::VectorDeclarationNode(const std::string& vectorName, Comm
 		// calcula o deslocamento do vetor varrendo a lista de dimensões do mesmo
 		int size = 0;
 		int dtSize = Symbol::getDataTypeSize(dataType);
-		for (int i = 0; i < dimensions->size(); i++) {
+		for (unsigned int i = 0; i < dimensions->size(); i++) {
 			size += dimensions->at(i) * dtSize;
 		}
 
 		// atualiza o deslocamento do escopo atual
+		this->setCurrentOffset(coffset);
 		scope->setCurrentOffset(coffset + size);
 
 		Scope::addSymbol(sym);
