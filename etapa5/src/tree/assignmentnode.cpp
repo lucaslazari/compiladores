@@ -39,9 +39,14 @@ void AssignmentNode::generateILOCCode() {
 		Node* symbolScope = Scope::getScope(varName);
 		Node* expressionAssigned = this->children->at(0);
 		std::stringstream symbolOffsetStr;
+		std::stringstream currentScopeBaseAddress;
 		symbolOffsetStr << symbol->getOffset();
+		currentScopeBaseAddress << symbolScope->getBaseAddr();
+		std::string* registerBaseAddress = ILOC::getRegister(currentScopeBaseAddress.str());
 		expressionAssigned->generateILOCCode();
-		ILOC* instruction = new ILOC(Common::ILOC_STOREAI, expressionAssigned->getLastRegister(), "", symbolScope->getLastRegister(), symbolOffsetStr.str());
+		ILOC* instructionLoadBase = new ILOC(Common::ILOC_LOADI, currentScopeBaseAddress.str(), "", *registerBaseAddress, "");
+		ILOC* instruction = new ILOC(Common::ILOC_STOREAI, expressionAssigned->getLastRegister(), "", *registerBaseAddress, symbolOffsetStr.str());
+		this->instructions->push_back(instructionLoadBase);
 		this->instructions->push_back(instruction);
 	}
 }

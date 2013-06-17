@@ -37,9 +37,14 @@ void IdentifierNode::generateILOCCode() {
 		Node* symbolScope = Scope::getScope(this->symbol->getText());
 		std::string* varAddressRegisterName = ILOC::getRegister("@ADDR" + symbol->getText());
 		std::stringstream symbolOffsetStr;
+		std::stringstream currentScopeBaseAddress;
 		symbolOffsetStr << symbol->getOffset();
-		ILOC* instruction = new ILOC(Common::ILOC_LOADAI, symbolScope->getLastRegister(), symbolOffsetStr.str(), *varAddressRegisterName, "");
-		this->instructions->push_back(instruction);		
+		currentScopeBaseAddress << symbolScope->getBaseAddr();
+		std::string* registerBaseAddress = ILOC::getRegister(currentScopeBaseAddress.str());
+		ILOC* instructionLoadBase = new ILOC(Common::ILOC_LOADI, currentScopeBaseAddress.str(), "", *registerBaseAddress, "");
+		ILOC* instruction = new ILOC(Common::ILOC_LOADAI, *registerBaseAddress, symbolOffsetStr.str(), *varAddressRegisterName, "");
+		this->instructions->push_back(instructionLoadBase);
+		this->instructions->push_back(instruction);
 		this->setLastRegister(*varAddressRegisterName);
 	}
 }
