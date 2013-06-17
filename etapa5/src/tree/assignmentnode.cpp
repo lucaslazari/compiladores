@@ -34,12 +34,14 @@ void AssignmentNode::printSourceCode(const std::string& end) {
 }
 
 void AssignmentNode::generateILOCCode() {
-	Symbol* symbol = Scope::getSymbol(varName);
-	// TODO
-	std::string registerName = ILOC::getRegister(varName);
-	/*ILOC* instructionOne = new ILOC(Common::ILOC_LOADI, );
-	ILOC* instructionTwo = new ILOC();*/
-	for (std::vector<Node*>::iterator it = this->children->begin(); it != this->children->end(); it++) {
-		(*it)->generateILOCCode();
+	if (this->children->size() == 1) { // Variable
+		Symbol* symbol = Scope::getSymbol(varName);
+		Node* currentScope = Scope::getScope();
+		Node* expressionAssigned = this->children->at(0);
+		std::stringstream symbolOffsetStr;
+		symbolOffsetStr << symbol->getOffset();
+		expressionAssigned->generateILOCCode();
+		ILOC* instruction = new ILOC(Common::ILOC_STOREAI, expressionAssigned->getLastRegister(), "", currentScope->getLastRegister(), symbolOffsetStr.str());
+		this->instructions->push_back(instruction);
 	}
 }

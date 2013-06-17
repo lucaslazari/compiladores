@@ -15,6 +15,7 @@ VarDeclarationNode::VarDeclarationNode(const std::string& varName, Common::DataT
 		int coffest = scope->getCurrentOffset();
 		sym->setOffset(coffest);
 		// atualiza o deslocamento do escopo atual
+		this->setCurrentOffset(coffest);
 		scope->setCurrentOffset(coffest + Symbol::getDataTypeSize(dataType));
 
 		Scope::addSymbol(sym);
@@ -44,8 +45,4 @@ void VarDeclarationNode::printSourceCode(const std::string& end) {
 	fprintf(this->flexOut, "%s", end.c_str());
 }
 
-void VarDeclarationNode::generateILOCCode() {
-	for (std::vector<Node*>::iterator it = this->children->begin(); it != this->children->end(); it++) {
-		(*it)->generateILOCCode();
-	}
-}
+void VarDeclarationNode::generateILOCCode() {}
