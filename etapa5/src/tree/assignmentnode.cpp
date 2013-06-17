@@ -5,15 +5,13 @@
 
 AssignmentNode::AssignmentNode(const std::string& varName, Node* expressionAssigned):
 	Node("Atribuicao", Common::NT_ASSIGNMENT), varName(varName) {
-	this->addChild(expressionAssigned);;
-	this->generateILOCInstructions();
+	this->addChild(expressionAssigned);
 }
 
 AssignmentNode::AssignmentNode(const std::string& varName, std::vector<Node*>* expressionIndexList, Node* expressionAssigned):
 	Node("Atribuicao", Common::NT_ASSIGNMENT), varName(varName) {
 	this->addChildren(expressionIndexList);
-	this->addChild(expressionAssigned);
-	this->generateILOCInstructions();
+	this->addChild(expressionAssigned);	
 }
 
 void AssignmentNode::printSourceCode(const std::string& end) {
@@ -36,16 +34,8 @@ void AssignmentNode::printSourceCode(const std::string& end) {
 }
 
 void AssignmentNode::generateILOCCode() {
-	if (this->children->size() == 1) {
-		this->children->at(0)->generateILOCCode();
-	} else if (this->children->size() == 2) {
-		this->children->at(0)->generateILOCCode();
-		this->children->at(1)->generateILOCCode();
-	}
-}
-
-void AssignmentNode::generateILOCInstructions() {
 	Symbol* symbol = Scope::getSymbol(varName);
+	// TODO
 	std::string registerName = ILOC::getRegister(varName);
 	/*ILOC* instructionOne = new ILOC(Common::ILOC_LOADI, );
 	ILOC* instructionTwo = new ILOC();*/
