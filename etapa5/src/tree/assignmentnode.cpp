@@ -36,20 +36,22 @@ void AssignmentNode::printSourceCode(const std::string& end) {
 void AssignmentNode::generateILOCCode() {
 	if (this->children->size() == 1) { // Variable
 		Symbol* symbol = Scope::getSymbol(varName);
-		Node* currentScope = Scope::getScope();
+		Node* symbolScope = Scope::getScope(varName);
 		Node* expressionAssigned = this->children->at(0);
 		std::stringstream symbolOffsetStr;
 		symbolOffsetStr << symbol->getOffset();
 		expressionAssigned->generateILOCCode();
-		ILOC* instruction = new ILOC(Common::ILOC_STOREAI, expressionAssigned->getLastRegister(), "", currentScope->getLastRegister(), symbolOffsetStr.str());
+		ILOC* instruction = new ILOC(Common::ILOC_STOREAI, expressionAssigned->getLastRegister(), "", symbolScope->getLastRegister(), symbolOffsetStr.str());
 		this->instructions->push_back(instruction);
 	}
 }
 
 void AssignmentNode::printILOC() {
-	for (unsigned int i = 0; i < this->instructions->size(); i++)
-		fprintf(this->flexOut, "%s", this->instructions->at(i)->codeline().c_str());
-
 	for (unsigned int i = 0; i < this->children->size(); i++)
 		this->children->at(i)->printILOC();
+
+	for (unsigned int i = 0; i < this->instructions->size(); i++) {
+		fprintf(this->flexOut, "%s", this->instructions->at(i)->codeline().c_str());
+		fprintf(this->flexOut, "%s", "\n");
+	}
 }

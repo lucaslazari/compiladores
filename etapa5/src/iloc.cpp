@@ -5,10 +5,10 @@
 std::vector<std::string> ILOC::registersBeingUsed (MAX_REGISTERS);
 RegisterDictionary ILOC::registersByIdentifier;
 
-ILOC::ILOC(Common::ILOC_OperationType type, std::string src1, std::string src2, std::string dst1, std::string dst2):
+ILOC::ILOC(Common::ILOC_OperationType type, const std::string& src1, const std::string& src2, const std::string& dst1, const std::string& dst2):
 	type(type), src1(src1), src2(src2), dst1(dst1), dst2(dst2) {}
 
-ILOC::ILOC(Common::ILOC_OperationType type, std::string label, std::string src1, std::string src2, std::string dst1, std::string dst2):
+ILOC::ILOC(Common::ILOC_OperationType type, const std::string& label, const std::string& src1, const std::string& src2, const std::string& dst1, const std::string& dst2):
 	type(type), label(label), src1(src1), src2(src2), dst1(dst1), dst2(dst2) {}
 
 std::string ILOC::codeline() {
@@ -185,7 +185,7 @@ void ILOC::initRegisters() {
 	}
 }
 
-std::string ILOC::getRegister(const std::string& identifierName) {
+std::string* ILOC::getRegister(const std::string& identifierName) {
 	int registerIndex;
 	std::stringstream registerName;
 
@@ -204,7 +204,7 @@ std::string ILOC::getRegister(const std::string& identifierName) {
 		registerName << 'r' << registerIndex;
 	}
 
-	return registerName.str();
+	return new std::string(registerName.str());
 }
 
 void ILOC::returnRegister(const std::string& registerName) {
