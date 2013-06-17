@@ -16,6 +16,7 @@ public:
 	void setDataType(const Common::DataType& value);
 	void printSourceCode(const std::string& end);
 	void generateILOCCode();
+	void printILOC();
 
 private:
 	std::string functionName;

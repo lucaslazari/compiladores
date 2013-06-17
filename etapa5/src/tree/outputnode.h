@@ -10,6 +10,7 @@ public:
 	OutputNode(std::vector<Node*>* children);
 	void printSourceCode(const std::string& end);
 	void generateILOCCode();
+	void printILOC();
 };
 
 #endif // OUTPUTNODE_H

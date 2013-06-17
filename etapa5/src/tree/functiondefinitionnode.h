@@ -14,6 +14,7 @@ public:
 	void setBlock(Node* block);
 	void printSourceCode(const std::string& end);
 	void generateILOCCode();
+	void printILOC();
 };
 
 #endif // FUNCTIONDEFINITIONNODE_H

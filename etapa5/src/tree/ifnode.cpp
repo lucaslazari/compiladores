@@ -33,3 +33,5 @@ void IfNode::generateILOCCode() {
 		this->children->at(2)->generateILOCCode();
 	}
 }
+
+void IfNode::printILOC() {}

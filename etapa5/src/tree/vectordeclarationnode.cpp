@@ -44,6 +44,6 @@ void VectorDeclarationNode::printSourceCode(const std::string& end) {
 	fprintf(this->flexOut, "%s", end.c_str());
 }
 
-void VectorDeclarationNode::generateILOCCode() {
-	// ...
-}
+void VectorDeclarationNode::generateILOCCode() {}
+
+void VectorDeclarationNode::printILOC() {}

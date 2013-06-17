@@ -18,3 +18,5 @@ void OutputNode::generateILOCCode() {
 		this->children->at(i)->generateILOCCode();
 	}
 }
+
+void OutputNode::printILOC() {}

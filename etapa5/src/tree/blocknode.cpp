@@ -24,7 +24,12 @@ void BlockNode::printSourceCode(const std::string& end) {
 }
 
 void BlockNode::generateILOCCode() {
+	if (this->isNewScope)
+		Scope::pushScope(this);
+
 	for (std::vector<Node*>::iterator it = this->children->begin(); it != this->children->end(); it++) {
 		(*it)->generateILOCCode();
 	}
 }
+
+void BlockNode::printILOC() {}

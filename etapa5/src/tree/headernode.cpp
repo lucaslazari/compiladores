@@ -5,7 +5,7 @@ HeaderNode::HeaderNode(const std::string &functionName, Common::DataType dataTyp
 	Node("Cabecalho", Common::NT_HEADER), functionName(functionName), dataType(dataType) {
 	this->isNewScope = true;
 	this->hashTable = new Common::HashTable();
-    Scope::pushScope(this);
+	Scope::pushScope(this);
 }
 
 Common::DataType HeaderNode::getDataType() const {
@@ -39,7 +39,10 @@ void HeaderNode::printSourceCode(const std::string& end) {
 }
 
 void HeaderNode::generateILOCCode() {
+	Scope::pushScope(this);
 	for (unsigned int i = 0; i < this->children->size(); i++) {
 		this->children->at(i)->generateILOCCode();
 	}
 }
+
+void HeaderNode::printILOC() {}

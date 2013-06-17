@@ -14,3 +14,5 @@ void ReturnNode::printSourceCode(const std::string& end) {
 void ReturnNode::generateILOCCode() {
 	this->children->at(0)->generateILOCCode();
 }
+
+void ReturnNode::printILOC() {}
