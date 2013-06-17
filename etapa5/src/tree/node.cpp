@@ -42,6 +42,14 @@ void Node::setIsNewScope(bool value) {
 	isNewScope = value;
 }
 
+Common::NodeType Node::getNodeType() const {
+	return nodeType;
+}
+
+void Node::setNodeType(const Common::NodeType& value) {
+	nodeType = value;
+}
+
 Node* Node::getParentWithScope() const {
 	if (parent->getIsNewScope())
 		return parent;
@@ -51,7 +59,7 @@ Node* Node::getParentWithScope() const {
 
 void Node::print(int level) {
 	this->printSpaces(level);
-	std::cout << this->name << "\n";
+	std::cout << this->name << " " << this->currentOffset << "\n";
 	for (std::vector<Node*>::iterator it = children->begin(); it != children->end(); it++)
 		(*it)->print(level+1);
 }
@@ -131,4 +139,12 @@ int Node::getCurrentOffset() {
 
 void Node::setCurrentOffset(int co) {
 	this->currentOffset = co;
+}
+
+std::string Node::getLastRegister() const {
+	return lastRegister;
+}
+
+void Node::setLastRegister(const std::string& value) {
+	lastRegister = value;
 }

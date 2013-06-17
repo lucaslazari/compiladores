@@ -19,10 +19,8 @@ void ProgramNode::generateILOCCode() {
 	std::stringstream baseAddrStr;
 	baseAddrStr << this->baseAddr;
 	std::string registerName = ILOC::getRegister("PROGRAM_BASE_ADDRESS");
-	fprintf(this->flexOut, "%s", "loadI ");
-	fprintf(this->flexOut, "%s", baseAddrStr.str().c_str());
-	fprintf(this->flexOut, "%s", " => ");
-	fprintf(this->flexOut, "%s", registerName.c_str());
+	ILOC* instruction = new ILOC(Common::ILOC_LOADI, baseAddrStr.str(), "", registerName, "");
+	this->instructions->push_back(instruction);
 	for (std::vector<Node*>::iterator it = this->children->begin(); it != this->children->end(); it++) {
 		(*it)->generateILOCCode();
 	}
