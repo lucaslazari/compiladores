@@ -2,11 +2,13 @@
 #include <iostream>
 
 std::deque<Node*> Scope::scopes;
+int Scope::count = 0;
 
 Scope::Scope() {}
 
 void Scope::pushScope(Node* newScopeNode) {
 	Scope::scopes.push_front(newScopeNode);
+	Scope::count++;
 }
 
 Node* Scope::popScope() {
@@ -60,4 +62,8 @@ Symbol* Scope::getSymbol(const std::string& token) {
 		return symbolPair->second;
 	else
 		return NULL;
+}
+
+int Scope::scopeCount() {
+	return Scope::count;
 }

@@ -162,8 +162,8 @@ tipo_var: TK_PR_INTEIRO { $$ = Common::INT; }
 	| TK_PR_CADEIA { $$ = Common::STRING; }
 	;
 
-def_funcao: cabecalho decl_local '{' seq_comando '}' { $$ = new FunctionDefinitionNode(); $$->setHeader($1); $$->setLocals($2); Node* b = new BlockNode(false); b->addChildren($4); $$->setBlock(b); delete $2; Scope::popScope(); }
-	| cabecalho '{' seq_comando '}' { $$ = new FunctionDefinitionNode(); $$->setHeader($1); Node* b = new BlockNode(false); b->addChildren($3); $$->setBlock(b); Scope::popScope(); }
+def_funcao: cabecalho decl_local '{' seq_comando '}' { $$ = new FunctionDefinitionNode(); $$->setHeader($1); $1->printHashTable(); $$->setLocals($2); Node* b = new BlockNode(false); b->addChildren($4); $$->setBlock(b); delete $2; }
+        | cabecalho '{' seq_comando '}' { $$ = new FunctionDefinitionNode(); $$->setHeader($1); $1->printHashTable(); Node* b = new BlockNode(false); b->addChildren($3); $$->setBlock(b); }
 	;
 
 chamada_funcao: TK_IDENTIFICADOR '(' lista_expressoes ')' { $$ = new FunctionCallNode($1->getText(), $3); }

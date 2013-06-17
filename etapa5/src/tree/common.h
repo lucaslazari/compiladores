@@ -15,6 +15,8 @@ namespace DataSize {
 
 namespace Common {
 
+	const int scopeSize = 2000;
+
 	typedef enum TokenType {
 		LIT_INT,
 		LIT_FLOAT,

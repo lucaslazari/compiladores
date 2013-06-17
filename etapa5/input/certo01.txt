@@ -1,5 +1,5 @@
+vetor_inteiro : inteiro[4];
 variavel_flutuante : flutuante;
 variavel_inteira : inteiro;
-vetor_inteiro : inteiro[2];
 /* var : booleano; */
 variavel_caractere : caractere;

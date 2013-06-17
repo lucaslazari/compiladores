@@ -19,9 +19,12 @@ public:
 	static bool isTokenInClosestScope(const std::string& token);
 	static void addSymbol(Symbol* symbol);
 	static Symbol* getSymbol(const std::string& token);
+	static int scopeCount();
 
 private:
 	static std::deque<Node*> scopes;
+	static int count;
 };
+
 
 #endif // SCOPE_H

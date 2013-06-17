@@ -5,6 +5,8 @@ HeaderNode::HeaderNode(const std::string &functionName, Common::DataType dataTyp
 	Node("Cabecalho", Common::NT_HEADER), functionName(functionName), dataType(dataType) {
 	this->isNewScope = true;
 	this->hashTable = new Common::HashTable();
+	this->baseAddr = Scope::scopeCount() * Common::scopeSize;
+	this->currentOffset = 0;
 	Scope::pushScope(this);
 }
 

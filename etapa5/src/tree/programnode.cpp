@@ -5,7 +5,7 @@
 ProgramNode::ProgramNode(): Node("Programa", Common::NT_PROGRAM) {
 	this->isNewScope = true;
 	this->hashTable = new Common::HashTable();
-	this->baseAddr = 0;
+	this->baseAddr = Scope::scopeCount() * Common::scopeSize;
 	this->currentOffset = 0;
 	Scope::pushScope(this);
 }
