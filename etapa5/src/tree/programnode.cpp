@@ -18,17 +18,20 @@ void ProgramNode::printSourceCode(const std::string& end) {
 void ProgramNode::generateILOCCode() {
 	std::stringstream baseAddrStr;
 	baseAddrStr << this->baseAddr;
-	std::string registerName = ILOC::getRegister("PROGRAM_BASE_ADDRESS");
-	ILOC* instruction = new ILOC(Common::ILOC_LOADI, baseAddrStr.str(), "", registerName, "");
+	std::string* registerName = ILOC::getRegister("PROGRAM_BASE_ADDRESS");
+	ILOC* instruction = new ILOC(Common::ILOC_LOADI, baseAddrStr.str(), "", *registerName, "");
 	this->instructions->push_back(instruction);
+	this->setLastRegister(*registerName);
 	for (std::vector<Node*>::iterator it = this->children->begin(); it != this->children->end(); it++) {
 		(*it)->generateILOCCode();
 	}
 }
 
 void ProgramNode::printILOC() {
-	for (unsigned int i = 0; i < this->instructions->size(); i++)
+	for (unsigned int i = 0; i < this->instructions->size(); i++) {
 		fprintf(this->flexOut, "%s", this->instructions->at(i)->codeline().c_str());
+		fprintf(this->flexOut, "%s", "\n");
+	}
 
 	for (unsigned int i = 0; i < this->children->size(); i++)
 		this->children->at(i)->printILOC();

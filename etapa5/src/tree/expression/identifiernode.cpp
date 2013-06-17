@@ -32,18 +32,21 @@ void IdentifierNode::printSourceCode(const std::string& end) {
 }
 
 void IdentifierNode::generateILOCCode() {
-	if (this->children->size() == 1) { // Variable
+	if (this->children->size() == 0) { // Variable
 		Symbol* symbol = Scope::getSymbol(this->symbol->getText());
-		Node* currentScope = Scope::getScope();
-		std::string varAddressRegisterName = ILOC::getRegister("@ADDR" + symbol->getText());
+		Node* symbolScope = Scope::getScope(this->symbol->getText());
+		std::string* varAddressRegisterName = ILOC::getRegister("@ADDR" + symbol->getText());
 		std::stringstream symbolOffsetStr;
 		symbolOffsetStr << symbol->getOffset();
-		ILOC* instruction = new ILOC(Common::ILOC_LOADAI, currentScope->getLastRegister(), symbolOffsetStr.str(), varAddressRegisterName, "");
-		this->instructions->push_back(instruction);
+		ILOC* instruction = new ILOC(Common::ILOC_LOADAI, symbolScope->getLastRegister(), symbolOffsetStr.str(), *varAddressRegisterName, "");
+		this->instructions->push_back(instruction);		
+		this->setLastRegister(*varAddressRegisterName);
 	}
 }
 
 void IdentifierNode::printILOC() {
-	for (unsigned int i = 0; i < this->instructions->size(); i++)
+	for (unsigned int i = 0; i < this->instructions->size(); i++) {
 		fprintf(this->flexOut, "%s", this->instructions->at(i)->codeline().c_str());
+		fprintf(this->flexOut, "%s", "\n");
+	}
 }

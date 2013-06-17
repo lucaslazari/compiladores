@@ -68,4 +68,7 @@ void FunctionDefinitionNode::generateILOCCode() {
 	}
 }
 
-void FunctionDefinitionNode::printILOC() {}
+void FunctionDefinitionNode::printILOC() {
+	for (unsigned int i = 0; i < this->children->size(); i++)
+		this->children->at(i)->printILOC();
+}
