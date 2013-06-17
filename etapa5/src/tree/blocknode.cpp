@@ -4,14 +4,18 @@
 BlockNode::BlockNode(): Node("Bloco", Common::NT_BLOCK) {
 	this->isNewScope = true;
 	this->hashTable = new Common::HashTable();
-    Scope::pushScope(this);
+	this->baseAddr = Scope::scopeCount() * Common::scopeSize;
+	this->currentOffset = 0;
+	Scope::pushScope(this);
 }
 
 BlockNode::BlockNode(bool isNewScope): Node("Bloco", Common::NT_BLOCK) {
 	this->isNewScope = isNewScope;
 	if (this->isNewScope) {
 		this->hashTable = new Common::HashTable();
-        Scope::pushScope(this);
+		this->baseAddr = Scope::scopeCount() * Common::scopeSize;
+		this->currentOffset = 0;
+		Scope::pushScope(this);
 	}
 }
 

@@ -13,8 +13,10 @@ void FunctionDefinitionNode::setHeader(Node* header) {
 	if (Scope::isTokenInClosestScope(headerNode->getFunctionName()))
 		yyerror("Funcao ja declarada.");
 	else {
+		Symbol * sym = new Symbol(headerNode->getFunctionName(), Common::FUNCTION, headerNode->getDataType());
+		sym->setOffset(Scope::getScope()->getBaseAddr());
 		Scope::popScope();
-		Scope::addSymbol(new Symbol(headerNode->getFunctionName(), Common::FUNCTION, headerNode->getDataType()));
+		Scope::addSymbol(sym);
 	}
 
 	this->addChild(header);

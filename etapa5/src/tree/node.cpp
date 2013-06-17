@@ -145,7 +145,7 @@ void Node::printHashTable() {
 	std::cout << "==============================\n";
 	for (std::tr1::unordered_map<std::string, Symbol*>::iterator it = hashTable->begin(); it != hashTable->end(); it++) {
 		Symbol * s = (Symbol*)(*it).second;
-		std::cout << s->getText() << " " << s->getDataType() << " " << s->getOffset() << "\n";
+		std::cout << s->getText() << " " << s->getDataType() << " " << this->baseAddr + s->getOffset() << "\n";
 	}
 
 }
