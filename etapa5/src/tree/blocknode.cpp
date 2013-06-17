@@ -32,4 +32,7 @@ void BlockNode::generateILOCCode() {
 	}
 }
 
-void BlockNode::printILOC() {}
+void BlockNode::printILOC() {
+	for (unsigned int i = 0; i < this->children->size(); i++)
+		this->children->at(i)->printILOC();
+}

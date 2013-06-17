@@ -20,6 +20,20 @@ Node* Scope::getScope() {
 	return scope;
 }
 
+Node* Scope::getScope(const std::string& token) {
+	Node* currentScope = NULL;
+	Common::HashTable::iterator symbolPair;
+	for (unsigned int i = 0; i < scopes.size(); i++) {
+		Common::HashTable* scope = scopes[i]->getHashTable();
+		symbolPair = scope->find(token);
+		if (symbolPair != scope->end()) {
+			currentScope = scopes[i];
+			break;
+		}
+	}
+	return currentScope;
+}
+
 bool Scope::isTokenInScopes(const std::string& token) {
 	bool tokenExist = false;
 	for (unsigned int i = 0; i < scopes.size(); i++) {
