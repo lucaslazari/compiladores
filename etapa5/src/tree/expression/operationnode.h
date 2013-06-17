@@ -10,6 +10,7 @@ public:
 	OperationNode(const Common::OperationType& operationType, Node* leftSide, Node* rightSide);
 	void printSourceCode(const std::string& end);
 	void generateILOCCode();
+	void printILOC();
 
 private:
 	Common::OperationType operationType;

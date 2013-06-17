@@ -46,3 +46,5 @@ void VarDeclarationNode::printSourceCode(const std::string& end) {
 }
 
 void VarDeclarationNode::generateILOCCode() {}
+
+void VarDeclarationNode::printILOC() {}

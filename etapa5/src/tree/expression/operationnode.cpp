@@ -51,3 +51,5 @@ void OperationNode::generateILOCCode() {
 		(*it)->generateILOCCode();
 	}
 }
+
+void OperationNode::printILOC() {}

@@ -42,3 +42,8 @@ void IdentifierNode::generateILOCCode() {
 		this->instructions->push_back(instruction);
 	}
 }
+
+void IdentifierNode::printILOC() {
+	for (unsigned int i = 0; i < this->instructions->size(); i++)
+		fprintf(this->flexOut, "%s", this->instructions->at(i)->codeline().c_str());
+}

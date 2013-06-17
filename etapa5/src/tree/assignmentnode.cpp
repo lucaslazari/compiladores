@@ -45,3 +45,11 @@ void AssignmentNode::generateILOCCode() {
 		this->instructions->push_back(instruction);
 	}
 }
+
+void AssignmentNode::printILOC() {
+	for (unsigned int i = 0; i < this->instructions->size(); i++)
+		fprintf(this->flexOut, "%s", this->instructions->at(i)->codeline().c_str());
+
+	for (unsigned int i = 0; i < this->children->size(); i++)
+		this->children->at(i)->printILOC();
+}

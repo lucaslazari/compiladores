@@ -63,3 +63,5 @@ void FunctionDefinitionNode::generateILOCCode() {
 		block->generateILOCCode();
 	}
 }
+
+void FunctionDefinitionNode::printILOC() {}

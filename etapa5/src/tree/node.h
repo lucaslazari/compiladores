@@ -28,6 +28,7 @@ public:
 	void print(int level);
 	virtual void printSourceCode(const std::string& end) = 0;
 	virtual void generateILOCCode() = 0;
+	virtual void printILOC() = 0;
 	std::string getName();
 	Common::HashTable* getHashTable();
 	int getBaseAddr();

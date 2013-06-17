@@ -11,6 +11,7 @@ public:
 	LiteralNode(const std::string& literal, const Common::DataType& dataType);
 	void printSourceCode(const std::string& end);
 	void generateILOCCode();
+	void printILOC();
 
 private:
 	std::string literal;

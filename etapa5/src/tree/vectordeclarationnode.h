@@ -12,6 +12,7 @@ public:
 	VectorDeclarationNode(const std::string& vectorName, Common::DataType& dataType, std::vector<int>* dimensions);
 	void printSourceCode(const std::string& end);
 	void generateILOCCode();
+	void printILOC();
 
 private:
 	std::string vectorName;

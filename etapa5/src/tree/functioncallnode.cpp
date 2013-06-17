@@ -18,3 +18,5 @@ void FunctionCallNode::generateILOCCode() {
 		(*it)->generateILOCCode();
 	}
 }
+
+void FunctionCallNode::printILOC() {}

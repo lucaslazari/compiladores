@@ -9,6 +9,7 @@ public:
 	ReturnNode(Node* expression);
 	void printSourceCode(const std::string& end);
 	void generateILOCCode();
+	void printILOC();
 };
 
 #endif // RETURNNODE_H

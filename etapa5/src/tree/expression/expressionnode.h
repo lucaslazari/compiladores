@@ -16,6 +16,7 @@ public:
 	Common::ExpressionType getExpressionType() const;
 	void setExpressionType(const Common::ExpressionType& value);
 	virtual void printSourceCode(const std::string& end) = 0;
+	virtual void printILOC() = 0;
 
 protected:
 	Common::ExpressionType expressionType;

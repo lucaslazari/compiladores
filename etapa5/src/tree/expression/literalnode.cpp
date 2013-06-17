@@ -17,3 +17,8 @@ void LiteralNode::generateILOCCode() {
 		this->setLastRegister(registerName);
 	}
 }
+
+void LiteralNode::printILOC() {
+	for (unsigned int i = 0; i < this->instructions->size(); i++)
+		fprintf(this->flexOut, "%s", this->instructions->at(i)->codeline().c_str());
+}

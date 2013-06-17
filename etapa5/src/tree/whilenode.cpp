@@ -19,3 +19,5 @@ void WhileNode::generateILOCCode() {
 	// faça...
 	this->children->at(1)->generateILOCCode();
 }
+
+void WhileNode::printILOC() {}

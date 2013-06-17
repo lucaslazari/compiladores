@@ -11,6 +11,7 @@ public:
 	FunctionCallNode(const std::string& functionName, std::vector<Node*>* children);
 	void printSourceCode(const std::string& end);
 	void generateILOCCode();
+	void printILOC();
 
 private:
 	std::string functionName;
