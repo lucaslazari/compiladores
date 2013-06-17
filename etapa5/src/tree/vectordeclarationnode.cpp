@@ -10,10 +10,12 @@ VectorDeclarationNode::VectorDeclarationNode(const std::string& vectorName, Comm
 	} else {
 		Symbol* sym = new Symbol(vectorName, Common::VECTOR_VAR, dataType);
 
+		Node* scope = Scope::getScope();
 		// busca o deslocamento do escopo atual, esse será o deslocamento da nova variavel no escopo
-		sym->setOffset(this->getCurrentOffset());
+		sym->setOffset(scope->getCurrentOffset());
 		// atualiza o deslocamento do escopo atual
-		this->setCurrentOffset(this->getCurrentOffset() + Symbol::getDataTypeSize(dataType));
+		this->setCurrentOffset(scope->getCurrentOffset());
+		scope->setCurrentOffset(scope->getCurrentOffset() + Symbol::getDataTypeSize(dataType)); // TODO: multiply by the number of dimensions
 
 		Scope::addSymbol(sym);
 	}

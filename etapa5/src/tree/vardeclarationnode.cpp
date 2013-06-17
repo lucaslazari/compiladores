@@ -9,12 +9,12 @@ VarDeclarationNode::VarDeclarationNode(const std::string& varName, Common::DataT
 	} else {
 
 		Symbol* sym = new Symbol(varName, Common::VARIABLE, dataType);
-
 		Node* scope = Scope::getScope();
+
 		// busca o deslocamento do escopo atual, esse será o deslocamento da nova variavel no escopo
 		sym->setOffset(scope->getCurrentOffset());
-		// atualiza o deslocamento do escopo atual
 
+		// atualiza o deslocamento do escopo atual
 		this->setCurrentOffset(scope->getCurrentOffset());
 		scope->setCurrentOffset(scope->getCurrentOffset() + Symbol::getDataTypeSize(dataType));
 
