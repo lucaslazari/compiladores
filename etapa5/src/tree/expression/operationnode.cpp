@@ -23,7 +23,8 @@ OperationNode::OperationNode(const Common::OperationType& operationType, Node* l
 			yyerror("tipos diferentes na expressao.");
 		else
 			this->dataType = dataTypeExprLeft;
-	}
+	} else if (leftSide != NULL)
+		this->dataType = dataTypeExprLeft;
 }
 
 void OperationNode::printSourceCode(const std::string& end) {
@@ -102,6 +103,17 @@ void OperationNode::generateILOCCode(Node* context) {
 				ILOC* instruction = new ILOC(Common::ILOC_OR, left->getLastRegister(), right->getLastRegister(), *operationRegister, "");
 				ILOC::addInstruction(instruction);
 				this->setLastRegister(*operationRegister);
+				break;
+			}
+			default:
+				break;
+		}
+	} else if (this->children->size() == 1) {
+		ExpressionNode* left = dynamic_cast<ExpressionNode*>(this->children->at(0));
+		switch (this->operationType) {
+			case Common::OP_PAREN: {
+				left->generateILOCCode(this);
+				this->setLastRegister(left->getLastRegister());
 				break;
 			}
 			default:
