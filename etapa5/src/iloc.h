@@ -18,8 +18,8 @@ public:
 	std::string codeline();
 	static void initRegisters();
 	static std::string* getRegister(const std::string& identifierName);
-	static void returnRegister(const std::string& registerName);
-	static std::vector<ILOC*> instructions;
+	static void returnRegister(const std::string& registerName);	
+	static void addInstruction(ILOC* instruction);
 	static void printILOC(FILE *f);
 
 private:
@@ -31,6 +31,7 @@ private:
 	std::string dst2;
 	static std::vector<std::string> registersBeingUsed;
 	static RegisterDictionary registersByIdentifier;
+	static std::vector<ILOC*> instructions;
 };
 
 #endif // SYMBOL_H

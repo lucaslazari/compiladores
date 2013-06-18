@@ -6,12 +6,14 @@
 AssignmentNode::AssignmentNode(const std::string& varName, Node* expressionAssigned):
 	Node("Atribuicao", Common::NT_ASSIGNMENT), varName(varName) {
 	this->addChild(expressionAssigned);
+	this->generateILOCCode(NULL);
 }
 
 AssignmentNode::AssignmentNode(const std::string& varName, std::vector<Node*>* expressionIndexList, Node* expressionAssigned):
 	Node("Atribuicao", Common::NT_ASSIGNMENT), varName(varName) {
 	this->addChildren(expressionIndexList);
 	this->addChild(expressionAssigned);
+	this->generateILOCCode(NULL);
 }
 
 void AssignmentNode::printSourceCode(const std::string& end) {
@@ -43,6 +45,6 @@ void AssignmentNode::generateILOCCode(Node* context) {
 		symbolOffsetStr << symbol->getOffset();
 		expressionAssigned->generateILOCCode(this);
 		ILOC* instruction = new ILOC(Common::ILOC_STOREAI, expressionAssigned->getLastRegister(), "", registerBaseAddress, symbolOffsetStr.str());
-		ILOC::instructions.push_back(instruction);
+		ILOC::addInstruction(instruction);
 	}
 }

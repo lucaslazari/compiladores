@@ -45,4 +45,22 @@ void OperationNode::printSourceCode(const std::string& end) {
 	}
 }
 
-void OperationNode::generateILOCCode(Node* context) {}
+void OperationNode::generateILOCCode(Node* context) {
+	if (this->children->size() == 2) {
+		ExpressionNode* left = dynamic_cast<ExpressionNode*>(this->children->at(0));
+		ExpressionNode* right = dynamic_cast<ExpressionNode*>(this->children->at(1));
+		switch (this->operationType) {
+			case Common::OP_SUM: {
+				left->generateILOCCode(this);
+				right->generateILOCCode(this);
+				std::string* operationRegister = ILOC::getRegister("EX_SUM_REG");
+				ILOC* instruction = new ILOC(Common::ILOC_ADD, left->getLastRegister(), right->getLastRegister(), *operationRegister, "");
+				ILOC::addInstruction(instruction);
+				this->setLastRegister(*operationRegister);
+				break;
+			}
+			default:
+				break;
+		}
+	}
+}
