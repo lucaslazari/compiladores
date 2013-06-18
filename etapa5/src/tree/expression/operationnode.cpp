@@ -45,11 +45,4 @@ void OperationNode::printSourceCode(const std::string& end) {
 	}
 }
 
-void OperationNode::generateILOCCode() {
-	// TODO
-	for (std::vector<Node*>::iterator it = this->children->begin(); it != this->children->end(); it++) {
-		(*it)->generateILOCCode();
-	}
-}
-
-void OperationNode::printILOC() {}
+void OperationNode::generateILOCCode(Node* context) {}

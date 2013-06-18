@@ -10,8 +10,7 @@ class FunctionCallNode : public Node {
 public:
 	FunctionCallNode(const std::string& functionName, std::vector<Node*>* children);
 	void printSourceCode(const std::string& end);
-	void generateILOCCode();
-	void printILOC();
+	void generateILOCCode(Node* context);
 
 private:
 	std::string functionName;

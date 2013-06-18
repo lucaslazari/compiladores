@@ -40,11 +40,4 @@ void HeaderNode::printSourceCode(const std::string& end) {
 	fprintf(this->flexOut, "%s", ")");
 }
 
-void HeaderNode::generateILOCCode() {
-	Scope::pushScope(this);
-	for (unsigned int i = 0; i < this->children->size(); i++) {
-		this->children->at(i)->generateILOCCode();
-	}
-}
-
-void HeaderNode::printILOC() {}
+void HeaderNode::generateILOCCode(Node* context) {}

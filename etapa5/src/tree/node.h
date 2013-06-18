@@ -27,8 +27,7 @@ public:
 	Node* getParentWithScope() const;
 	void print(int level);
 	virtual void printSourceCode(const std::string& end) = 0;
-	virtual void generateILOCCode() = 0;
-	virtual void printILOC() = 0;
+	virtual void generateILOCCode(Node* context) = 0;
 	std::string getName();
 	Common::HashTable* getHashTable();
 	int getBaseAddr();
@@ -40,7 +39,7 @@ public:
 
 protected:
 	std::string dataTypeToString(const Common::DataType& dataType);
-	std::string operationTypeToString(const Common::OperationType& operationType);
+	std::string operationTypeToString(const Common::OperationType& operationType);	
 	std::string name;
 	Common::NodeType nodeType;
 	std::vector<Node*>* children;
@@ -55,6 +54,7 @@ protected:
 
 private:
 	void printSpaces(int level);
+
 };
 
 #endif // NODE_H

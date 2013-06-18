@@ -9,6 +9,4 @@ void InputNode::printSourceCode(const std::string& end) {
 	fprintf(this->flexOut, "%s", ";\n");
 }
 
-void InputNode::generateILOCCode() {}
-
-void InputNode::printILOC() {}
+void InputNode::generateILOCCode(Node* context) {}

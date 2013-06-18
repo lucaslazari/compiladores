@@ -12,8 +12,7 @@ public:
 	AssignmentNode(const std::string& varName, Node* expressionAssigned);
 	AssignmentNode(const std::string& varName, std::vector<Node*>* expressionIndexList, Node* expressionAssigned);
 	void printSourceCode(const std::string& end);
-	void generateILOCCode();
-	void printILOC();
+	void generateILOCCode(Node* context);
 
 private:
 	std::string varName;

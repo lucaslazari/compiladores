@@ -9,8 +9,7 @@ class OperationNode : public ExpressionNode {
 public:
 	OperationNode(const Common::OperationType& operationType, Node* leftSide, Node* rightSide);
 	void printSourceCode(const std::string& end);
-	void generateILOCCode();
-	void printILOC();
+	void generateILOCCode(Node* context);
 
 private:
 	Common::OperationType operationType;

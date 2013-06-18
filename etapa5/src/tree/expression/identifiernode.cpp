@@ -31,27 +31,16 @@ void IdentifierNode::printSourceCode(const std::string& end) {
 	}
 }
 
-void IdentifierNode::generateILOCCode() {
+void IdentifierNode::generateILOCCode(Node* context) {
 	if (this->children->size() == 0) { // Variable
 		Symbol* symbol = Scope::getSymbol(this->symbol->getText());
 		Node* symbolScope = Scope::getScope(this->symbol->getText());
 		std::string* varAddressRegisterName = ILOC::getRegister("@ADDR" + symbol->getText());
+		std::string registerBaseAddress = (symbolScope->getNodeType() == Common::NT_PROGRAM) ? "bss" : "fp";
 		std::stringstream symbolOffsetStr;
-		std::stringstream currentScopeBaseAddress;
 		symbolOffsetStr << symbol->getOffset();
-		currentScopeBaseAddress << symbolScope->getBaseAddr();
-		std::string* registerBaseAddress = ILOC::getRegister(currentScopeBaseAddress.str());
-		ILOC* instructionLoadBase = new ILOC(Common::ILOC_LOADI, currentScopeBaseAddress.str(), "", *registerBaseAddress, "");
-		ILOC* instruction = new ILOC(Common::ILOC_LOADAI, *registerBaseAddress, symbolOffsetStr.str(), *varAddressRegisterName, "");
-		this->instructions->push_back(instructionLoadBase);
+		ILOC* instruction = new ILOC(Common::ILOC_LOADAI, registerBaseAddress, symbolOffsetStr.str(), *varAddressRegisterName, "");
 		this->instructions->push_back(instruction);
 		this->setLastRegister(*varAddressRegisterName);
-	}
-}
-
-void IdentifierNode::printILOC() {
-	for (unsigned int i = 0; i < this->instructions->size(); i++) {
-		fprintf(this->flexOut, "%s", this->instructions->at(i)->codeline().c_str());
-		fprintf(this->flexOut, "%s", "\n");
 	}
 }
