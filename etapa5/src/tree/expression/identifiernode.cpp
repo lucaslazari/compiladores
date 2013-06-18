@@ -35,12 +35,12 @@ void IdentifierNode::generateILOCCode(Node* context) {
 	if (this->children->size() == 0) { // Variable
 		Symbol* symbol = Scope::getSymbol(this->symbol->getText());
 		Node* symbolScope = Scope::getScope(this->symbol->getText());
-		std::string* varAddressRegisterName = ILOC::getRegister("@ADDR" + symbol->getText());
+		std::string* varAddressRegisterName = ILOC::getRegister(symbol->getText());
 		std::string registerBaseAddress = (symbolScope->getNodeType() == Common::NT_PROGRAM) ? "bss" : "fp";
 		std::stringstream symbolOffsetStr;
 		symbolOffsetStr << symbol->getOffset();
 		ILOC* instruction = new ILOC(Common::ILOC_LOADAI, registerBaseAddress, symbolOffsetStr.str(), *varAddressRegisterName, "");
-		ILOC::instructions.push_back(instruction);
+		ILOC::addInstruction(instruction);
 		this->setLastRegister(*varAddressRegisterName);
 	}
 }

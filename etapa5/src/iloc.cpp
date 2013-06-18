@@ -1,6 +1,6 @@
 #include "iloc.h"
-#include <sstream>
 #include <stdio.h>
+#include <sstream>
 #include <algorithm>
 
 std::vector<ILOC*> ILOC::instructions;
@@ -218,8 +218,12 @@ void ILOC::returnRegister(const std::string& registerName) {
 	ILOC::registersBeingUsed.at(registerIndex) = "";
 }
 
+void ILOC::addInstruction(ILOC* instruction) {
+	ILOC::instructions.push_back(instruction);
+}
+
 void ILOC::printILOC(FILE * f) {
-	for (int i = 0; i < ILOC::instructions.size(); i++) {
-		fprintf(f, ILOC::instructions.at(i)->codeline().c_str(),"\n");
+	for (unsigned int i = 0; i < ILOC::instructions.size(); i++) {
+		fprintf(f, "%s\n", ILOC::instructions.at(i)->codeline().c_str());
 	}
 }
