@@ -9,8 +9,8 @@ class OutputNode : public Node {
 public:
 	OutputNode(std::vector<Node*>* children);
 	void printSourceCode(const std::string& end);
-	void generateILOCCode();
-	void printILOC();
+	void generateILOCCode(Node* context);
+
 };
 
 #endif // OUTPUTNODE_H

@@ -15,10 +15,9 @@ public:
 	void setDataType(const Common::DataType& value);
 	Common::ExpressionType getExpressionType() const;
 	void setExpressionType(const Common::ExpressionType& value);
-	virtual void printSourceCode(const std::string& end) = 0;
-	virtual void printILOC() = 0;
 
 protected:
+	virtual void printSourceCode(const std::string& end) = 0;
 	Common::ExpressionType expressionType;
 	Common::DataType dataType;
 };

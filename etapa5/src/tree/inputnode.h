@@ -9,10 +9,9 @@ class InputNode : public Node {
 public:
 	InputNode(const std::string& varName);
 	void printSourceCode(const std::string& end);
-	void generateILOCCode();
-	void printILOC();
+	void generateILOCCode(Node* context);
 
-private:
+private:	
 	std::string varName;
 };
 

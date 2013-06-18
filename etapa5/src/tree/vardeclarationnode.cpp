@@ -45,6 +45,4 @@ void VarDeclarationNode::printSourceCode(const std::string& end) {
 	fprintf(this->flexOut, "%s", end.c_str());
 }
 
-void VarDeclarationNode::generateILOCCode() {}
-
-void VarDeclarationNode::printILOC() {}
+void VarDeclarationNode::generateILOCCode(Node* context) {}

@@ -13,8 +13,8 @@ public:
 	void setLocals(std::vector<Node*>* locals);
 	void setBlock(Node* block);
 	void printSourceCode(const std::string& end);
-	void generateILOCCode();
-	void printILOC();
+	void generateILOCCode(Node* context);
+
 };
 
 #endif // FUNCTIONDEFINITIONNODE_H

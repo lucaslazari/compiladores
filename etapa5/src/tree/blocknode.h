@@ -11,8 +11,8 @@ public:
 	BlockNode();
 	BlockNode(bool isNewScope);
 	void printSourceCode(const std::string& end);
-	void generateILOCCode();
-	void printILOC();
+	void generateILOCCode(Node* context);
+
 };
 
 #endif // BLOCONODE_H

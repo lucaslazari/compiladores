@@ -14,8 +14,7 @@ public:
 	IdentifierNode(Symbol* symbol);
 	IdentifierNode(Symbol* symbol, std::vector<Node*>* expressionList);
 	void printSourceCode(const std::string& end);
-	void generateILOCCode();
-	void printILOC();
+	void generateILOCCode(Node* context);
 
 private:
 	Symbol* symbol;

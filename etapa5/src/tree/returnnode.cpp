@@ -11,8 +11,4 @@ void ReturnNode::printSourceCode(const std::string& end) {
 	fprintf(this->flexOut, "%s", ";\n");
 }
 
-void ReturnNode::generateILOCCode() {
-	this->children->at(0)->generateILOCCode();
-}
-
-void ReturnNode::printILOC() {}
+void ReturnNode::generateILOCCode(Node* context) {}

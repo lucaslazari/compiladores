@@ -9,8 +9,8 @@ public:
 	IfNode(Node* expression, Node* commandThen);
 	IfNode(Node* expression, Node* commandThen, Node* commandElse);
 	void printSourceCode(const std::string& end);
-	void generateILOCCode();
-	void printILOC();
+	void generateILOCCode(Node* context);
+
 };
 
 #endif // IFNODE_H

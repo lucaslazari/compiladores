@@ -11,7 +11,7 @@ AssignmentNode::AssignmentNode(const std::string& varName, Node* expressionAssig
 AssignmentNode::AssignmentNode(const std::string& varName, std::vector<Node*>* expressionIndexList, Node* expressionAssigned):
 	Node("Atribuicao", Common::NT_ASSIGNMENT), varName(varName) {
 	this->addChildren(expressionIndexList);
-	this->addChild(expressionAssigned);	
+	this->addChild(expressionAssigned);
 }
 
 void AssignmentNode::printSourceCode(const std::string& end) {
@@ -33,30 +33,16 @@ void AssignmentNode::printSourceCode(const std::string& end) {
 	}
 }
 
-void AssignmentNode::generateILOCCode() {
+void AssignmentNode::generateILOCCode(Node* context) {
 	if (this->children->size() == 1) { // Variable
 		Symbol* symbol = Scope::getSymbol(varName);
 		Node* symbolScope = Scope::getScope(varName);
 		Node* expressionAssigned = this->children->at(0);
+		std::string registerBaseAddress = (symbolScope->getNodeType() == Common::NT_PROGRAM) ? "bss" : "fp";
 		std::stringstream symbolOffsetStr;
-		std::stringstream currentScopeBaseAddress;
 		symbolOffsetStr << symbol->getOffset();
-		currentScopeBaseAddress << symbolScope->getBaseAddr();
-		std::string* registerBaseAddress = ILOC::getRegister(currentScopeBaseAddress.str());
-		expressionAssigned->generateILOCCode();
-		ILOC* instructionLoadBase = new ILOC(Common::ILOC_LOADI, currentScopeBaseAddress.str(), "", *registerBaseAddress, "");
-		ILOC* instruction = new ILOC(Common::ILOC_STOREAI, expressionAssigned->getLastRegister(), "", *registerBaseAddress, symbolOffsetStr.str());
-		this->instructions->push_back(instructionLoadBase);
+		expressionAssigned->generateILOCCode(this);
+		ILOC* instruction = new ILOC(Common::ILOC_STOREAI, expressionAssigned->getLastRegister(), "", registerBaseAddress, symbolOffsetStr.str());
 		this->instructions->push_back(instruction);
-	}
-}
-
-void AssignmentNode::printILOC() {
-	for (unsigned int i = 0; i < this->children->size(); i++)
-		this->children->at(i)->printILOC();
-
-	for (unsigned int i = 0; i < this->instructions->size(); i++) {
-		fprintf(this->flexOut, "%s", this->instructions->at(i)->codeline().c_str());
-		fprintf(this->flexOut, "%s", "\n");
 	}
 }

@@ -13,11 +13,4 @@ void WhileNode::printSourceCode(const std::string& end) {
 	this->children->at(1)->printSourceCode(";\n");
 }
 
-void WhileNode::generateILOCCode() {
-	// while condição
-	this->children->at(0)->generateILOCCode();
-	// faça...
-	this->children->at(1)->generateILOCCode();
-}
-
-void WhileNode::printILOC() {}
+void WhileNode::generateILOCCode(Node* context) {}

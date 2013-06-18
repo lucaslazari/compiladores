@@ -13,10 +13,4 @@ void FunctionCallNode::printSourceCode(const std::string& end) {
 	fprintf(this->flexOut, "%s", end.c_str());
 }
 
-void FunctionCallNode::generateILOCCode() {
-	for (std::vector<Node*>::iterator it = this->children->begin(); it != this->children->end(); it++) {
-		(*it)->generateILOCCode();
-	}
-}
-
-void FunctionCallNode::printILOC() {}
+void FunctionCallNode::generateILOCCode(Node* context) {}
