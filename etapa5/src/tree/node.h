@@ -47,7 +47,7 @@ protected:
 	FILE* flexOut;
 	bool isNewScope;
 	Common::HashTable* hashTable;
-	std::vector<ILOC*>* instructions;
+	//std::vector<ILOC*>* instructions;
 	int baseAddr;
 	int currentOffset;
 	std::string lastRegister;

@@ -19,6 +19,8 @@ public:
 	static void initRegisters();
 	static std::string* getRegister(const std::string& identifierName);
 	static void returnRegister(const std::string& registerName);
+	static std::vector<ILOC*> instructions;
+	static void printILOC(FILE *f);
 
 private:
 	Common::ILOC_OperationType type;

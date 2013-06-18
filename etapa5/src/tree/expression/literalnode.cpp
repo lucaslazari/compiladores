@@ -13,7 +13,7 @@ void LiteralNode::generateILOCCode(Node* context) {
 	if (context->getNodeType() == Common::NT_ASSIGNMENT) {
 		std::string* registerName = ILOC::getRegister(literal);
 		ILOC* instruction = new ILOC(Common::ILOC_LOADI, literal, "", *registerName, "");
-		this->instructions->push_back(instruction);
+		ILOC::instructions.push_back(instruction);
 		this->setLastRegister(*registerName);
 	}
 }

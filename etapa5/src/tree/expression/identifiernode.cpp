@@ -40,7 +40,7 @@ void IdentifierNode::generateILOCCode(Node* context) {
 		std::stringstream symbolOffsetStr;
 		symbolOffsetStr << symbol->getOffset();
 		ILOC* instruction = new ILOC(Common::ILOC_LOADAI, registerBaseAddress, symbolOffsetStr.str(), *varAddressRegisterName, "");
-		this->instructions->push_back(instruction);
+		ILOC::instructions.push_back(instruction);
 		this->setLastRegister(*varAddressRegisterName);
 	}
 }

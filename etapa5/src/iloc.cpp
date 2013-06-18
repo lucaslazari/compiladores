@@ -1,7 +1,9 @@
 #include "iloc.h"
 #include <sstream>
+#include <stdio.h>
 #include <algorithm>
 
+std::vector<ILOC*> ILOC::instructions;
 std::vector<std::string> ILOC::registersBeingUsed (MAX_REGISTERS);
 RegisterDictionary ILOC::registersByIdentifier;
 
@@ -214,4 +216,10 @@ void ILOC::returnRegister(const std::string& registerName) {
 	std::string identifierName = ILOC::registersBeingUsed.at(registerIndex);
 	ILOC::registersByIdentifier.erase(identifierName);
 	ILOC::registersBeingUsed.at(registerIndex) = "";
+}
+
+void ILOC::printILOC(FILE * f) {
+	for (int i = 0; i < ILOC::instructions.size(); i++) {
+		fprintf(f, "adasda","\n");
+	}
 }
