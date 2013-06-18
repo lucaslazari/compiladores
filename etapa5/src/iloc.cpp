@@ -220,6 +220,6 @@ void ILOC::returnRegister(const std::string& registerName) {
 
 void ILOC::printILOC(FILE * f) {
 	for (int i = 0; i < ILOC::instructions.size(); i++) {
-		fprintf(f, "adasda","\n");
+		fprintf(f, ILOC::instructions.at(i)->codeline().c_str(),"\n");
 	}
 }
