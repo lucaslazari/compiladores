@@ -53,8 +53,53 @@ void OperationNode::generateILOCCode(Node* context) {
 			case Common::OP_SUM: {
 				left->generateILOCCode(this);
 				right->generateILOCCode(this);
-				std::string* operationRegister = ILOC::getRegister("EX_SUM_REG");
+				std::string* operationRegister = ILOC::getRegister("@EX_SUM_REG");
 				ILOC* instruction = new ILOC(Common::ILOC_ADD, left->getLastRegister(), right->getLastRegister(), *operationRegister, "");
+				ILOC::addInstruction(instruction);
+				this->setLastRegister(*operationRegister);
+				break;
+			}
+			case Common::OP_SUB: {
+				left->generateILOCCode(this);
+				right->generateILOCCode(this);
+				std::string* operationRegister = ILOC::getRegister("@EX_SUB_REG");
+				ILOC* instruction = new ILOC(Common::ILOC_SUB, left->getLastRegister(), right->getLastRegister(), *operationRegister, "");
+				ILOC::addInstruction(instruction);
+				this->setLastRegister(*operationRegister);
+				break;
+			}
+			case Common::OP_MULT: {
+				left->generateILOCCode(this);
+				right->generateILOCCode(this);
+				std::string* operationRegister = ILOC::getRegister("@EX_MULT_REG");
+				ILOC* instruction = new ILOC(Common::ILOC_MULT, left->getLastRegister(), right->getLastRegister(), *operationRegister, "");
+				ILOC::addInstruction(instruction);
+				this->setLastRegister(*operationRegister);
+				break;
+			}
+			case Common::OP_DIV: {
+				left->generateILOCCode(this);
+				right->generateILOCCode(this);
+				std::string* operationRegister = ILOC::getRegister("@EX_DIV_REG");
+				ILOC* instruction = new ILOC(Common::ILOC_DIV, left->getLastRegister(), right->getLastRegister(), *operationRegister, "");
+				ILOC::addInstruction(instruction);
+				this->setLastRegister(*operationRegister);
+				break;
+			}
+			case Common::OP_AND: {
+				left->generateILOCCode(this);
+				right->generateILOCCode(this);
+				std::string* operationRegister = ILOC::getRegister("@EX_AND_REG");
+				ILOC* instruction = new ILOC(Common::ILOC_AND, left->getLastRegister(), right->getLastRegister(), *operationRegister, "");
+				ILOC::addInstruction(instruction);
+				this->setLastRegister(*operationRegister);
+				break;
+			}
+			case Common::OP_OR: {
+				left->generateILOCCode(this);
+				right->generateILOCCode(this);
+				std::string* operationRegister = ILOC::getRegister("@EX_OR_REG");
+				ILOC* instruction = new ILOC(Common::ILOC_OR, left->getLastRegister(), right->getLastRegister(), *operationRegister, "");
 				ILOC::addInstruction(instruction);
 				this->setLastRegister(*operationRegister);
 				break;
