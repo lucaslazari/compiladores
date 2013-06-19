@@ -46,6 +46,13 @@ public:
 	std::string getNextLabel() const;
 	void setNextLabel(const std::string &value);
 
+	std::vector<ILOC *> getInstructions() const;
+	void setInstructions(const std::vector<ILOC *> &value);
+
+	void printILOC(FILE * f);
+
+	void addInstruction(ILOC* instruction);
+
 protected:
 	std::string dataTypeToString(const Common::DataType& dataType);
 	std::string operationTypeToString(const Common::OperationType& operationType);
@@ -67,6 +74,7 @@ private:
 	std::string trueLabel;
 	std::string falseLabel;
 	std::string nextLabel;
+	std::vector<ILOC*> instructions;
 
 };
 

@@ -1,5 +1,6 @@
 #include "node.h"
 #include <iostream>
+#include <stdio.h>
 
 Node::Node(const std::string& name, const Common::NodeType& nodeType):
 	name(name), nodeType(nodeType), parent(NULL), flexOut(yyout), isNewScope(false), hashTable(NULL) {
@@ -178,4 +179,22 @@ std::string Node::getNextLabel() const {
 
 void Node::setNextLabel(const std::string &value) {
     nextLabel = value;
+}
+
+void Node::addInstruction(ILOC* instruction) {
+	this->instructions.push_back(instruction);
+}
+
+std::vector<ILOC *> Node::getInstructions() const {
+	return instructions;
+}
+
+void Node::setInstructions(const std::vector<ILOC *> &value) {
+	instructions = value;
+}
+
+void Node::printILOC(FILE * f) {
+	for (unsigned int i = 0; i < this->instructions.size(); i++) {
+		fprintf(f, "%s\n", this->instructions.at(i)->codeline().c_str());
+	}
 }

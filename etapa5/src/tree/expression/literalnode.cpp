@@ -15,6 +15,6 @@ void LiteralNode::generateILOCCode(Node* context) {
 	std::string finalValue = (literal.compare("verdadeiro") == 0) ? "true" : (literal.compare("false") == 0) ? "false": literal;
 	std::string* registerName = ILOC::getRegister(finalValue);
 	ILOC* instruction = new ILOC(Common::ILOC_LOADI, finalValue, "", *registerName, "");
-	ILOC::addInstruction(instruction);
+	this->addInstruction(instruction);
 	this->setLastRegister(*registerName);
 }

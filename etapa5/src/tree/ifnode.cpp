@@ -50,11 +50,11 @@ void IfNode::generateILOCCode(Node* context) {
 
 	// adiciona instrução de comparação de um registrador, pulando para determinado label
 	ILOC* instruction = new ILOC(Common::ILOC_CBR, condition->getLastRegister(), "", this->getTrueLabel(), this->getFalseLabel());
-	ILOC::addInstruction(instruction);
+	this->addInstruction(instruction);
 
 	// adiciona o label de condição verdadeira
 	instruction = new ILOC(Common::ILOC_NOP, this->getTrueLabel(), "", "", "", "");
-	ILOC::addInstruction(instruction);
+	this->addInstruction(instruction);
 
 	// gera o iloc do bloco 'then
 	condTrue = dynamic_cast<Node*>(this->children->at(1));
@@ -64,11 +64,11 @@ void IfNode::generateILOCCode(Node* context) {
 	if (this->children->size() == 3) {
 		// adiciona jump incondicional para o próximo comando
 		instruction = new ILOC(Common::ILOC_JUMPI, "", "", this->getNextLabel(), "");
-		ILOC::addInstruction(instruction);
+		this->addInstruction(instruction);
 
 		// adiciona o label de condição falsa
 		instruction = new ILOC(Common::ILOC_NOP, this->getFalseLabel(), "", "", "", "");
-		ILOC::addInstruction(instruction);
+		this->addInstruction(instruction);
 
 		// gera o iloc do bloco 'else'
 		condFalse = dynamic_cast<Node*>(this->children->at(2));
@@ -76,10 +76,10 @@ void IfNode::generateILOCCode(Node* context) {
 
 		// adiciona o label de condição falsa
 		instruction = new ILOC(Common::ILOC_NOP, this->getNextLabel(), "", "", "", "");
-		ILOC::addInstruction(instruction);
+		this->addInstruction(instruction);
 	} else {
 		// adiciona o label de condição falsa
 		instruction = new ILOC(Common::ILOC_NOP, this->getFalseLabel(), "", "", "", "");
-		ILOC::addInstruction(instruction);
+		this->addInstruction(instruction);
 	}
 }

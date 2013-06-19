@@ -56,7 +56,7 @@ void OperationNode::generateILOCCode(Node* context) {
 				right->generateILOCCode(this);
 				std::string* operationRegister = ILOC::getRegister("@EX_SUM_REG");
 				ILOC* instruction = new ILOC(Common::ILOC_ADD, left->getLastRegister(), right->getLastRegister(), *operationRegister, "");
-				ILOC::addInstruction(instruction);
+				this->addInstruction(instruction);
 				this->setLastRegister(*operationRegister);
 				break;
 			}
@@ -65,7 +65,7 @@ void OperationNode::generateILOCCode(Node* context) {
 				right->generateILOCCode(this);
 				std::string* operationRegister = ILOC::getRegister("@EX_SUB_REG");
 				ILOC* instruction = new ILOC(Common::ILOC_SUB, left->getLastRegister(), right->getLastRegister(), *operationRegister, "");
-				ILOC::addInstruction(instruction);
+				this->addInstruction(instruction);
 				this->setLastRegister(*operationRegister);
 				break;
 			}
@@ -74,7 +74,7 @@ void OperationNode::generateILOCCode(Node* context) {
 				right->generateILOCCode(this);
 				std::string* operationRegister = ILOC::getRegister("@EX_MULT_REG");
 				ILOC* instruction = new ILOC(Common::ILOC_MULT, left->getLastRegister(), right->getLastRegister(), *operationRegister, "");
-				ILOC::addInstruction(instruction);
+				this->addInstruction(instruction);
 				this->setLastRegister(*operationRegister);
 				break;
 			}
@@ -83,7 +83,7 @@ void OperationNode::generateILOCCode(Node* context) {
 				right->generateILOCCode(this);
 				std::string* operationRegister = ILOC::getRegister("@EX_DIV_REG");
 				ILOC* instruction = new ILOC(Common::ILOC_DIV, left->getLastRegister(), right->getLastRegister(), *operationRegister, "");
-				ILOC::addInstruction(instruction);
+				this->addInstruction(instruction);
 				this->setLastRegister(*operationRegister);
 				break;
 			}
@@ -93,14 +93,14 @@ void OperationNode::generateILOCCode(Node* context) {
 				std::string labelFalse = ILOC::makeLabel();
 				ILOC* instructionShortCircuit = new ILOC(Common::ILOC_CBR, left->getLastRegister(), "", labelTrue, labelFalse);
 				ILOC* instructionNopTrue = new ILOC(Common::ILOC_NOP, labelTrue, "nop", "", "", "");
-				ILOC::addInstruction(instructionShortCircuit);
-				ILOC::addInstruction(instructionNopTrue);
+				this->addInstruction(instructionShortCircuit);
+				this->addInstruction(instructionNopTrue);
 				right->generateILOCCode(this);
 				std::string* operationRegister = ILOC::getRegister("@EX_AND_REG");
 				ILOC* instruction = new ILOC(Common::ILOC_AND, left->getLastRegister(), right->getLastRegister(), *operationRegister, "");
 				ILOC* instructionNopFalse = new ILOC(Common::ILOC_NOP, labelFalse, "nop", "", "", "");
-				ILOC::addInstruction(instruction);
-				ILOC::addInstruction(instructionNopFalse);
+				this->addInstruction(instruction);
+				this->addInstruction(instructionNopFalse);
 				this->setLastRegister(*operationRegister);
 				break;
 			}
@@ -110,14 +110,14 @@ void OperationNode::generateILOCCode(Node* context) {
 				std::string labelFalse = ILOC::makeLabel();
 				ILOC* instructionShortCircuit = new ILOC(Common::ILOC_CBR, left->getLastRegister(), "", labelTrue, labelFalse);
 				ILOC* instructionNopFalse = new ILOC(Common::ILOC_NOP, labelFalse, "nop", "", "", "");
-				ILOC::addInstruction(instructionShortCircuit);
-				ILOC::addInstruction(instructionNopFalse);
+				this->addInstruction(instructionShortCircuit);
+				this->addInstruction(instructionNopFalse);
 				right->generateILOCCode(this);
 				std::string* operationRegister = ILOC::getRegister("@EX_OR_REG");
 				ILOC* instruction = new ILOC(Common::ILOC_OR, left->getLastRegister(), right->getLastRegister(), *operationRegister, "");
 				ILOC* instructionNopTrue = new ILOC(Common::ILOC_NOP, labelTrue, "nop", "", "", "");
-				ILOC::addInstruction(instruction);
-				ILOC::addInstruction(instructionNopTrue);
+				this->addInstruction(instruction);
+				this->addInstruction(instructionNopTrue);
 				this->setLastRegister(*operationRegister);
 				break;
 			}
@@ -126,7 +126,7 @@ void OperationNode::generateILOCCode(Node* context) {
 				right->generateILOCCode(this);
 				std::string* operationRegister = ILOC::getRegister("@EX_CMP_LT_REG");
 				ILOC* instruction = new ILOC(Common::ILOC_CMP_LT, left->getLastRegister(), right->getLastRegister(), *operationRegister, "");
-				ILOC::addInstruction(instruction);
+				this->addInstruction(instruction);
 				this->setLastRegister(*operationRegister);
 				break;
 			}
@@ -135,7 +135,7 @@ void OperationNode::generateILOCCode(Node* context) {
 				right->generateILOCCode(this);
 				std::string* operationRegister = ILOC::getRegister("@EX_CMP_GT_REG");
 				ILOC* instruction = new ILOC(Common::ILOC_CMP_GT, left->getLastRegister(), right->getLastRegister(), *operationRegister, "");
-				ILOC::addInstruction(instruction);
+				this->addInstruction(instruction);
 				this->setLastRegister(*operationRegister);
 				break;
 			}
@@ -144,7 +144,7 @@ void OperationNode::generateILOCCode(Node* context) {
 				right->generateILOCCode(this);
 				std::string* operationRegister = ILOC::getRegister("@EX_CMP_LE_REG");
 				ILOC* instruction = new ILOC(Common::ILOC_CMP_LE, left->getLastRegister(), right->getLastRegister(), *operationRegister, "");
-				ILOC::addInstruction(instruction);
+				this->addInstruction(instruction);
 				this->setLastRegister(*operationRegister);
 				break;
 			}
@@ -153,7 +153,7 @@ void OperationNode::generateILOCCode(Node* context) {
 				right->generateILOCCode(this);
 				std::string* operationRegister = ILOC::getRegister("@EX_CMP_GE_REG");
 				ILOC* instruction = new ILOC(Common::ILOC_CMP_GE, left->getLastRegister(), right->getLastRegister(), *operationRegister, "");
-				ILOC::addInstruction(instruction);
+				this->addInstruction(instruction);
 				this->setLastRegister(*operationRegister);
 				break;
 			}
@@ -162,7 +162,7 @@ void OperationNode::generateILOCCode(Node* context) {
 				right->generateILOCCode(this);
 				std::string* operationRegister = ILOC::getRegister("@EX_CMP_EQ_REG");
 				ILOC* instruction = new ILOC(Common::ILOC_CMP_EQ, left->getLastRegister(), right->getLastRegister(), *operationRegister, "");
-				ILOC::addInstruction(instruction);
+				this->addInstruction(instruction);
 				this->setLastRegister(*operationRegister);
 				break;
 			}
@@ -171,7 +171,7 @@ void OperationNode::generateILOCCode(Node* context) {
 				right->generateILOCCode(this);
 				std::string* operationRegister = ILOC::getRegister("@EX_CMP_NEQ_REG");
 				ILOC* instruction = new ILOC(Common::ILOC_CMP_NE, left->getLastRegister(), right->getLastRegister(), *operationRegister, "");
-				ILOC::addInstruction(instruction);
+				this->addInstruction(instruction);
 				this->setLastRegister(*operationRegister);
 				break;
 			}

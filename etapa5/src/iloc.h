@@ -23,7 +23,6 @@ public:
 
 	static const std::string makeLabel();
 
-	static void addInstruction(ILOC* instruction);
 	static void printILOC(FILE *f);
 
 private:
@@ -35,7 +34,6 @@ private:
 	std::string dst2;
 	static std::vector<std::string> registersBeingUsed;
 	static Dictionary registersByIdentifier;
-	static std::vector<ILOC*> instructions;
 	static int labelCount;
 };
 

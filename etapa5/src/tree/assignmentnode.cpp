@@ -45,6 +45,6 @@ void AssignmentNode::generateILOCCode(Node* context) {
 		symbolOffsetStr << symbol->getOffset();
 		expressionAssigned->generateILOCCode(this);
 		ILOC* instruction = new ILOC(Common::ILOC_STOREAI, expressionAssigned->getLastRegister(), "", registerBaseAddress, symbolOffsetStr.str());
-		ILOC::addInstruction(instruction);
+		this->addInstruction(instruction);
 	}
 }
