@@ -14,3 +14,19 @@ void WhileNode::printSourceCode(const std::string& end) {
 }
 
 void WhileNode::generateILOCCode(Node* context) {}
+
+std::string WhileNode::getFalseLabel() const {
+	return falseLabel;
+}
+
+void WhileNode::setFalseLabel(const std::string &value) {
+	falseLabel = value;
+}
+
+std::string WhileNode::getTrueLabel() const {
+	return trueLabel;
+}
+
+void WhileNode::setTrueLabel(const std::string &value) {
+	trueLabel = value;
+}

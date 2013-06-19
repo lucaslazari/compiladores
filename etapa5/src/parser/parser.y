@@ -232,7 +232,7 @@ lista_expressoes_nao_vazia: lista_expressoes_nao_vazia ',' expressao { $1->push_
 	;
 
 controle_fluxo: TK_PR_SE '(' expressao ')' TK_PR_ENTAO comando { $$ = new IfNode($3, $6); }
-	| TK_PR_SE '(' expressao ')' TK_PR_ENTAO comando TK_PR_SENAO comando { $$ = new IfNode($3, $6, $8); }
+        | TK_PR_SE '(' expressao ')' TK_PR_ENTAO comando TK_PR_SENAO comando { $$ = new IfNode($3, $6, $8); }
 	| TK_PR_ENQUANTO '(' expressao ')' comando { $$ = new WhileNode($3, $5); }
 	;
 

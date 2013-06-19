@@ -155,3 +155,27 @@ std::string Node::getLastRegister() const {
 void Node::setLastRegister(const std::string& value) {
 	lastRegister = value;
 }
+
+std::string Node::getFalseLabel() const {
+	return falseLabel;
+}
+
+void Node::setFalseLabel(const std::string &value) {
+	falseLabel = value;
+}
+
+std::string Node::getTrueLabel() const {
+	return trueLabel;
+}
+
+void Node::setTrueLabel(const std::string &value) {
+	trueLabel = value;
+}
+
+std::string Node::getNextLabel() const {
+    return nextLabel;
+}
+
+void Node::setNextLabel(const std::string &value) {
+    nextLabel = value;
+}

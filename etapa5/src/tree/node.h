@@ -37,9 +37,18 @@ public:
 	std::string getLastRegister() const;
 	void setLastRegister(const std::string& value);
 
+	std::string getTrueLabel() const;
+	void setTrueLabel(const std::string &value);
+
+	std::string getFalseLabel() const;
+	void setFalseLabel(const std::string &value);
+
+	std::string getNextLabel() const;
+	void setNextLabel(const std::string &value);
+
 protected:
 	std::string dataTypeToString(const Common::DataType& dataType);
-	std::string operationTypeToString(const Common::OperationType& operationType);	
+	std::string operationTypeToString(const Common::OperationType& operationType);
 	std::string name;
 	Common::NodeType nodeType;
 	std::vector<Node*>* children;
@@ -53,6 +62,11 @@ protected:
 
 private:
 	void printSpaces(int level);
+
+private:
+	std::string trueLabel;
+	std::string falseLabel;
+	std::string nextLabel;
 
 };
 
