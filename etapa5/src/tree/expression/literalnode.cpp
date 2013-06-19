@@ -1,6 +1,8 @@
 #include "literalnode.h"
 #include <stdio.h>
 #include <sstream>
+#include <iostream>
+
 
 LiteralNode::LiteralNode(const std::string& literal, const Common::DataType& dataType):
 	ExpressionNode("Expressao literal", Common::EX_LITERAL, dataType), literal(literal) {}

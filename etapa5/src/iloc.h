@@ -7,8 +7,9 @@
 #include "tree/common.h"
 #include "symbol.h"
 #define MAX_REGISTERS 200
+#define MAX_LABELS    200
 
-typedef std::tr1::unordered_map<std::string, int> RegisterDictionary;
+typedef std::tr1::unordered_map<std::string, int> Dictionary;
 
 class ILOC {
 
@@ -19,6 +20,9 @@ public:
 	static void initRegisters();
 	static std::string* getRegister(const std::string& identifierName);
 	static void returnRegister(const std::string& registerName);	
+
+	static const std::string makeLabel();
+
 	static void addInstruction(ILOC* instruction);
 	static void printILOC(FILE *f);
 
@@ -30,8 +34,9 @@ private:
 	std::string dst1;
 	std::string dst2;
 	static std::vector<std::string> registersBeingUsed;
-	static RegisterDictionary registersByIdentifier;
+	static Dictionary registersByIdentifier;
 	static std::vector<ILOC*> instructions;
+	static int labelCount;
 };
 
 #endif // SYMBOL_H

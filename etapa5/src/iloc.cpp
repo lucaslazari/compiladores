@@ -5,7 +5,8 @@
 
 std::vector<ILOC*> ILOC::instructions;
 std::vector<std::string> ILOC::registersBeingUsed (MAX_REGISTERS);
-RegisterDictionary ILOC::registersByIdentifier;
+Dictionary ILOC::registersByIdentifier;
+int ILOC::labelCount;
 
 ILOC::ILOC(Common::ILOC_OperationType type, const std::string& src1, const std::string& src2, const std::string& dst1, const std::string& dst2):
 	type(type), src1(src1), src2(src2), dst1(dst1), dst2(dst2) {}
@@ -191,13 +192,13 @@ std::string* ILOC::getRegister(const std::string& identifierName) {
 	int registerIndex;
 	std::stringstream registerName;
 
-	RegisterDictionary::iterator registerPair = ILOC::registersByIdentifier.find(identifierName);
+	Dictionary::iterator registerPair = ILOC::registersByIdentifier.find(identifierName);
 	if (registerPair != ILOC::registersByIdentifier.end()) {
 		registerName << 'r' << registerPair->second;
 	} else {
 		for (unsigned int i = 0; i < MAX_REGISTERS; i++) {
 			if (ILOC::registersBeingUsed.at(i).compare("") == 0) {
-				ILOC::registersByIdentifier.insert(RegisterDictionary::value_type(identifierName, i));
+				ILOC::registersByIdentifier.insert(Dictionary::value_type(identifierName, i));
 				ILOC::registersBeingUsed.at(i) = identifierName;
 				registerIndex = i;
 				break;
@@ -227,3 +228,11 @@ void ILOC::printILOC(FILE * f) {
 		fprintf(f, "%s\n", ILOC::instructions.at(i)->codeline().c_str());
 	}
 }
+
+const std::string ILOC::makeLabel() {
+	std::stringstream labelName;
+	labelCount++;
+	labelName << 'L' << labelCount;
+	return labelName.str();
+}
+
