@@ -40,6 +40,7 @@ void IfNode::printSourceCode(const std::string& end) {
 }
 
 void IfNode::generateILOCCode(Node* context) {
+	/*
 	Node* condition;
 	Node* condTrue;
 	Node*	condFalse;
@@ -82,4 +83,5 @@ void IfNode::generateILOCCode(Node* context) {
 		instruction = new ILOC(Common::ILOC_NOP, this->getFalseLabel(), "", "", "", "");
 		this->addInstruction(instruction);
 	}
+	*/
 }

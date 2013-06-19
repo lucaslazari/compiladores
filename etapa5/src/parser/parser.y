@@ -125,7 +125,7 @@ class FunctionDefinitionNode;
 /* Regras (e ações) da gramática da Linguagem K */
 
 // criada a regra s para conseguir chamar a impressão da árvore
-s : { $<node>$ = new ProgramNode(); } programa { $$ = $<node>1; $$->print(0); $$->printILOC(yyout); /*$$->printSourceCode("");*/ /*$$->printILOC();*/ }
+s : { $<node>$ = new ProgramNode(); } programa { $$ = $<node>1; $$->print(0); $$->generateILOCCode(NULL); $$->printILOC(yyout); /*$$->printSourceCode("");*/ /*$$->printILOC();*/ }
 	;
 
 programa: programa decl_global { $<node>0->addChild($2); }
@@ -162,8 +162,8 @@ tipo_var: TK_PR_INTEIRO { $$ = Common::INT; }
 	| TK_PR_CADEIA { $$ = Common::STRING; }
 	;
 
-def_funcao: cabecalho decl_local '{' seq_comando '}' { $$ = new FunctionDefinitionNode(); $$->setHeader($1); $$->setLocals($2); Node* b = new BlockNode(false); b->addChildren($4); $$->setBlock(b); delete $2; }
-        | cabecalho '{' seq_comando '}' { $$ = new FunctionDefinitionNode(); $$->setHeader($1); Node* b = new BlockNode(false); b->addChildren($3); $$->setBlock(b); }
+def_funcao: cabecalho decl_local '{' seq_comando '}' { $$ = new FunctionDefinitionNode(); $$->setHeader($1); $$->setLocals($2); Node* b = new BlockNode(false); b->addChildren($4); $$->setBlock(b); b->generateILOCCode(NULL); $$->generateILOCCode(NULL); delete $2; }
+        | cabecalho '{' seq_comando '}' { $$ = new FunctionDefinitionNode(); $$->setHeader($1); Node* b = new BlockNode(false); b->addChildren($3); $$->setBlock(b); b->generateILOCCode(NULL); $$->generateILOCCode(NULL); }
 	;
 
 chamada_funcao: TK_IDENTIFICADOR '(' lista_expressoes ')' { $$ = new FunctionCallNode($1->getText(), $3); }
@@ -198,7 +198,7 @@ comando: bloco_comando { $$ = $1; }
 	| chamada_funcao ';' { $$ = $1; }
 	;
 
-bloco_comando: '{' { $<node>$ = new BlockNode(); } seq_comando '}' { $<node>$ = $<node>2; $<node>$->addChildren($3); Scope::popScope(); }
+bloco_comando: '{' { $<node>$ = new BlockNode(); } seq_comando '}' { $<node>$ = $<node>2;  $<node>$->addChildren($3); $$->generateILOCCode(NULL); Scope::popScope(); }
 	;
 
 seq_comando: seq_comando comando { $1->push_back($2); }

@@ -54,9 +54,21 @@ void OperationNode::generateILOCCode(Node* context) {
 			case Common::OP_SUM: {
 				left->generateILOCCode(this);
 				right->generateILOCCode(this);
+
+				std::vector<ILOC*> l = left->instructions;
+				std::vector<ILOC*> r = right->instructions;
+
+				this->instructions.reserve( this->instructions.size() + l.size() + r.size() ); // preallocate memory
+				this->instructions.insert( this->instructions.end(), l.begin(), l.end() );
+				this->instructions.insert( this->instructions.end(), r.begin(), r.end() );
+
 				std::string* operationRegister = ILOC::getRegister("@EX_SUM_REG");
 				ILOC* instruction = new ILOC(Common::ILOC_ADD, left->getLastRegister(), right->getLastRegister(), *operationRegister, "");
+
 				this->addInstruction(instruction);
+
+				//this->printILOC(this->flexOut);
+
 				this->setLastRegister(*operationRegister);
 				break;
 			}

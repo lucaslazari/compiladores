@@ -46,12 +46,15 @@ public:
 	std::string getNextLabel() const;
 	void setNextLabel(const std::string &value);
 
-	std::vector<ILOC *> getInstructions() const;
+	std::vector<ILOC *> getInstructions();
 	void setInstructions(const std::vector<ILOC *> &value);
 
 	void printILOC(FILE * f);
 
 	void addInstruction(ILOC* instruction);
+
+	std::vector<ILOC*> instructions;
+
 
 protected:
 	std::string dataTypeToString(const Common::DataType& dataType);
@@ -70,11 +73,9 @@ protected:
 private:
 	void printSpaces(int level);
 
-private:
 	std::string trueLabel;
 	std::string falseLabel;
 	std::string nextLabel;
-	std::vector<ILOC*> instructions;
 
 };
 

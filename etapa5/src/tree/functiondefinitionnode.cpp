@@ -5,7 +5,8 @@
 #include "vardeclarationnode.h"
 
 FunctionDefinitionNode::FunctionDefinitionNode():
-	Node("Definicao de funcao", Common::NT_FUNCTION_DEFINITION) {}
+	Node("Definicao de funcao", Common::NT_FUNCTION_DEFINITION) {
+}
 
 void FunctionDefinitionNode::setHeader(Node* header) {
 	HeaderNode* headerNode = dynamic_cast<HeaderNode*>(header);
@@ -49,4 +50,12 @@ void FunctionDefinitionNode::printSourceCode(const std::string& end) {
 	}
 }
 
-void FunctionDefinitionNode::generateILOCCode(Node* context) {}
+void FunctionDefinitionNode::generateILOCCode(Node* context) {
+	for (std::vector<Node*>::iterator it = this->children->begin(); it != this->children->end(); it++) {
+		std::vector<ILOC*> instr = (*it)->getInstructions();
+
+		this->instructions.reserve( this->instructions.size() + instr.size() ); // preallocate memory
+		this->instructions.insert( this->instructions.end(), instr.begin(), instr.end() );
+
+	}
+}

@@ -185,7 +185,7 @@ void Node::addInstruction(ILOC* instruction) {
 	this->instructions.push_back(instruction);
 }
 
-std::vector<ILOC *> Node::getInstructions() const {
+std::vector<ILOC *> Node::getInstructions() {
 	return instructions;
 }
 

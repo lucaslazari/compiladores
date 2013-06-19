@@ -50,7 +50,7 @@ void IdentifierNode::generateILOCCode(Node* context) {
 		std::stringstream symbolOffsetStr;
 		symbolOffsetStr << symbol->getOffset();
 		ILOC* instruction = new ILOC(Common::ILOC_ADDI, registerBaseAddress, symbolOffsetStr.str(), *vectorAddressRegisterName, "");
-		ILOC::addInstruction(instruction);
+		this->addInstruction(instruction);
 		std::string lastBaseRegister = *vectorAddressRegisterName;
 		std::string* indexRegisterName;
 		for (unsigned int i = 0; i < this->children->size(); i++) {
@@ -63,8 +63,8 @@ void IdentifierNode::generateILOCCode(Node* context) {
 			ILOC* instructionMult = new ILOC(Common::ILOC_MULTI, expression->getLastRegister(), "4", *multResultRegisterName, "");
 			ILOC* instructionLoadAO = new ILOC(Common::ILOC_LOADA0, lastBaseRegister, *multResultRegisterName, *indexRegisterName, "");
 			lastBaseRegister = *indexRegisterName;
-			ILOC::addInstruction(instructionMult);
-			ILOC::addInstruction(instructionLoadAO);
+			this->addInstruction(instructionMult);
+			this->addInstruction(instructionLoadAO);
 		}
 		this->setLastRegister(*indexRegisterName);
 	}

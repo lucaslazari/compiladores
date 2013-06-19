@@ -11,7 +11,6 @@ public:
 	ProgramNode();
 	void printSourceCode(const std::string& end);
 	void generateILOCCode(Node* context);
-	void printILOC(FILE * f);
 
 };
 
