@@ -12,10 +12,9 @@ void LiteralNode::printSourceCode(const std::string& end) {
 }
 
 void LiteralNode::generateILOCCode(Node* context) {
-	if (context->getNodeType() == Common::NT_ASSIGNMENT || context->getNodeType() == Common::NT_EXPRESSION) {
-		std::string* registerName = ILOC::getRegister(literal);
-		ILOC* instruction = new ILOC(Common::ILOC_LOADI, literal, "", *registerName, "");
-		ILOC::addInstruction(instruction);
-		this->setLastRegister(*registerName);
-	}
+	std::string finalValue = (literal.compare("verdadeiro") == 0) ? "true" : (literal.compare("false") == 0) ? "false": literal;
+	std::string* registerName = ILOC::getRegister(finalValue);
+	ILOC* instruction = new ILOC(Common::ILOC_LOADI, finalValue, "", *registerName, "");
+	ILOC::addInstruction(instruction);
+	this->setLastRegister(*registerName);
 }

@@ -89,18 +89,88 @@ void OperationNode::generateILOCCode(Node* context) {
 			}
 			case Common::OP_AND: {
 				left->generateILOCCode(this);
+				std::string labelTrue = ILOC::makeLabel();
+				std::string labelFalse = ILOC::makeLabel();
+				ILOC* instructionShortCircuit = new ILOC(Common::ILOC_CBR, left->getLastRegister(), "", labelTrue, labelFalse);
+				ILOC* instructionNopTrue = new ILOC(Common::ILOC_NOP, labelTrue, "nop", "", "", "");
+				ILOC::addInstruction(instructionShortCircuit);
+				ILOC::addInstruction(instructionNopTrue);
 				right->generateILOCCode(this);
 				std::string* operationRegister = ILOC::getRegister("@EX_AND_REG");
 				ILOC* instruction = new ILOC(Common::ILOC_AND, left->getLastRegister(), right->getLastRegister(), *operationRegister, "");
+				ILOC* instructionNopFalse = new ILOC(Common::ILOC_NOP, labelFalse, "nop", "", "", "");
 				ILOC::addInstruction(instruction);
+				ILOC::addInstruction(instructionNopFalse);
 				this->setLastRegister(*operationRegister);
 				break;
 			}
 			case Common::OP_OR: {
 				left->generateILOCCode(this);
+				std::string labelTrue = ILOC::makeLabel();
+				std::string labelFalse = ILOC::makeLabel();
+				ILOC* instructionShortCircuit = new ILOC(Common::ILOC_CBR, left->getLastRegister(), "", labelTrue, labelFalse);
+				ILOC* instructionNopFalse = new ILOC(Common::ILOC_NOP, labelFalse, "nop", "", "", "");
+				ILOC::addInstruction(instructionShortCircuit);
+				ILOC::addInstruction(instructionNopFalse);
 				right->generateILOCCode(this);
 				std::string* operationRegister = ILOC::getRegister("@EX_OR_REG");
 				ILOC* instruction = new ILOC(Common::ILOC_OR, left->getLastRegister(), right->getLastRegister(), *operationRegister, "");
+				ILOC* instructionNopTrue = new ILOC(Common::ILOC_NOP, labelTrue, "nop", "", "", "");
+				ILOC::addInstruction(instruction);
+				ILOC::addInstruction(instructionNopTrue);
+				this->setLastRegister(*operationRegister);
+				break;
+			}
+			case Common::OP_LESS: {
+				left->generateILOCCode(this);
+				right->generateILOCCode(this);
+				std::string* operationRegister = ILOC::getRegister("@EX_CMP_LT_REG");
+				ILOC* instruction = new ILOC(Common::ILOC_CMP_LT, left->getLastRegister(), right->getLastRegister(), *operationRegister, "");
+				ILOC::addInstruction(instruction);
+				this->setLastRegister(*operationRegister);
+				break;
+			}
+			case Common::OP_GREATER: {
+				left->generateILOCCode(this);
+				right->generateILOCCode(this);
+				std::string* operationRegister = ILOC::getRegister("@EX_CMP_GT_REG");
+				ILOC* instruction = new ILOC(Common::ILOC_CMP_GT, left->getLastRegister(), right->getLastRegister(), *operationRegister, "");
+				ILOC::addInstruction(instruction);
+				this->setLastRegister(*operationRegister);
+				break;
+			}
+			case Common::OP_LE: {
+				left->generateILOCCode(this);
+				right->generateILOCCode(this);
+				std::string* operationRegister = ILOC::getRegister("@EX_CMP_LE_REG");
+				ILOC* instruction = new ILOC(Common::ILOC_CMP_LE, left->getLastRegister(), right->getLastRegister(), *operationRegister, "");
+				ILOC::addInstruction(instruction);
+				this->setLastRegister(*operationRegister);
+				break;
+			}
+			case Common::OP_GE: {
+				left->generateILOCCode(this);
+				right->generateILOCCode(this);
+				std::string* operationRegister = ILOC::getRegister("@EX_CMP_GE_REG");
+				ILOC* instruction = new ILOC(Common::ILOC_CMP_GE, left->getLastRegister(), right->getLastRegister(), *operationRegister, "");
+				ILOC::addInstruction(instruction);
+				this->setLastRegister(*operationRegister);
+				break;
+			}
+			case Common::OP_EQUAL: {
+				left->generateILOCCode(this);
+				right->generateILOCCode(this);
+				std::string* operationRegister = ILOC::getRegister("@EX_CMP_EQ_REG");
+				ILOC* instruction = new ILOC(Common::ILOC_CMP_EQ, left->getLastRegister(), right->getLastRegister(), *operationRegister, "");
+				ILOC::addInstruction(instruction);
+				this->setLastRegister(*operationRegister);
+				break;
+			}
+			case Common::OP_NEQUAL: {
+				left->generateILOCCode(this);
+				right->generateILOCCode(this);
+				std::string* operationRegister = ILOC::getRegister("@EX_CMP_NEQ_REG");
+				ILOC* instruction = new ILOC(Common::ILOC_CMP_NE, left->getLastRegister(), right->getLastRegister(), *operationRegister, "");
 				ILOC::addInstruction(instruction);
 				this->setLastRegister(*operationRegister);
 				break;
