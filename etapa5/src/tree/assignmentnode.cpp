@@ -43,11 +43,9 @@ void AssignmentNode::generateILOCCode(Node* context) {
 		std::string registerBaseAddress = (symbolScope->getNodeType() == Common::NT_PROGRAM) ? "bss" : "fp";
 		std::stringstream symbolOffsetStr;
 		symbolOffsetStr << symbol->getOffset();
-		expressionAssigned->generateILOCCode(this);
 
 		std::vector<ILOC*> instr = expressionAssigned->getInstructions();
 
-		this->instructions.reserve( this->instructions.size() + instr.size() ); // preallocate memory
 		this->instructions.insert( this->instructions.end(), instr.begin(), instr.end() );
 
 		ILOC* instruction = new ILOC(Common::ILOC_STOREAI, expressionAssigned->getLastRegister(), "", registerBaseAddress, symbolOffsetStr.str());

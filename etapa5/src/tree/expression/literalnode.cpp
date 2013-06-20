@@ -5,7 +5,10 @@
 
 
 LiteralNode::LiteralNode(const std::string& literal, const Common::DataType& dataType):
-	ExpressionNode("Expressao literal", Common::EX_LITERAL, dataType), literal(literal) {}
+	ExpressionNode("Expressao literal", Common::EX_LITERAL, dataType), literal(literal) {
+
+	this->generateILOCCode(NULL);
+}
 
 void LiteralNode::printSourceCode(const std::string& end) {
 	fprintf(this->flexOut, "%s", literal.c_str());

@@ -8,6 +8,7 @@ IdentifierNode::IdentifierNode(Symbol* symbol):
 	// TODO check the data type
 	Symbol* sym = Scope::getSymbol(symbol->getText());
 	this->dataType = sym->getDataType();
+	this->generateILOCCode(NULL);
 }
 
 IdentifierNode::IdentifierNode(Symbol* symbol, std::vector<Node*>* expressionList):
@@ -16,6 +17,7 @@ IdentifierNode::IdentifierNode(Symbol* symbol, std::vector<Node*>* expressionLis
 	this->addChildren(expressionList);
 	Symbol* sym = Scope::getSymbol(symbol->getText());
 	this->dataType = sym->getDataType();
+	this->generateILOCCode(NULL);
 }
 
 void IdentifierNode::printSourceCode(const std::string& end) {

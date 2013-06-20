@@ -25,6 +25,8 @@ OperationNode::OperationNode(const Common::OperationType& operationType, Node* l
 			this->dataType = dataTypeExprLeft;
 	} else if (leftSide != NULL)
 		this->dataType = dataTypeExprLeft;
+
+	this->generateILOCCode(NULL);
 }
 
 void OperationNode::printSourceCode(const std::string& end) {
@@ -52,13 +54,10 @@ void OperationNode::generateILOCCode(Node* context) {
 		ExpressionNode* right = dynamic_cast<ExpressionNode*>(this->children->at(1));
 		switch (this->operationType) {
 			case Common::OP_SUM: {
-				left->generateILOCCode(this);
-				right->generateILOCCode(this);
 
-				std::vector<ILOC*> l = left->instructions;
-				std::vector<ILOC*> r = right->instructions;
+				std::vector<ILOC*> l = left->getInstructions();
+				std::vector<ILOC*> r = right->getInstructions();
 
-				this->instructions.reserve( this->instructions.size() + l.size() + r.size() ); // preallocate memory
 				this->instructions.insert( this->instructions.end(), l.begin(), l.end() );
 				this->instructions.insert( this->instructions.end(), r.begin(), r.end() );
 
