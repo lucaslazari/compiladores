@@ -8,10 +8,23 @@ Dictionary ILOC::registersByIdentifier;
 int ILOC::labelCount;
 
 ILOC::ILOC(Common::ILOC_OperationType type, const std::string& src1, const std::string& src2, const std::string& dst1, const std::string& dst2):
-	type(type), src1(src1), src2(src2), dst1(dst1), dst2(dst2) {}
+	type(type), src1(src1), src2(src2), dst1(dst1), dst2(dst2) {
+	this->isLabelSet = false;
+}
 
 ILOC::ILOC(Common::ILOC_OperationType type, const std::string& label, const std::string& src1, const std::string& src2, const std::string& dst1, const std::string& dst2):
-	type(type), label(label), src1(src1), src2(src2), dst1(dst1), dst2(dst2) {}
+	type(type), label(label), src1(src1), src2(src2), dst1(dst1), dst2(dst2) {
+	this->isLabelSet = true;
+}
+
+bool ILOC::hasLabel() {
+	return this->isLabelSet;
+}
+
+void ILOC::setLabel(std::string lbl) {
+	this->isLabelSet = true;
+	this->label = lbl;
+}
 
 std::string ILOC::codeline() {
 	std::string line;
@@ -143,31 +156,31 @@ std::string ILOC::codeline() {
 
 		// Operações de fluxo de controle
 	case Common::ILOC_JUMPI:
-		line = "jumpI => " + dst1;
+		line = "jumpI -> " + dst1;
 		break;
 	case Common::ILOC_JUMP:
-		line = "jump  => " + dst1;
+		line = "jump  -> " + dst1;
 		break;
 	case Common::ILOC_CBR:
-		line = "cbr " + src1 + " => " + dst1 + ", " + dst2;
+		line = "cbr " + src1 + " -> " + dst1 + ", " + dst2;
 		break;
 	case Common::ILOC_CMP_LT:
-		line = "cmp_LT " + src1 + ", " + src2 + " => " + dst1;
+		line = "cmp_LT " + src1 + ", " + src2 + " -> " + dst1;
 		break;
 	case Common::ILOC_CMP_LE:
-		line = "cmp_LE " + src1 + ", " + src2 + " => " + dst1;
+		line = "cmp_LE " + src1 + ", " + src2 + " -> " + dst1;
 		break;
 	case Common::ILOC_CMP_EQ:
-		line = "cmp_EQ " + src1 + ", " + src2 + " => " + dst1;
+		line = "cmp_EQ " + src1 + ", " + src2 + " -> " + dst1;
 		break;
 	case Common::ILOC_CMP_GE:
-		line = "cmp_GE " + src1 + ", " + src2 + " => " + dst1;
+		line = "cmp_GE " + src1 + ", " + src2 + " -> " + dst1;
 		break;
 	case Common::ILOC_CMP_GT:
-		line = "cmp_GT " + src1 + ", " + src2 + " => " + dst1;
+		line = "cmp_GT " + src1 + ", " + src2 + " -> " + dst1;
 		break;
 	case Common::ILOC_CMP_NE:
-		line = "cmp_NE " + src1 + ", " + src2 + " => " + dst1;
+		line = "cmp_NE " + src1 + ", " + src2 + " -> " + dst1;
 		break;
 	}
 
@@ -217,9 +230,6 @@ void ILOC::returnRegister(const std::string& registerName) {
 	ILOC::registersByIdentifier.erase(identifierName);
 	ILOC::registersBeingUsed.at(registerIndex) = "";
 }
-
-
-
 
 const std::string ILOC::makeLabel() {
 	std::stringstream labelName;

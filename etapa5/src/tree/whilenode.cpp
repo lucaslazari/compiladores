@@ -36,15 +36,17 @@ void WhileNode::setTrueLabel(const std::string &value) {
 void WhileNode::generateILOCCode(Node* context) {
 	ILOC* instruction;
 
-	// adiciona o label de condição falsa
-	instruction = new ILOC(Common::ILOC_NOP, this->getFalseLabel(), "", "", "", "");
-	this->addInstruction(instruction);
-
 	// condição do while
 	Node* condNode = dynamic_cast<Node*>(this->children->at(0));
 	std::vector<ILOC*> condInstr = condNode->getInstructions();
 
-	//condInstr.at(0)->setLabel();
+	if (!condInstr.at(0)->hasLabel()) {
+		condInstr.at(0)->setLabel(this->getFalseLabel());
+	} else {
+		// adiciona o label de condição falsa
+		instruction = new ILOC(Common::ILOC_NOP, this->getFalseLabel(), "", "", "", "");
+		this->addInstruction(instruction);
+	}
 
 	this->instructions.insert(this->instructions.end(), condInstr.begin(), condInstr.end());
 
@@ -52,13 +54,18 @@ void WhileNode::generateILOCCode(Node* context) {
 	instruction = new ILOC(Common::ILOC_CBR, condNode->getLastRegister(), "", this->getTrueLabel(), this->getNextLabel());
 	this->addInstruction(instruction);
 
-	// adiciona o label de condição verdadeira
-	instruction = new ILOC(Common::ILOC_NOP, this->getTrueLabel(), "", "", "", "");
-	this->addInstruction(instruction);
-
 	// código caso for verdadeiro
 	Node* doNode = dynamic_cast<Node*>(this->children->at(1));
 	std::vector<ILOC*> doInstr = doNode->getInstructions();
+
+	// adiciona o label "verdadeiro" na próxima instrução sintetizada, caso já houver, adiciona ele em um NOP
+	if (!doInstr.at(0)->hasLabel()) {
+		doInstr.at(0)->setLabel(this->getTrueLabel());
+	} else {
+		// adiciona o label de condição verdadeira
+		instruction = new ILOC(Common::ILOC_NOP, this->getTrueLabel(), "", "", "", "");
+		this->addInstruction(instruction);
+	}
 
 	this->instructions.insert(this->instructions.end(), doInstr.begin(), doInstr.end());
 

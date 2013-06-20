@@ -24,6 +24,8 @@ public:
 	static const std::string makeLabel();
 
 	static void printILOC(FILE *f);
+	bool hasLabel();
+	void setLabel(std::string lbl);
 
 private:
 	Common::ILOC_OperationType type;
@@ -32,6 +34,7 @@ private:
 	std::string src2;
 	std::string dst1;
 	std::string dst2;
+	bool isLabelSet;
 	static std::vector<std::string> registersBeingUsed;
 	static Dictionary registersByIdentifier;
 	static int labelCount;

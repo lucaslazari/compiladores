@@ -53,13 +53,17 @@ void IfNode::generateILOCCode(Node* context) {
 	instruction = new ILOC(Common::ILOC_CBR, condNode->getLastRegister(), "", this->getTrueLabel(), this->getFalseLabel());
 	this->addInstruction(instruction);
 
-	// adiciona o label de condição verdadeira
-	instruction = new ILOC(Common::ILOC_NOP, this->getTrueLabel(), "", "", "", "");
-	this->addInstruction(instruction);
-
 	// código caso for verdadeiro
 	Node* thenNode = dynamic_cast<Node*>(this->children->at(1));
 	std::vector<ILOC*> thenInstr = thenNode->getInstructions();
+
+	if (!thenInstr.at(0)->hasLabel()) {
+		thenInstr.at(0)->setLabel(this->getTrueLabel());
+	} else {
+		// adiciona o label de condição falsa
+		instruction = new ILOC(Common::ILOC_NOP, this->getTrueLabel(), "", "", "", "");
+		this->addInstruction(instruction);
+	}
 
 	// instruções geradas pelo nó de código "verdadeiro"
 	this->instructions.insert(this->instructions.end(), thenInstr.begin(), thenInstr.end());
@@ -73,9 +77,13 @@ void IfNode::generateILOCCode(Node* context) {
 		instruction = new ILOC(Common::ILOC_JUMPI, "", "", this->getNextLabel(), "");
 		this->addInstruction(instruction);
 
-		// adiciona o label de condição falsa
-		instruction = new ILOC(Common::ILOC_NOP, this->getFalseLabel(), "", "", "", "");
-		this->addInstruction(instruction);
+		if (!elseInstr.at(0)->hasLabel()) {
+			elseInstr.at(0)->setLabel(this->getFalseLabel());
+		} else {
+			// adiciona o label de condição falsa
+			instruction = new ILOC(Common::ILOC_NOP, this->getFalseLabel(), "", "", "", "");
+			this->addInstruction(instruction);
+		}
 
 		// instruções geradas pelo nó de código "verdadeiro"
 		this->instructions.insert(this->instructions.end(), elseInstr.begin(), elseInstr.end());
