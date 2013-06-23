@@ -1,0 +1,10 @@
+variavel_flutuante: flutuante;
+variavel_inteira: inteiro;
+variavel_caractere: caractere;
+a: inteiro;
+minha_funcao: inteiro () {
+b: inteiro;
+c: inteiro;
+a = b;
+}
+loadI 1024 => r0

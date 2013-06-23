@@ -1,0 +1,13 @@
+a: inteiro;
+b: inteiro;
+minha_funcao : inteiro ()
+{
+
+se (a < b) entao { 
+  a = b + 1;
+} senao { 
+  b = a + 4;
+}
+
+
+}
