@@ -11,6 +11,7 @@ namespace DataSize {
 		const int INT = 4;
 		const int FLOAT = 8;
 		const int CHAR = 1;
+		const int INSTR = 4;
 }
 
 namespace Common {

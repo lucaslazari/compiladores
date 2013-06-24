@@ -11,3 +11,4 @@ se (a < b) entao {
 
 
 }
+minha_funcao();

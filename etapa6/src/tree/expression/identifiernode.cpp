@@ -38,7 +38,7 @@ void IdentifierNode::generateILOCCode(Node* context) {
 		Symbol* symbol = Scope::getSymbol(this->symbol->getText());
 		Node* symbolScope = Scope::getScope(this->symbol->getText());
 		std::string* varAddressRegisterName = ILOC::getRegister(symbol->getText());
-		std::string registerBaseAddress = (symbolScope->getNodeType() == Common::NT_PROGRAM) ? "bss" : "fp";
+		std::string registerBaseAddress = (symbolScope->getNodeType() == Common::NT_PROGRAM) ? "rBSS" : "rFP";
 		std::stringstream symbolOffsetStr;
 		symbolOffsetStr << symbol->getOffset();
 		ILOC* instruction = new ILOC(Common::ILOC_LOADAI, registerBaseAddress, symbolOffsetStr.str(), *varAddressRegisterName, "");
@@ -48,7 +48,7 @@ void IdentifierNode::generateILOCCode(Node* context) {
 		Symbol* symbol = Scope::getSymbol(this->symbol->getText());
 		Node* symbolScope = Scope::getScope(this->symbol->getText());
 		std::string* vectorAddressRegisterName = ILOC::getRegister(symbol->getText());
-		std::string registerBaseAddress = (symbolScope->getNodeType() == Common::NT_PROGRAM) ? "bss" : "fp";
+		std::string registerBaseAddress = (symbolScope->getNodeType() == Common::NT_PROGRAM) ? "rBSS" : "rFP";
 		std::stringstream symbolOffsetStr;
 		symbolOffsetStr << symbol->getOffset();
 		ILOC* instruction = new ILOC(Common::ILOC_ADDI, registerBaseAddress, symbolOffsetStr.str(), *vectorAddressRegisterName, "");

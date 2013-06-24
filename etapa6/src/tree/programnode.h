@@ -12,6 +12,9 @@ public:
 	void printSourceCode(const std::string& end);
 	void generateILOCCode(Node* context);
 
+private:
+	void execSupportCode();
+
 };
 
 #endif // PROGRAMNODE_H
