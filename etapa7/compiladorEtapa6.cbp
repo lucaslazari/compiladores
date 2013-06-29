@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+   <FileVersion major="1" minor="6" />
+   <Project>
+      <Option title="compiladorEtapa6" />
+      <Option makefile_is_custom="1" />
+      <Option compiler="gcc" />
+      <Option virtualFolders="CMake Files\;" />
+      <Build>
+      <Target title="all">
+         <Option working_dir="/home/cuca/Downloads/compiladores/etapa6" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/cuca/Downloads/compiladores/etapa6/Makefile&quot;  VERBOSE=1 all" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/cuca/Downloads/compiladores/etapa6/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/cuca/Downloads/compiladores/etapa6/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/cuca/Downloads/compiladores/etapa6/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="main">
+         <Option output="/home/cuca/Downloads/compiladores/etapa6/main" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/cuca/Downloads/compiladores/etapa6" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/home/cuca/Downloads/compiladores/etapa6" />
+            <Add directory="/home/cuca/Downloads/compiladores/etapa6/src" />
+            <Add directory="/home/cuca/Downloads/compiladores/etapa6/src/parser" />
+            <Add directory="/home/cuca/Downloads/compiladores/etapa6/src/scanner" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.7" />
+            <Add directory="/usr/include/c++/4.7/backward" />
+            <Add directory="/usr/include/c++/4.7/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/cuca/Downloads/compiladores/etapa6/Makefile&quot;  VERBOSE=1 main" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/cuca/Downloads/compiladores/etapa6/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/cuca/Downloads/compiladores/etapa6/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/cuca/Downloads/compiladores/etapa6/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="main/fast">
+         <Option output="/home/cuca/Downloads/compiladores/etapa6/main" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/cuca/Downloads/compiladores/etapa6" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/home/cuca/Downloads/compiladores/etapa6" />
+            <Add directory="/home/cuca/Downloads/compiladores/etapa6/src" />
+            <Add directory="/home/cuca/Downloads/compiladores/etapa6/src/parser" />
+            <Add directory="/home/cuca/Downloads/compiladores/etapa6/src/scanner" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.7" />
+            <Add directory="/usr/include/c++/4.7/backward" />
+            <Add directory="/usr/include/c++/4.7/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/cuca/Downloads/compiladores/etapa6/Makefile&quot;  VERBOSE=1 main/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/cuca/Downloads/compiladores/etapa6/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/cuca/Downloads/compiladores/etapa6/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/cuca/Downloads/compiladores/etapa6/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="rebuild_cache">
+         <Option working_dir="/home/cuca/Downloads/compiladores/etapa6" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/cuca/Downloads/compiladores/etapa6/Makefile&quot;  VERBOSE=1 rebuild_cache" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/cuca/Downloads/compiladores/etapa6/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/cuca/Downloads/compiladores/etapa6/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/cuca/Downloads/compiladores/etapa6/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      </Build>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/iloc.cpp">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/main.cpp">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/scope.cpp">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/symbol.cpp">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/tree/assignmentnode.cpp">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/tree/blocknode.cpp">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/tree/expression/expressionnode.cpp">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/tree/expression/identifiernode.cpp">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/tree/expression/literalnode.cpp">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/tree/expression/operationnode.cpp">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/tree/functioncallnode.cpp">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/tree/functiondefinitionnode.cpp">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/tree/headernode.cpp">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/tree/ifnode.cpp">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/tree/inputnode.cpp">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/tree/node.cpp">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/tree/outputnode.cpp">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/tree/programnode.cpp">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/tree/returnnode.cpp">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/tree/vardeclarationnode.cpp">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/tree/vectordeclarationnode.cpp">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/tree/whilenode.cpp">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/iloc.h">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/parser/parser.y">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/scanner/scanner.l">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/scope.h">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/symbol.h">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/tree/assignmentnode.h">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/tree/blocknode.h">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/tree/common.h">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/tree/expression/expressionnode.h">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/tree/expression/identifiernode.h">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/tree/expression/literalnode.h">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/tree/expression/operationnode.h">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/tree/functioncallnode.h">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/tree/functiondefinitionnode.h">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/tree/headernode.h">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/tree/ifnode.h">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/tree/inputnode.h">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/tree/node.h">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/tree/outputnode.h">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/tree/programnode.h">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/tree/returnnode.h">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/tree/vardeclarationnode.h">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/tree/vectordeclarationnode.h">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/src/tree/whilenode.h">
+      </Unit>
+      <Unit filename="/home/cuca/Downloads/compiladores/etapa6/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\" />
+      </Unit>
+   </Project>
+</CodeBlocks_project_file>

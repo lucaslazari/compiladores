@@ -1,0 +1,1 @@
+/home/cuca/Downloads/compiladores/etapa6/CMakeFiles/main.dir
