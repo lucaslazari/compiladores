@@ -64,10 +64,13 @@ CMakeFiles/main.dir/src/tree/assignmentnode.cpp.o: src/tree/../iloc.h
 CMakeFiles/main.dir/src/tree/assignmentnode.cpp.o: src/tree/assignmentnode.cpp
 CMakeFiles/main.dir/src/tree/assignmentnode.cpp.o: src/tree/assignmentnode.h
 CMakeFiles/main.dir/src/tree/assignmentnode.cpp.o: src/tree/common.h
+CMakeFiles/main.dir/src/tree/assignmentnode.cpp.o: src/tree/expression/../../iloc.h
+CMakeFiles/main.dir/src/tree/assignmentnode.cpp.o: src/tree/expression/../../scope.h
 CMakeFiles/main.dir/src/tree/assignmentnode.cpp.o: src/tree/expression/../../symbol.h
 CMakeFiles/main.dir/src/tree/assignmentnode.cpp.o: src/tree/expression/../common.h
 CMakeFiles/main.dir/src/tree/assignmentnode.cpp.o: src/tree/expression/../node.h
 CMakeFiles/main.dir/src/tree/assignmentnode.cpp.o: src/tree/expression/expressionnode.h
+CMakeFiles/main.dir/src/tree/assignmentnode.cpp.o: src/tree/expression/identifiernode.h
 CMakeFiles/main.dir/src/tree/assignmentnode.cpp.o: src/tree/node.h
 CMakeFiles/main.dir/src/tree/assignmentnode.cpp.o: src/scope.h
 CMakeFiles/main.dir/src/tree/assignmentnode.cpp.o: src/symbol.h
@@ -129,8 +132,10 @@ CMakeFiles/main.dir/src/tree/functioncallnode.cpp.o: src/tree/common.h
 CMakeFiles/main.dir/src/tree/functioncallnode.cpp.o: src/tree/functioncallnode.cpp
 CMakeFiles/main.dir/src/tree/functioncallnode.cpp.o: src/tree/functioncallnode.h
 CMakeFiles/main.dir/src/tree/functioncallnode.cpp.o: src/tree/node.h
+CMakeFiles/main.dir/src/tree/functioncallnode.cpp.o: src/scope.h
 CMakeFiles/main.dir/src/tree/functioncallnode.cpp.o: src/symbol.h
 CMakeFiles/main.dir/src/tree/functioncallnode.cpp.o: src/tree/common.h
+CMakeFiles/main.dir/src/tree/functioncallnode.cpp.o: src/tree/node.h
 
 CMakeFiles/main.dir/src/tree/functiondefinitionnode.cpp.o: src/tree/../iloc.h
 CMakeFiles/main.dir/src/tree/functiondefinitionnode.cpp.o: src/tree/blocknode.h

@@ -20,7 +20,7 @@ void FunctionDefinitionNode::setHeader(Node* header) {
 		Symbol * sym = new Symbol(headerNode->getFunctionName(), Common::FUNCTION, headerNode->getDataType());
 		sym->setOffset(Scope::getScope()->getBaseAddr());
 		Scope::popScope();
-		Scope::addSymbol(sym);
+		//Scope::addSymbol(sym);
 	}
 
 	this->addChild(header);
@@ -62,12 +62,12 @@ void FunctionDefinitionNode::generateILOCCode(Node* context) {
 	}
 
 	std::vector<ILOC*> instr;
-
-	if (!this->instructions.at(0)->hasLabel()) {
-		this->instructions.at(0)->setLabel(this->getTrueLabel());
-	} else {
-		instr.push_back(new ILOC(Common::ILOC_NOP, this->getTrueLabel(), "", "", "", ""));
-		this->instructions.insert(this->instructions.begin(), instr.begin(), instr.end());
+	if (this->instructions.size() > 0) {
+		if (!this->instructions.at(0)->hasLabel()) {
+			this->instructions.at(0)->setLabel(this->getTrueLabel());
+		} else {
+			instr.push_back(new ILOC(Common::ILOC_NOP, this->getTrueLabel(), "", "", "", ""));
+			this->instructions.insert(this->instructions.begin(), instr.begin(), instr.end());
+		}
 	}
-
 }

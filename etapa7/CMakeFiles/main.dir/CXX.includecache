@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/cuca/Downloads/compiladores/etapa6/src/tree/../iloc.h
+/home/cuca/Downloads/compiladores/etapa7/src/tree/../iloc.h
 string
 -
 vector
@@ -14,57 +14,35 @@ vector
 tr1/unordered_map
 -
 tree/common.h
-/home/cuca/Downloads/compiladores/etapa6/src/tree/../tree/common.h
+/home/cuca/Downloads/compiladores/etapa7/src/tree/../tree/common.h
 symbol.h
-/home/cuca/Downloads/compiladores/etapa6/src/tree/../symbol.h
+/home/cuca/Downloads/compiladores/etapa7/src/tree/../symbol.h
 
-/home/cuca/Downloads/compiladores/etapa6/src/tree/blocknode.h
-vector
--
-node.h
-/home/cuca/Downloads/compiladores/etapa6/src/tree/node.h
-scope.h
-/home/cuca/Downloads/compiladores/etapa6/src/tree/scope.h
-
-/home/cuca/Downloads/compiladores/etapa6/src/tree/common.h
+/home/cuca/Downloads/compiladores/etapa7/src/tree/common.h
 string
 -
 tr1/unordered_map
 -
 
-/home/cuca/Downloads/compiladores/etapa6/src/tree/functiondefinitionnode.cpp
-functiondefinitionnode.h
-/home/cuca/Downloads/compiladores/etapa6/src/tree/functiondefinitionnode.h
+/home/cuca/Downloads/compiladores/etapa7/src/tree/headernode.cpp
+headernode.h
+/home/cuca/Downloads/compiladores/etapa7/src/tree/headernode.h
 stdio.h
 -
-headernode.h
-/home/cuca/Downloads/compiladores/etapa6/src/tree/headernode.h
-blocknode.h
-/home/cuca/Downloads/compiladores/etapa6/src/tree/blocknode.h
-vardeclarationnode.h
-/home/cuca/Downloads/compiladores/etapa6/src/tree/vardeclarationnode.h
 
-/home/cuca/Downloads/compiladores/etapa6/src/tree/functiondefinitionnode.h
+/home/cuca/Downloads/compiladores/etapa7/src/tree/headernode.h
 string
 -
 vector
 -
 node.h
-/home/cuca/Downloads/compiladores/etapa6/src/tree/node.h
-
-/home/cuca/Downloads/compiladores/etapa6/src/tree/headernode.h
-string
--
-vector
--
-node.h
-/home/cuca/Downloads/compiladores/etapa6/src/tree/node.h
+/home/cuca/Downloads/compiladores/etapa7/src/tree/node.h
 scope.h
-/home/cuca/Downloads/compiladores/etapa6/src/tree/scope.h
+/home/cuca/Downloads/compiladores/etapa7/src/tree/scope.h
 common.h
-/home/cuca/Downloads/compiladores/etapa6/src/tree/common.h
+/home/cuca/Downloads/compiladores/etapa7/src/tree/common.h
 
-/home/cuca/Downloads/compiladores/etapa6/src/tree/node.h
+/home/cuca/Downloads/compiladores/etapa7/src/tree/node.h
 vector
 -
 tr1/unordered_map
@@ -72,21 +50,11 @@ tr1/unordered_map
 string
 -
 common.h
-/home/cuca/Downloads/compiladores/etapa6/src/tree/common.h
+/home/cuca/Downloads/compiladores/etapa7/src/tree/common.h
 symbol.h
-/home/cuca/Downloads/compiladores/etapa6/src/tree/symbol.h
+/home/cuca/Downloads/compiladores/etapa7/src/tree/symbol.h
 ../iloc.h
-/home/cuca/Downloads/compiladores/etapa6/src/tree/../iloc.h
-
-/home/cuca/Downloads/compiladores/etapa6/src/tree/vardeclarationnode.h
-string
--
-node.h
-/home/cuca/Downloads/compiladores/etapa6/src/tree/node.h
-scope.h
-/home/cuca/Downloads/compiladores/etapa6/src/tree/scope.h
-common.h
-/home/cuca/Downloads/compiladores/etapa6/src/tree/common.h
+/home/cuca/Downloads/compiladores/etapa7/src/tree/../iloc.h
 
 src/scope.h
 deque

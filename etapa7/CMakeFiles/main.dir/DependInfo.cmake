@@ -4,36 +4,36 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/cuca/Downloads/compiladores/etapa6/src/iloc.cpp" "/home/cuca/Downloads/compiladores/etapa6/CMakeFiles/main.dir/src/iloc.cpp.o"
-  "/home/cuca/Downloads/compiladores/etapa6/src/main.cpp" "/home/cuca/Downloads/compiladores/etapa6/CMakeFiles/main.dir/src/main.cpp.o"
-  "/home/cuca/Downloads/compiladores/etapa6/src/parser/parser.cpp" "/home/cuca/Downloads/compiladores/etapa6/CMakeFiles/main.dir/src/parser/parser.cpp.o"
-  "/home/cuca/Downloads/compiladores/etapa6/src/scanner/scanner.cpp" "/home/cuca/Downloads/compiladores/etapa6/CMakeFiles/main.dir/src/scanner/scanner.cpp.o"
-  "/home/cuca/Downloads/compiladores/etapa6/src/scope.cpp" "/home/cuca/Downloads/compiladores/etapa6/CMakeFiles/main.dir/src/scope.cpp.o"
-  "/home/cuca/Downloads/compiladores/etapa6/src/symbol.cpp" "/home/cuca/Downloads/compiladores/etapa6/CMakeFiles/main.dir/src/symbol.cpp.o"
-  "/home/cuca/Downloads/compiladores/etapa6/src/tree/assignmentnode.cpp" "/home/cuca/Downloads/compiladores/etapa6/CMakeFiles/main.dir/src/tree/assignmentnode.cpp.o"
-  "/home/cuca/Downloads/compiladores/etapa6/src/tree/blocknode.cpp" "/home/cuca/Downloads/compiladores/etapa6/CMakeFiles/main.dir/src/tree/blocknode.cpp.o"
-  "/home/cuca/Downloads/compiladores/etapa6/src/tree/expression/expressionnode.cpp" "/home/cuca/Downloads/compiladores/etapa6/CMakeFiles/main.dir/src/tree/expression/expressionnode.cpp.o"
-  "/home/cuca/Downloads/compiladores/etapa6/src/tree/expression/identifiernode.cpp" "/home/cuca/Downloads/compiladores/etapa6/CMakeFiles/main.dir/src/tree/expression/identifiernode.cpp.o"
-  "/home/cuca/Downloads/compiladores/etapa6/src/tree/expression/literalnode.cpp" "/home/cuca/Downloads/compiladores/etapa6/CMakeFiles/main.dir/src/tree/expression/literalnode.cpp.o"
-  "/home/cuca/Downloads/compiladores/etapa6/src/tree/expression/operationnode.cpp" "/home/cuca/Downloads/compiladores/etapa6/CMakeFiles/main.dir/src/tree/expression/operationnode.cpp.o"
-  "/home/cuca/Downloads/compiladores/etapa6/src/tree/functioncallnode.cpp" "/home/cuca/Downloads/compiladores/etapa6/CMakeFiles/main.dir/src/tree/functioncallnode.cpp.o"
-  "/home/cuca/Downloads/compiladores/etapa6/src/tree/functiondefinitionnode.cpp" "/home/cuca/Downloads/compiladores/etapa6/CMakeFiles/main.dir/src/tree/functiondefinitionnode.cpp.o"
-  "/home/cuca/Downloads/compiladores/etapa6/src/tree/headernode.cpp" "/home/cuca/Downloads/compiladores/etapa6/CMakeFiles/main.dir/src/tree/headernode.cpp.o"
-  "/home/cuca/Downloads/compiladores/etapa6/src/tree/ifnode.cpp" "/home/cuca/Downloads/compiladores/etapa6/CMakeFiles/main.dir/src/tree/ifnode.cpp.o"
-  "/home/cuca/Downloads/compiladores/etapa6/src/tree/inputnode.cpp" "/home/cuca/Downloads/compiladores/etapa6/CMakeFiles/main.dir/src/tree/inputnode.cpp.o"
-  "/home/cuca/Downloads/compiladores/etapa6/src/tree/node.cpp" "/home/cuca/Downloads/compiladores/etapa6/CMakeFiles/main.dir/src/tree/node.cpp.o"
-  "/home/cuca/Downloads/compiladores/etapa6/src/tree/outputnode.cpp" "/home/cuca/Downloads/compiladores/etapa6/CMakeFiles/main.dir/src/tree/outputnode.cpp.o"
-  "/home/cuca/Downloads/compiladores/etapa6/src/tree/programnode.cpp" "/home/cuca/Downloads/compiladores/etapa6/CMakeFiles/main.dir/src/tree/programnode.cpp.o"
-  "/home/cuca/Downloads/compiladores/etapa6/src/tree/returnnode.cpp" "/home/cuca/Downloads/compiladores/etapa6/CMakeFiles/main.dir/src/tree/returnnode.cpp.o"
-  "/home/cuca/Downloads/compiladores/etapa6/src/tree/vardeclarationnode.cpp" "/home/cuca/Downloads/compiladores/etapa6/CMakeFiles/main.dir/src/tree/vardeclarationnode.cpp.o"
-  "/home/cuca/Downloads/compiladores/etapa6/src/tree/vectordeclarationnode.cpp" "/home/cuca/Downloads/compiladores/etapa6/CMakeFiles/main.dir/src/tree/vectordeclarationnode.cpp.o"
-  "/home/cuca/Downloads/compiladores/etapa6/src/tree/whilenode.cpp" "/home/cuca/Downloads/compiladores/etapa6/CMakeFiles/main.dir/src/tree/whilenode.cpp.o"
+  "/home/cuca/Downloads/compiladores/etapa7/src/iloc.cpp" "/home/cuca/Downloads/compiladores/etapa7/CMakeFiles/main.dir/src/iloc.cpp.o"
+  "/home/cuca/Downloads/compiladores/etapa7/src/main.cpp" "/home/cuca/Downloads/compiladores/etapa7/CMakeFiles/main.dir/src/main.cpp.o"
+  "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.cpp" "/home/cuca/Downloads/compiladores/etapa7/CMakeFiles/main.dir/src/parser/parser.cpp.o"
+  "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.cpp" "/home/cuca/Downloads/compiladores/etapa7/CMakeFiles/main.dir/src/scanner/scanner.cpp.o"
+  "/home/cuca/Downloads/compiladores/etapa7/src/scope.cpp" "/home/cuca/Downloads/compiladores/etapa7/CMakeFiles/main.dir/src/scope.cpp.o"
+  "/home/cuca/Downloads/compiladores/etapa7/src/symbol.cpp" "/home/cuca/Downloads/compiladores/etapa7/CMakeFiles/main.dir/src/symbol.cpp.o"
+  "/home/cuca/Downloads/compiladores/etapa7/src/tree/assignmentnode.cpp" "/home/cuca/Downloads/compiladores/etapa7/CMakeFiles/main.dir/src/tree/assignmentnode.cpp.o"
+  "/home/cuca/Downloads/compiladores/etapa7/src/tree/blocknode.cpp" "/home/cuca/Downloads/compiladores/etapa7/CMakeFiles/main.dir/src/tree/blocknode.cpp.o"
+  "/home/cuca/Downloads/compiladores/etapa7/src/tree/expression/expressionnode.cpp" "/home/cuca/Downloads/compiladores/etapa7/CMakeFiles/main.dir/src/tree/expression/expressionnode.cpp.o"
+  "/home/cuca/Downloads/compiladores/etapa7/src/tree/expression/identifiernode.cpp" "/home/cuca/Downloads/compiladores/etapa7/CMakeFiles/main.dir/src/tree/expression/identifiernode.cpp.o"
+  "/home/cuca/Downloads/compiladores/etapa7/src/tree/expression/literalnode.cpp" "/home/cuca/Downloads/compiladores/etapa7/CMakeFiles/main.dir/src/tree/expression/literalnode.cpp.o"
+  "/home/cuca/Downloads/compiladores/etapa7/src/tree/expression/operationnode.cpp" "/home/cuca/Downloads/compiladores/etapa7/CMakeFiles/main.dir/src/tree/expression/operationnode.cpp.o"
+  "/home/cuca/Downloads/compiladores/etapa7/src/tree/functioncallnode.cpp" "/home/cuca/Downloads/compiladores/etapa7/CMakeFiles/main.dir/src/tree/functioncallnode.cpp.o"
+  "/home/cuca/Downloads/compiladores/etapa7/src/tree/functiondefinitionnode.cpp" "/home/cuca/Downloads/compiladores/etapa7/CMakeFiles/main.dir/src/tree/functiondefinitionnode.cpp.o"
+  "/home/cuca/Downloads/compiladores/etapa7/src/tree/headernode.cpp" "/home/cuca/Downloads/compiladores/etapa7/CMakeFiles/main.dir/src/tree/headernode.cpp.o"
+  "/home/cuca/Downloads/compiladores/etapa7/src/tree/ifnode.cpp" "/home/cuca/Downloads/compiladores/etapa7/CMakeFiles/main.dir/src/tree/ifnode.cpp.o"
+  "/home/cuca/Downloads/compiladores/etapa7/src/tree/inputnode.cpp" "/home/cuca/Downloads/compiladores/etapa7/CMakeFiles/main.dir/src/tree/inputnode.cpp.o"
+  "/home/cuca/Downloads/compiladores/etapa7/src/tree/node.cpp" "/home/cuca/Downloads/compiladores/etapa7/CMakeFiles/main.dir/src/tree/node.cpp.o"
+  "/home/cuca/Downloads/compiladores/etapa7/src/tree/outputnode.cpp" "/home/cuca/Downloads/compiladores/etapa7/CMakeFiles/main.dir/src/tree/outputnode.cpp.o"
+  "/home/cuca/Downloads/compiladores/etapa7/src/tree/programnode.cpp" "/home/cuca/Downloads/compiladores/etapa7/CMakeFiles/main.dir/src/tree/programnode.cpp.o"
+  "/home/cuca/Downloads/compiladores/etapa7/src/tree/returnnode.cpp" "/home/cuca/Downloads/compiladores/etapa7/CMakeFiles/main.dir/src/tree/returnnode.cpp.o"
+  "/home/cuca/Downloads/compiladores/etapa7/src/tree/vardeclarationnode.cpp" "/home/cuca/Downloads/compiladores/etapa7/CMakeFiles/main.dir/src/tree/vardeclarationnode.cpp.o"
+  "/home/cuca/Downloads/compiladores/etapa7/src/tree/vectordeclarationnode.cpp" "/home/cuca/Downloads/compiladores/etapa7/CMakeFiles/main.dir/src/tree/vectordeclarationnode.cpp.o"
+  "/home/cuca/Downloads/compiladores/etapa7/src/tree/whilenode.cpp" "/home/cuca/Downloads/compiladores/etapa7/CMakeFiles/main.dir/src/tree/whilenode.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Pairs of files generated by the same build rule.
 SET(CMAKE_MULTIPLE_OUTPUT_PAIRS
-  "/home/cuca/Downloads/compiladores/etapa6/src/parser/parser.hpp" "/home/cuca/Downloads/compiladores/etapa6/src/parser/parser.cpp"
+  "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.hpp" "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.cpp"
   )
 
 

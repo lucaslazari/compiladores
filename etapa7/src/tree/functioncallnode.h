@@ -8,12 +8,13 @@
 class FunctionCallNode : public Node {
 
 public:
-	FunctionCallNode(const std::string& functionName, std::vector<Node*>* children);
+	FunctionCallNode(Symbol* functionSym, std::vector<Node*>* children);
 	void printSourceCode(const std::string& end);
 	void generateILOCCode(Node* context);
+	bool hasDeclaration(Symbol* sym);
 
 private:
-	std::string functionName;
+	Symbol* funSym;
 };
 
 #endif // FUNCTIONCALLNODE_H

@@ -66,7 +66,7 @@
 /* Copy the first part of user declarations.  */
 
 /* Line 268 of yacc.c  */
-#line 1 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 1 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
 
 #include <stdio.h>
 #include <vector>
@@ -104,7 +104,7 @@ typedef std::vector<int> DimensionList;
 
 
 /* Line 268 of yacc.c  */
-#line 108 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.cpp"
+#line 108 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.cpp"
 
 /* Enabling traces.  */
 #ifndef YYDEBUG
@@ -127,14 +127,14 @@ typedef std::vector<int> DimensionList;
 /* "%code requires" blocks.  */
 
 /* Line 288 of yacc.c  */
-#line 37 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 37 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
 
 class FunctionDefinitionNode;
 
 
 
 /* Line 288 of yacc.c  */
-#line 138 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.cpp"
+#line 138 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.cpp"
 
 /* Tokens.  */
 #ifndef YYTOKENTYPE
@@ -179,7 +179,7 @@ typedef union YYSTYPE
 {
 
 /* Line 293 of yacc.c  */
-#line 41 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 41 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
 
   Node* node;
   FunctionDefinitionNode* funcNode;
@@ -192,7 +192,7 @@ typedef union YYSTYPE
 
 
 /* Line 293 of yacc.c  */
-#line 196 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.cpp"
+#line 196 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.cpp"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
@@ -204,7 +204,7 @@ typedef union YYSTYPE
 
 
 /* Line 343 of yacc.c  */
-#line 208 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.cpp"
+#line 208 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.cpp"
 
 #ifdef short
 # undef short
@@ -1607,574 +1607,574 @@ yyreduce:
         case 2:
 
 /* Line 1806 of yacc.c  */
-#line 128 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 128 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = new ProgramNode(); }
     break;
 
   case 3:
 
 /* Line 1806 of yacc.c  */
-#line 128 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 128 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = (yyvsp[(1) - (2)].node); (yyval.node)->print(0); (yyval.node)->generateILOCCode(NULL); (yyval.node)->printILOC(yyout); /*$$->printSourceCode("");*/ /*$$->printILOC();*/ }
     break;
 
   case 4:
 
 /* Line 1806 of yacc.c  */
-#line 131 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 131 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyvsp[(0) - (2)].node)->addChild((yyvsp[(2) - (2)].node)); }
     break;
 
   case 5:
 
 /* Line 1806 of yacc.c  */
-#line 132 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 132 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyvsp[(0) - (2)].node)->addChild((yyvsp[(2) - (2)].funcNode)); }
     break;
 
   case 6:
 
 /* Line 1806 of yacc.c  */
-#line 133 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 133 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyvsp[(0) - (1)].node)->addChild((yyvsp[(1) - (1)].node)); }
     break;
 
   case 7:
 
 /* Line 1806 of yacc.c  */
-#line 134 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 134 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyvsp[(0) - (1)].node)->addChild((yyvsp[(1) - (1)].funcNode)); }
     break;
 
   case 8:
 
 /* Line 1806 of yacc.c  */
-#line 137 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 137 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = (yyvsp[(1) - (2)].node); }
     break;
 
   case 9:
 
 /* Line 1806 of yacc.c  */
-#line 138 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 138 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = (yyvsp[(1) - (2)].node); }
     break;
 
   case 10:
 
 /* Line 1806 of yacc.c  */
-#line 141 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 141 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.nodes)->push_back((yyvsp[(2) - (3)].node)); }
     break;
 
   case 11:
 
 /* Line 1806 of yacc.c  */
-#line 142 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 142 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.nodes) = new VariableList(); (yyval.nodes)->push_back((yyvsp[(1) - (2)].node)); }
     break;
 
   case 12:
 
 /* Line 1806 of yacc.c  */
-#line 145 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 145 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = new VarDeclarationNode((yyvsp[(1) - (3)].symbol)->getText(), (yyvsp[(3) - (3)].dataType)); }
     break;
 
   case 13:
 
 /* Line 1806 of yacc.c  */
-#line 148 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 148 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = new VectorDeclarationNode((yyvsp[(1) - (4)].symbol)->getText(), (yyvsp[(3) - (4)].dataType), (yyvsp[(4) - (4)].integers)); }
     break;
 
   case 14:
 
 /* Line 1806 of yacc.c  */
-#line 151 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 151 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.integers)->push_back((yyvsp[(3) - (4)].integer)); }
     break;
 
   case 15:
 
 /* Line 1806 of yacc.c  */
-#line 152 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 152 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.integers) = new DimensionList(); (yyval.integers)->push_back((yyvsp[(2) - (3)].integer)); }
     break;
 
   case 16:
 
 /* Line 1806 of yacc.c  */
-#line 155 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 155 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.integer) = atoi((yyvsp[(1) - (1)].symbol)->getText().c_str()); }
     break;
 
   case 17:
 
 /* Line 1806 of yacc.c  */
-#line 158 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 158 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.dataType) = Common::INT; }
     break;
 
   case 18:
 
 /* Line 1806 of yacc.c  */
-#line 159 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 159 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.dataType) = Common::FLOAT; }
     break;
 
   case 19:
 
 /* Line 1806 of yacc.c  */
-#line 160 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 160 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.dataType) = Common::BOOL; }
     break;
 
   case 20:
 
 /* Line 1806 of yacc.c  */
-#line 161 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 161 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.dataType) = Common::CHAR; }
     break;
 
   case 21:
 
 /* Line 1806 of yacc.c  */
-#line 162 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 162 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.dataType) = Common::STRING; }
     break;
 
   case 22:
 
 /* Line 1806 of yacc.c  */
-#line 165 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 165 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.funcNode) = new FunctionDefinitionNode(); (yyval.funcNode)->setHeader((yyvsp[(1) - (5)].node)); (yyval.funcNode)->setLocals((yyvsp[(2) - (5)].nodes)); Node* b = new BlockNode(false); b->addChildren((yyvsp[(4) - (5)].nodes)); (yyval.funcNode)->setBlock(b); b->generateILOCCode(NULL); (yyval.funcNode)->generateILOCCode(NULL); delete (yyvsp[(2) - (5)].nodes); }
     break;
 
   case 23:
 
 /* Line 1806 of yacc.c  */
-#line 166 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 166 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.funcNode) = new FunctionDefinitionNode(); (yyval.funcNode)->setHeader((yyvsp[(1) - (4)].node)); Node* b = new BlockNode(false); b->addChildren((yyvsp[(3) - (4)].nodes)); (yyval.funcNode)->setBlock(b); b->generateILOCCode(NULL); (yyval.funcNode)->generateILOCCode(NULL); }
     break;
 
   case 24:
 
 /* Line 1806 of yacc.c  */
-#line 169 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
-    { (yyval.node) = new FunctionCallNode((yyvsp[(1) - (4)].symbol)->getText(), (yyvsp[(3) - (4)].nodes)); }
+#line 169 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
+    { (yyval.node) = new FunctionCallNode((yyvsp[(1) - (4)].symbol), (yyvsp[(3) - (4)].nodes)); }
     break;
 
   case 25:
 
 /* Line 1806 of yacc.c  */
-#line 173 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 173 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = new HeaderNode((yyvsp[(1) - (4)].symbol)->getText(), (yyvsp[(3) - (4)].dataType)); }
     break;
 
   case 26:
 
 /* Line 1806 of yacc.c  */
-#line 173 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 173 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = (yyvsp[(5) - (7)].node); (yyval.node)->addChildren((yyvsp[(6) - (7)].nodes)); }
     break;
 
   case 27:
 
 /* Line 1806 of yacc.c  */
-#line 176 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 176 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.nodes) = (yyvsp[(1) - (1)].nodes); }
     break;
 
   case 28:
 
 /* Line 1806 of yacc.c  */
-#line 177 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 177 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.nodes) = new ParameterList(); }
     break;
 
   case 29:
 
 /* Line 1806 of yacc.c  */
-#line 180 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 180 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyvsp[(1) - (3)].nodes)->push_back((yyvsp[(3) - (3)].node)); }
     break;
 
   case 30:
 
 /* Line 1806 of yacc.c  */
-#line 181 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 181 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.nodes) = new ParameterList(); (yyval.nodes)->push_back((yyvsp[(1) - (1)].node)); }
     break;
 
   case 31:
 
 /* Line 1806 of yacc.c  */
-#line 184 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 184 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = new VarDeclarationNode((yyvsp[(1) - (3)].symbol)->getText(), (yyvsp[(3) - (3)].dataType)); }
     break;
 
   case 32:
 
 /* Line 1806 of yacc.c  */
-#line 191 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 191 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = (yyvsp[(1) - (1)].node); }
     break;
 
   case 33:
 
 /* Line 1806 of yacc.c  */
-#line 192 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 192 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = (yyvsp[(1) - (1)].node); }
     break;
 
   case 34:
 
 /* Line 1806 of yacc.c  */
-#line 193 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 193 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = (yyvsp[(1) - (1)].node); }
     break;
 
   case 35:
 
 /* Line 1806 of yacc.c  */
-#line 194 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 194 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = (yyvsp[(1) - (1)].node); }
     break;
 
   case 36:
 
 /* Line 1806 of yacc.c  */
-#line 195 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 195 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = (yyvsp[(1) - (1)].node); }
     break;
 
   case 37:
 
 /* Line 1806 of yacc.c  */
-#line 196 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 196 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = (yyvsp[(1) - (1)].node); }
     break;
 
   case 38:
 
 /* Line 1806 of yacc.c  */
-#line 197 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 197 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = (yyvsp[(1) - (2)].node); }
     break;
 
   case 39:
 
 /* Line 1806 of yacc.c  */
-#line 198 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 198 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = (yyvsp[(1) - (2)].node); }
     break;
 
   case 40:
 
 /* Line 1806 of yacc.c  */
-#line 201 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 201 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = new BlockNode(); }
     break;
 
   case 41:
 
 /* Line 1806 of yacc.c  */
-#line 201 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 201 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = (yyvsp[(2) - (4)].node);  (yyval.node)->addChildren((yyvsp[(3) - (4)].nodes)); (yyval.node)->generateILOCCode(NULL); Scope::popScope(); }
     break;
 
   case 42:
 
 /* Line 1806 of yacc.c  */
-#line 204 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 204 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyvsp[(1) - (2)].nodes)->push_back((yyvsp[(2) - (2)].node)); }
     break;
 
   case 43:
 
 /* Line 1806 of yacc.c  */
-#line 205 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 205 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyvsp[(1) - (3)].nodes)->push_back((yyvsp[(2) - (3)].node)); }
     break;
 
   case 44:
 
 /* Line 1806 of yacc.c  */
-#line 206 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 206 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.nodes) = new CommandList(); }
     break;
 
   case 45:
 
 /* Line 1806 of yacc.c  */
-#line 209 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
-    { (yyval.node) = new AssignmentNode((yyvsp[(1) - (4)].symbol)->getText(), (yyvsp[(3) - (4)].node)); }
+#line 209 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
+    { (yyval.node) = new AssignmentNode((yyvsp[(1) - (4)].symbol), (yyvsp[(3) - (4)].node)); }
     break;
 
   case 46:
 
 /* Line 1806 of yacc.c  */
-#line 210 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
-    { (yyval.node) = new AssignmentNode((yyvsp[(1) - (5)].symbol)->getText(), (yyvsp[(2) - (5)].nodes), (yyvsp[(4) - (5)].node)); }
+#line 210 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
+    { (yyval.node) = new AssignmentNode((yyvsp[(1) - (5)].symbol), (yyvsp[(2) - (5)].nodes), (yyvsp[(4) - (5)].node)); }
     break;
 
   case 47:
 
 /* Line 1806 of yacc.c  */
-#line 213 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 213 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyvsp[(1) - (4)].nodes)->push_back((yyvsp[(3) - (4)].node)); }
     break;
 
   case 48:
 
 /* Line 1806 of yacc.c  */
-#line 214 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 214 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.nodes) = new ExpressionList(); (yyval.nodes)->push_back((yyvsp[(2) - (3)].node)); }
     break;
 
   case 49:
 
 /* Line 1806 of yacc.c  */
-#line 217 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 217 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = new InputNode((yyvsp[(2) - (3)].symbol)->getText()); }
     break;
 
   case 50:
 
 /* Line 1806 of yacc.c  */
-#line 220 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 220 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = new OutputNode((yyvsp[(2) - (3)].nodes)); }
     break;
 
   case 51:
 
 /* Line 1806 of yacc.c  */
-#line 223 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 223 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = new ReturnNode((yyvsp[(2) - (3)].node)); }
     break;
 
   case 52:
 
 /* Line 1806 of yacc.c  */
-#line 226 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 226 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.nodes) = (yyvsp[(1) - (1)].nodes); }
     break;
 
   case 53:
 
 /* Line 1806 of yacc.c  */
-#line 227 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 227 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.nodes) = new ExpressionList(); }
     break;
 
   case 54:
 
 /* Line 1806 of yacc.c  */
-#line 230 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 230 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyvsp[(1) - (3)].nodes)->push_back((yyvsp[(3) - (3)].node)); }
     break;
 
   case 55:
 
 /* Line 1806 of yacc.c  */
-#line 231 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 231 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.nodes) = new ExpressionList(); (yyval.nodes)->push_back((yyvsp[(1) - (1)].node)); }
     break;
 
   case 56:
 
 /* Line 1806 of yacc.c  */
-#line 234 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 234 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = new IfNode((yyvsp[(3) - (6)].node), (yyvsp[(6) - (6)].node)); }
     break;
 
   case 57:
 
 /* Line 1806 of yacc.c  */
-#line 235 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 235 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = new IfNode((yyvsp[(3) - (8)].node), (yyvsp[(6) - (8)].node), (yyvsp[(8) - (8)].node)); }
     break;
 
   case 58:
 
 /* Line 1806 of yacc.c  */
-#line 236 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 236 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = new WhileNode((yyvsp[(3) - (5)].node), (yyvsp[(5) - (5)].node)); }
     break;
 
   case 59:
 
 /* Line 1806 of yacc.c  */
-#line 239 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 239 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = new IdentifierNode((yyvsp[(1) - (1)].symbol)); }
     break;
 
   case 60:
 
 /* Line 1806 of yacc.c  */
-#line 240 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 240 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = new IdentifierNode((yyvsp[(1) - (2)].symbol), (yyvsp[(2) - (2)].nodes)); }
     break;
 
   case 61:
 
 /* Line 1806 of yacc.c  */
-#line 241 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 241 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = new LiteralNode((yyvsp[(1) - (1)].symbol)->getText(), Common::INT); }
     break;
 
   case 62:
 
 /* Line 1806 of yacc.c  */
-#line 242 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 242 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = new LiteralNode((yyvsp[(1) - (1)].symbol)->getText(), Common::FLOAT); }
     break;
 
   case 63:
 
 /* Line 1806 of yacc.c  */
-#line 243 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 243 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = new LiteralNode((yyvsp[(1) - (1)].symbol)->getText(), Common::BOOL); }
     break;
 
   case 64:
 
 /* Line 1806 of yacc.c  */
-#line 244 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 244 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = new LiteralNode((yyvsp[(1) - (1)].symbol)->getText(), Common::BOOL); }
     break;
 
   case 65:
 
 /* Line 1806 of yacc.c  */
-#line 245 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 245 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = new LiteralNode((yyvsp[(1) - (1)].symbol)->getText(), Common::CHAR); }
     break;
 
   case 66:
 
 /* Line 1806 of yacc.c  */
-#line 246 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 246 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = new LiteralNode((yyvsp[(1) - (1)].symbol)->getText(), Common::STRING); }
     break;
 
   case 67:
 
 /* Line 1806 of yacc.c  */
-#line 247 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 247 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = new OperationNode(Common::OP_SUM, (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 68:
 
 /* Line 1806 of yacc.c  */
-#line 248 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 248 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = new OperationNode(Common::OP_SUB, (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 69:
 
 /* Line 1806 of yacc.c  */
-#line 249 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 249 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = new OperationNode(Common::OP_MULT, (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 70:
 
 /* Line 1806 of yacc.c  */
-#line 250 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 250 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = new OperationNode(Common::OP_DIV, (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 71:
 
 /* Line 1806 of yacc.c  */
-#line 251 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 251 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = new OperationNode(Common::OP_LESS, (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 72:
 
 /* Line 1806 of yacc.c  */
-#line 252 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 252 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = new OperationNode(Common::OP_GREATER, (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 73:
 
 /* Line 1806 of yacc.c  */
-#line 253 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 253 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = (yyvsp[(2) - (2)].node); }
     break;
 
   case 74:
 
 /* Line 1806 of yacc.c  */
-#line 254 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 254 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = new OperationNode(Common::OP_SUB, (yyvsp[(2) - (2)].node), NULL); }
     break;
 
   case 75:
 
 /* Line 1806 of yacc.c  */
-#line 255 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 255 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = new OperationNode(Common::OP_PAREN, (yyvsp[(2) - (3)].node), NULL); }
     break;
 
   case 76:
 
 /* Line 1806 of yacc.c  */
-#line 256 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 256 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = new OperationNode(Common::OP_LE, (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 77:
 
 /* Line 1806 of yacc.c  */
-#line 257 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 257 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = new OperationNode(Common::OP_GE, (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 78:
 
 /* Line 1806 of yacc.c  */
-#line 258 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 258 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = new OperationNode(Common::OP_EQUAL, (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 79:
 
 /* Line 1806 of yacc.c  */
-#line 259 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 259 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = new OperationNode(Common::OP_NEQUAL, (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 80:
 
 /* Line 1806 of yacc.c  */
-#line 260 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 260 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = new OperationNode(Common::OP_AND, (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 81:
 
 /* Line 1806 of yacc.c  */
-#line 261 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 261 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = new OperationNode(Common::OP_OR, (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 82:
 
 /* Line 1806 of yacc.c  */
-#line 262 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 262 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
     { (yyval.node) = (yyvsp[(1) - (1)].node); }
     break;
 
 
 
 /* Line 1806 of yacc.c  */
-#line 2178 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.cpp"
+#line 2178 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.cpp"
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -2405,6 +2405,6 @@ yyreturn:
 
 
 /* Line 2067 of yacc.c  */
-#line 267 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 267 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
 
 

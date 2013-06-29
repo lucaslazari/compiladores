@@ -15,6 +15,10 @@ public:
 	IdentifierNode(Symbol* symbol, std::vector<Node*>* expressionList);
 	void printSourceCode(const std::string& end);
 	void generateILOCCode(Node* context);
+	bool hasDeclaration(Symbol* sym);
+
+	Symbol *getSymbol() const;
+	void setSymbol(Symbol *value);
 
 private:
 	Symbol* symbol;

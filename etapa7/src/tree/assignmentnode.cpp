@@ -2,28 +2,49 @@
 #include <stdio.h>
 #include <sstream>
 #include "expression/expressionnode.h"
+#include "expression/identifiernode.h"
 
-AssignmentNode::AssignmentNode(const std::string& varName, Node* expressionAssigned):
-	Node("Atribuicao", Common::NT_ASSIGNMENT), varName(varName) {
+AssignmentNode::AssignmentNode(Symbol *varAssigned, Node* expressionAssigned):
+	Node("Atribuicao", Common::NT_ASSIGNMENT), varSym(varAssigned) {
+
 	this->addChild(expressionAssigned);
-	this->generateILOCCode(NULL);
+
+	if (this->hasDeclaration(varAssigned)) {
+		this->varSym = varAssigned;
+		this->generateILOCCode(NULL);
+	}
+
 }
 
-AssignmentNode::AssignmentNode(const std::string& varName, std::vector<Node*>* expressionIndexList, Node* expressionAssigned):
-	Node("Atribuicao", Common::NT_ASSIGNMENT), varName(varName) {
+AssignmentNode::AssignmentNode(Symbol *varAssigned, std::vector<Node*>* expressionIndexList, Node* expressionAssigned):
+	Node("Atribuicao", Common::NT_ASSIGNMENT), varSym(varAssigned) {
+
 	this->addChildren(expressionIndexList);
 	this->addChild(expressionAssigned);
-	this->generateILOCCode(NULL);
+
+	if (this->hasDeclaration(varAssigned)) {
+		this->varSym = varAssigned;
+		this->generateILOCCode(NULL);
+	}
+}
+
+bool AssignmentNode::hasDeclaration(Symbol* sym) {
+	bool found = true;
+	if (!Scope::isTokenInScopes(sym->getText())) {
+		yyerror("variable not declared");
+		found = false;
+	}
+	return found;
 }
 
 void AssignmentNode::printSourceCode(const std::string& end) {
 	if (this->children->size() == 1) {
-		fprintf(this->flexOut, "%s", this->varName.c_str());
+		fprintf(this->flexOut, "%s", this->varSym->getText().c_str());
 		fprintf(this->flexOut, "%s", " = ");
 		this->children->at(0)->printSourceCode("");
 		fprintf(this->flexOut, "%s", end.c_str());
 	} else {
-		fprintf(this->flexOut, "%s", this->varName.c_str());
+		fprintf(this->flexOut, "%s", this->varSym->getText().c_str());
 		for (unsigned int i = 0; i < this->children->size() - 1; i++) {
 			fprintf(this->flexOut, "%s", "[");
 			this->children->at(i)->printSourceCode("");
@@ -37,8 +58,8 @@ void AssignmentNode::printSourceCode(const std::string& end) {
 
 void AssignmentNode::generateILOCCode(Node* context) {
 	if (this->children->size() == 1) { // Variable
-		Symbol* symbol = Scope::getSymbol(varName);
-		Node* symbolScope = Scope::getScope(varName);
+		Symbol* symbol = Scope::getSymbol(this->varSym->getText());
+		Node* symbolScope = Scope::getScope(this->varSym->getText());
 		Node* expressionAssigned = this->children->at(0);
 		std::string registerBaseAddress = (symbolScope->getNodeType() == Common::NT_PROGRAM) ? "bss" : "fp";
 		std::stringstream symbolOffsetStr;

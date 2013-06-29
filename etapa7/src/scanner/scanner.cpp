@@ -1,6 +1,6 @@
-#line 2 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.cpp"
+#line 2 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.cpp"
 
-#line 4 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.cpp"
+#line 4 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.cpp"
 
 #define  YY_INT_ALIGNED short int
 
@@ -543,8 +543,8 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.l"
-#line 2 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.l"
+#line 1 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l"
+#line 2 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l"
 #include "../tree/common.h"
 #include "../symbol.h"
 #include "../tree/node.h"
@@ -552,7 +552,7 @@ char *yytext;
 
 int numeroLinha = 1;
 
-#line 556 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.cpp"
+#line 556 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.cpp"
 
 #define INITIAL 0
 #define COMM 1
@@ -740,9 +740,9 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
     
-#line 15 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.l"
+#line 15 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l"
 
-#line 746 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.cpp"
+#line 746 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.cpp"
 
 	if ( !(yy_init) )
 		{
@@ -827,188 +827,188 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 16 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.l"
+#line 16 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l"
 { return TK_PR_INTEIRO; }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 17 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.l"
+#line 17 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l"
 { return TK_PR_FLUTUANTE; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 18 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.l"
+#line 18 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l"
 { return TK_PR_BOOLEANO; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 19 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.l"
+#line 19 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l"
 { return TK_PR_CARACTERE; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 20 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.l"
+#line 20 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l"
 { return TK_PR_CADEIA;	}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 21 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.l"
+#line 21 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l"
 { return TK_PR_SE; }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 22 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.l"
+#line 22 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l"
 { return TK_PR_ENTAO;	}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 23 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.l"
+#line 23 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l"
 { return TK_PR_SENAO;	}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 24 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.l"
+#line 24 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l"
 { return TK_PR_ENQUANTO;	}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 25 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.l"
+#line 25 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l"
 { return TK_PR_REALIZA;	}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 26 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.l"
+#line 26 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l"
 { return TK_PR_ENTRADA;	}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 27 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.l"
+#line 27 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l"
 { return TK_PR_SAIDA;	}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 28 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.l"
+#line 28 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l"
 { return TK_PR_RETORNA;	}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 30 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.l"
+#line 30 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l"
 { yylval.symbol = new Symbol(yytext, Common::LIT_BOOL); return TK_LIT_VERDADEIRO; }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 31 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.l"
+#line 31 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l"
 { yylval.symbol = new Symbol(yytext, Common::LIT_BOOL); return TK_LIT_FALSO; }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 33 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.l"
+#line 33 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l"
 { return TK_OC_LE; }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 34 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.l"
+#line 34 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l"
 { return TK_OC_GE; }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 35 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.l"
+#line 35 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l"
 { return TK_OC_EQ; }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 36 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.l"
+#line 36 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l"
 { return TK_OC_NE; }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 37 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.l"
+#line 37 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l"
 { return TK_OC_AND; }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 38 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.l"
+#line 38 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l"
 { return TK_OC_OR; }
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 40 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.l"
+#line 40 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l"
 { return yytext[0];	}
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 42 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.l"
+#line 42 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l"
 { yylval.symbol = new Symbol(yytext, Common::IDENTIFIER); return TK_IDENTIFICADOR; }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 43 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.l"
+#line 43 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l"
 { yylval.symbol = new Symbol(yytext, Common::LIT_INT); return TK_LIT_INTEIRO; }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 44 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.l"
+#line 44 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l"
 { yylval.symbol = new Symbol(yytext, Common::LIT_FLOAT); return TK_LIT_FLUTUANTE; }
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 45 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.l"
+#line 45 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l"
 { yylval.symbol = new Symbol(yytext, Common::LIT_CHAR); return TK_LIT_CARACTERE; }
 	YY_BREAK
 case 27:
 /* rule 27 can match eol */
 YY_RULE_SETUP
-#line 46 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.l"
+#line 46 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l"
 { yylval.symbol = new Symbol(yytext, Common::LIT_STRING); return TK_LIT_CADEIA; }
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 48 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.l"
+#line 48 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l"
 {}
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 50 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.l"
+#line 50 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l"
 { BEGIN(COMM); }
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 51 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.l"
+#line 51 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l"
 { BEGIN(INITIAL); }
 	YY_BREAK
 case 31:
 /* rule 31 can match eol */
 YY_RULE_SETUP
-#line 52 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.l"
+#line 52 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l"
 { numeroLinha++; }
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 53 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.l"
+#line 53 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l"
 
 	YY_BREAK
 case 33:
 /* rule 33 can match eol */
 YY_RULE_SETUP
-#line 55 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.l"
+#line 55 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l"
 { numeroLinha++; }
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 56 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.l"
+#line 56 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l"
 { }
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 57 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.l"
+#line 57 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l"
 { return TOKEN_ERRO; }
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 59 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.l"
+#line 59 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l"
 ECHO;
 	YY_BREAK
-#line 1012 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.cpp"
+#line 1012 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.cpp"
 case YY_STATE_EOF(INITIAL):
 case YY_STATE_EOF(COMM):
 	yyterminate();
@@ -2007,6 +2007,6 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 59 "/home/cuca/Downloads/compiladores/etapa5/src/scanner/scanner.l"
+#line 59 "/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l"
 
 

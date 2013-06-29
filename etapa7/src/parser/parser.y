@@ -166,7 +166,7 @@ def_funcao: cabecalho decl_local '{' seq_comando '}' { $$ = new FunctionDefiniti
         | cabecalho '{' seq_comando '}' { $$ = new FunctionDefinitionNode(); $$->setHeader($1); Node* b = new BlockNode(false); b->addChildren($3); $$->setBlock(b); b->generateILOCCode(NULL); $$->generateILOCCode(NULL); }
 	;
 
-chamada_funcao: TK_IDENTIFICADOR '(' lista_expressoes ')' { $$ = new FunctionCallNode($1->getText(), $3); }
+chamada_funcao: TK_IDENTIFICADOR '(' lista_expressoes ')' { $$ = new FunctionCallNode($1, $3); }
 	;
 
 /* Function header - begin */
@@ -206,8 +206,8 @@ seq_comando: seq_comando comando { $1->push_back($2); }
 	| { $$ = new CommandList(); }
 	;
 
-atribuicao: TK_IDENTIFICADOR '=' expressao ';' { $$ = new AssignmentNode($1->getText(), $3); }
-	| TK_IDENTIFICADOR vetor_dimensoes '=' expressao ';' { $$ = new AssignmentNode($1->getText(), $2, $4); }
+atribuicao: TK_IDENTIFICADOR '=' expressao ';' { $$ = new AssignmentNode($1, $3); }
+        | TK_IDENTIFICADOR vetor_dimensoes '=' expressao ';' { $$ = new AssignmentNode($1, $2, $4); }
 	;
 
 vetor_dimensoes: vetor_dimensoes '[' expressao ']' { $1->push_back($3); }

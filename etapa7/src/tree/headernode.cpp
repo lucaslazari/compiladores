@@ -3,6 +3,11 @@
 
 HeaderNode::HeaderNode(const std::string &functionName, Common::DataType dataType):
 	Node("Cabecalho", Common::NT_HEADER), functionName(functionName), dataType(dataType) {
+
+	// adiciona a função na tabela hash antes de criar o novo escopo
+	Symbol * sym = new Symbol(functionName, Common::FUNCTION, dataType);
+	Scope::addSymbol(sym);
+
 	this->isNewScope = true;
 	this->hashTable = new Common::HashTable();
 	this->baseAddr = Scope::scopeCount() * Common::scopeSize;

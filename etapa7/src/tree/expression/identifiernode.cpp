@@ -1,23 +1,38 @@
 #include "identifiernode.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <iostream>
 #include <sstream>
 
 IdentifierNode::IdentifierNode(Symbol* symbol):
 	ExpressionNode("Expressao idenficador", Common::EX_IDENTIFIER), symbol(symbol) {
-	// TODO check the data type
-	Symbol* sym = Scope::getSymbol(symbol->getText());
-	this->dataType = sym->getDataType();
-	this->generateILOCCode(NULL);
+
+	if (this->hasDeclaration(symbol)) {
+		Symbol* sym = Scope::getSymbol(symbol->getText());
+		this->dataType = sym->getDataType();
+		this->generateILOCCode(NULL);
+	}
 }
 
 IdentifierNode::IdentifierNode(Symbol* symbol, std::vector<Node*>* expressionList):
 	ExpressionNode("Expressao idenficador", Common::EX_IDENTIFIER), symbol(symbol) {
-	// TODO check the data type
+
 	this->addChildren(expressionList);
-	Symbol* sym = Scope::getSymbol(symbol->getText());
-	this->dataType = sym->getDataType();
-	this->generateILOCCode(NULL);
+
+	if (this->hasDeclaration(symbol)) {
+		Symbol* sym = Scope::getSymbol(symbol->getText());
+		this->dataType = sym->getDataType();
+		this->generateILOCCode(NULL);
+	}
+}
+
+bool IdentifierNode::hasDeclaration(Symbol* sym) {
+	bool found = true;
+	if (!Scope::isTokenInScopes(sym->getText())) {
+		yyerror("variable not declared");
+		found = false;
+	}
+	return found;
 }
 
 void IdentifierNode::printSourceCode(const std::string& end) {
@@ -70,4 +85,14 @@ void IdentifierNode::generateILOCCode(Node* context) {
 		}
 		this->setLastRegister(*indexRegisterName);
 	}
+}
+
+Symbol *IdentifierNode::getSymbol() const
+{
+	return symbol;
+}
+
+void IdentifierNode::setSymbol(Symbol *value)
+{
+	symbol = value;
 }

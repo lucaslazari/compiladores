@@ -1,9 +1,9 @@
 a: inteiro;
-minha_funcao : inteiro ()
-{
+
+minha_funcao : inteiro () {
 b: inteiro;
 
-enquanto (a > b) entao { 
+enquanto (a > b) { 
   a = 1;
 } 
 

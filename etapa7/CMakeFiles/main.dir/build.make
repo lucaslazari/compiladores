@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cuca/Downloads/compiladores/etapa6
+CMAKE_SOURCE_DIR = /home/cuca/Downloads/compiladores/etapa7
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cuca/Downloads/compiladores/etapa6
+CMAKE_BINARY_DIR = /home/cuca/Downloads/compiladores/etapa7
 
 # Include any dependencies generated for this target.
 include CMakeFiles/main.dir/depend.make
@@ -50,30 +50,30 @@ include CMakeFiles/main.dir/progress.make
 include CMakeFiles/main.dir/flags.make
 
 src/scanner/scanner.cpp: src/scanner/scanner.l
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa6/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa7/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "[FLEX][scanner] Building scanner with flex 2.5.35"
-	/usr/bin/flex -o/home/cuca/Downloads/compiladores/etapa6/src/scanner/scanner.cpp /home/cuca/Downloads/compiladores/etapa6/src/scanner/scanner.l
+	/usr/bin/flex -o/home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.cpp /home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.l
 
 src/parser/parser.cpp: src/parser/parser.y
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa6/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa7/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "[BISON][parser] Building parser with bison 2.5"
-	/usr/bin/bison -d -o /home/cuca/Downloads/compiladores/etapa6/src/parser/parser.cpp /home/cuca/Downloads/compiladores/etapa6/src/parser/parser.y
+	/usr/bin/bison -d -o /home/cuca/Downloads/compiladores/etapa7/src/parser/parser.cpp /home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y
 
 src/parser/parser.hpp: src/parser/parser.cpp
 
 CMakeFiles/main.dir/src/main.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/main.cpp.o: src/main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa6/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa7/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/src/main.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/main.cpp.o -c /home/cuca/Downloads/compiladores/etapa6/src/main.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/main.cpp.o -c /home/cuca/Downloads/compiladores/etapa7/src/main.cpp
 
 CMakeFiles/main.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/main.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa6/src/main.cpp > CMakeFiles/main.dir/src/main.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa7/src/main.cpp > CMakeFiles/main.dir/src/main.cpp.i
 
 CMakeFiles/main.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/main.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa6/src/main.cpp -o CMakeFiles/main.dir/src/main.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa7/src/main.cpp -o CMakeFiles/main.dir/src/main.cpp.s
 
 CMakeFiles/main.dir/src/main.cpp.o.requires:
 .PHONY : CMakeFiles/main.dir/src/main.cpp.o.requires
@@ -86,17 +86,17 @@ CMakeFiles/main.dir/src/main.cpp.o.provides.build: CMakeFiles/main.dir/src/main.
 
 CMakeFiles/main.dir/src/scanner/scanner.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/scanner/scanner.cpp.o: src/scanner/scanner.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa6/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa7/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/src/scanner/scanner.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/scanner/scanner.cpp.o -c /home/cuca/Downloads/compiladores/etapa6/src/scanner/scanner.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/scanner/scanner.cpp.o -c /home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.cpp
 
 CMakeFiles/main.dir/src/scanner/scanner.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/scanner/scanner.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa6/src/scanner/scanner.cpp > CMakeFiles/main.dir/src/scanner/scanner.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.cpp > CMakeFiles/main.dir/src/scanner/scanner.cpp.i
 
 CMakeFiles/main.dir/src/scanner/scanner.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/scanner/scanner.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa6/src/scanner/scanner.cpp -o CMakeFiles/main.dir/src/scanner/scanner.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa7/src/scanner/scanner.cpp -o CMakeFiles/main.dir/src/scanner/scanner.cpp.s
 
 CMakeFiles/main.dir/src/scanner/scanner.cpp.o.requires:
 .PHONY : CMakeFiles/main.dir/src/scanner/scanner.cpp.o.requires
@@ -109,17 +109,17 @@ CMakeFiles/main.dir/src/scanner/scanner.cpp.o.provides.build: CMakeFiles/main.di
 
 CMakeFiles/main.dir/src/parser/parser.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/parser/parser.cpp.o: src/parser/parser.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa6/CMakeFiles $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa7/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/src/parser/parser.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/parser/parser.cpp.o -c /home/cuca/Downloads/compiladores/etapa6/src/parser/parser.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/parser/parser.cpp.o -c /home/cuca/Downloads/compiladores/etapa7/src/parser/parser.cpp
 
 CMakeFiles/main.dir/src/parser/parser.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/parser/parser.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa6/src/parser/parser.cpp > CMakeFiles/main.dir/src/parser/parser.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa7/src/parser/parser.cpp > CMakeFiles/main.dir/src/parser/parser.cpp.i
 
 CMakeFiles/main.dir/src/parser/parser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/parser/parser.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa6/src/parser/parser.cpp -o CMakeFiles/main.dir/src/parser/parser.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa7/src/parser/parser.cpp -o CMakeFiles/main.dir/src/parser/parser.cpp.s
 
 CMakeFiles/main.dir/src/parser/parser.cpp.o.requires:
 .PHONY : CMakeFiles/main.dir/src/parser/parser.cpp.o.requires
@@ -132,17 +132,17 @@ CMakeFiles/main.dir/src/parser/parser.cpp.o.provides.build: CMakeFiles/main.dir/
 
 CMakeFiles/main.dir/src/symbol.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/symbol.cpp.o: src/symbol.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa6/CMakeFiles $(CMAKE_PROGRESS_6)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa7/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/src/symbol.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/symbol.cpp.o -c /home/cuca/Downloads/compiladores/etapa6/src/symbol.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/symbol.cpp.o -c /home/cuca/Downloads/compiladores/etapa7/src/symbol.cpp
 
 CMakeFiles/main.dir/src/symbol.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/symbol.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa6/src/symbol.cpp > CMakeFiles/main.dir/src/symbol.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa7/src/symbol.cpp > CMakeFiles/main.dir/src/symbol.cpp.i
 
 CMakeFiles/main.dir/src/symbol.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/symbol.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa6/src/symbol.cpp -o CMakeFiles/main.dir/src/symbol.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa7/src/symbol.cpp -o CMakeFiles/main.dir/src/symbol.cpp.s
 
 CMakeFiles/main.dir/src/symbol.cpp.o.requires:
 .PHONY : CMakeFiles/main.dir/src/symbol.cpp.o.requires
@@ -155,17 +155,17 @@ CMakeFiles/main.dir/src/symbol.cpp.o.provides.build: CMakeFiles/main.dir/src/sym
 
 CMakeFiles/main.dir/src/iloc.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/iloc.cpp.o: src/iloc.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa6/CMakeFiles $(CMAKE_PROGRESS_7)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa7/CMakeFiles $(CMAKE_PROGRESS_7)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/src/iloc.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/iloc.cpp.o -c /home/cuca/Downloads/compiladores/etapa6/src/iloc.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/iloc.cpp.o -c /home/cuca/Downloads/compiladores/etapa7/src/iloc.cpp
 
 CMakeFiles/main.dir/src/iloc.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/iloc.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa6/src/iloc.cpp > CMakeFiles/main.dir/src/iloc.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa7/src/iloc.cpp > CMakeFiles/main.dir/src/iloc.cpp.i
 
 CMakeFiles/main.dir/src/iloc.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/iloc.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa6/src/iloc.cpp -o CMakeFiles/main.dir/src/iloc.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa7/src/iloc.cpp -o CMakeFiles/main.dir/src/iloc.cpp.s
 
 CMakeFiles/main.dir/src/iloc.cpp.o.requires:
 .PHONY : CMakeFiles/main.dir/src/iloc.cpp.o.requires
@@ -178,17 +178,17 @@ CMakeFiles/main.dir/src/iloc.cpp.o.provides.build: CMakeFiles/main.dir/src/iloc.
 
 CMakeFiles/main.dir/src/scope.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/scope.cpp.o: src/scope.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa6/CMakeFiles $(CMAKE_PROGRESS_8)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa7/CMakeFiles $(CMAKE_PROGRESS_8)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/src/scope.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/scope.cpp.o -c /home/cuca/Downloads/compiladores/etapa6/src/scope.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/scope.cpp.o -c /home/cuca/Downloads/compiladores/etapa7/src/scope.cpp
 
 CMakeFiles/main.dir/src/scope.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/scope.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa6/src/scope.cpp > CMakeFiles/main.dir/src/scope.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa7/src/scope.cpp > CMakeFiles/main.dir/src/scope.cpp.i
 
 CMakeFiles/main.dir/src/scope.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/scope.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa6/src/scope.cpp -o CMakeFiles/main.dir/src/scope.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa7/src/scope.cpp -o CMakeFiles/main.dir/src/scope.cpp.s
 
 CMakeFiles/main.dir/src/scope.cpp.o.requires:
 .PHONY : CMakeFiles/main.dir/src/scope.cpp.o.requires
@@ -201,17 +201,17 @@ CMakeFiles/main.dir/src/scope.cpp.o.provides.build: CMakeFiles/main.dir/src/scop
 
 CMakeFiles/main.dir/src/tree/node.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/tree/node.cpp.o: src/tree/node.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa6/CMakeFiles $(CMAKE_PROGRESS_9)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa7/CMakeFiles $(CMAKE_PROGRESS_9)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/src/tree/node.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/tree/node.cpp.o -c /home/cuca/Downloads/compiladores/etapa6/src/tree/node.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/tree/node.cpp.o -c /home/cuca/Downloads/compiladores/etapa7/src/tree/node.cpp
 
 CMakeFiles/main.dir/src/tree/node.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/tree/node.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa6/src/tree/node.cpp > CMakeFiles/main.dir/src/tree/node.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa7/src/tree/node.cpp > CMakeFiles/main.dir/src/tree/node.cpp.i
 
 CMakeFiles/main.dir/src/tree/node.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/tree/node.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa6/src/tree/node.cpp -o CMakeFiles/main.dir/src/tree/node.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa7/src/tree/node.cpp -o CMakeFiles/main.dir/src/tree/node.cpp.s
 
 CMakeFiles/main.dir/src/tree/node.cpp.o.requires:
 .PHONY : CMakeFiles/main.dir/src/tree/node.cpp.o.requires
@@ -224,17 +224,17 @@ CMakeFiles/main.dir/src/tree/node.cpp.o.provides.build: CMakeFiles/main.dir/src/
 
 CMakeFiles/main.dir/src/tree/programnode.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/tree/programnode.cpp.o: src/tree/programnode.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa6/CMakeFiles $(CMAKE_PROGRESS_10)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa7/CMakeFiles $(CMAKE_PROGRESS_10)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/src/tree/programnode.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/tree/programnode.cpp.o -c /home/cuca/Downloads/compiladores/etapa6/src/tree/programnode.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/tree/programnode.cpp.o -c /home/cuca/Downloads/compiladores/etapa7/src/tree/programnode.cpp
 
 CMakeFiles/main.dir/src/tree/programnode.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/tree/programnode.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa6/src/tree/programnode.cpp > CMakeFiles/main.dir/src/tree/programnode.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa7/src/tree/programnode.cpp > CMakeFiles/main.dir/src/tree/programnode.cpp.i
 
 CMakeFiles/main.dir/src/tree/programnode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/tree/programnode.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa6/src/tree/programnode.cpp -o CMakeFiles/main.dir/src/tree/programnode.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa7/src/tree/programnode.cpp -o CMakeFiles/main.dir/src/tree/programnode.cpp.s
 
 CMakeFiles/main.dir/src/tree/programnode.cpp.o.requires:
 .PHONY : CMakeFiles/main.dir/src/tree/programnode.cpp.o.requires
@@ -247,17 +247,17 @@ CMakeFiles/main.dir/src/tree/programnode.cpp.o.provides.build: CMakeFiles/main.d
 
 CMakeFiles/main.dir/src/tree/vardeclarationnode.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/tree/vardeclarationnode.cpp.o: src/tree/vardeclarationnode.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa6/CMakeFiles $(CMAKE_PROGRESS_11)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa7/CMakeFiles $(CMAKE_PROGRESS_11)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/src/tree/vardeclarationnode.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/tree/vardeclarationnode.cpp.o -c /home/cuca/Downloads/compiladores/etapa6/src/tree/vardeclarationnode.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/tree/vardeclarationnode.cpp.o -c /home/cuca/Downloads/compiladores/etapa7/src/tree/vardeclarationnode.cpp
 
 CMakeFiles/main.dir/src/tree/vardeclarationnode.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/tree/vardeclarationnode.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa6/src/tree/vardeclarationnode.cpp > CMakeFiles/main.dir/src/tree/vardeclarationnode.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa7/src/tree/vardeclarationnode.cpp > CMakeFiles/main.dir/src/tree/vardeclarationnode.cpp.i
 
 CMakeFiles/main.dir/src/tree/vardeclarationnode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/tree/vardeclarationnode.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa6/src/tree/vardeclarationnode.cpp -o CMakeFiles/main.dir/src/tree/vardeclarationnode.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa7/src/tree/vardeclarationnode.cpp -o CMakeFiles/main.dir/src/tree/vardeclarationnode.cpp.s
 
 CMakeFiles/main.dir/src/tree/vardeclarationnode.cpp.o.requires:
 .PHONY : CMakeFiles/main.dir/src/tree/vardeclarationnode.cpp.o.requires
@@ -270,17 +270,17 @@ CMakeFiles/main.dir/src/tree/vardeclarationnode.cpp.o.provides.build: CMakeFiles
 
 CMakeFiles/main.dir/src/tree/vectordeclarationnode.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/tree/vectordeclarationnode.cpp.o: src/tree/vectordeclarationnode.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa6/CMakeFiles $(CMAKE_PROGRESS_12)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa7/CMakeFiles $(CMAKE_PROGRESS_12)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/src/tree/vectordeclarationnode.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/tree/vectordeclarationnode.cpp.o -c /home/cuca/Downloads/compiladores/etapa6/src/tree/vectordeclarationnode.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/tree/vectordeclarationnode.cpp.o -c /home/cuca/Downloads/compiladores/etapa7/src/tree/vectordeclarationnode.cpp
 
 CMakeFiles/main.dir/src/tree/vectordeclarationnode.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/tree/vectordeclarationnode.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa6/src/tree/vectordeclarationnode.cpp > CMakeFiles/main.dir/src/tree/vectordeclarationnode.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa7/src/tree/vectordeclarationnode.cpp > CMakeFiles/main.dir/src/tree/vectordeclarationnode.cpp.i
 
 CMakeFiles/main.dir/src/tree/vectordeclarationnode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/tree/vectordeclarationnode.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa6/src/tree/vectordeclarationnode.cpp -o CMakeFiles/main.dir/src/tree/vectordeclarationnode.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa7/src/tree/vectordeclarationnode.cpp -o CMakeFiles/main.dir/src/tree/vectordeclarationnode.cpp.s
 
 CMakeFiles/main.dir/src/tree/vectordeclarationnode.cpp.o.requires:
 .PHONY : CMakeFiles/main.dir/src/tree/vectordeclarationnode.cpp.o.requires
@@ -293,17 +293,17 @@ CMakeFiles/main.dir/src/tree/vectordeclarationnode.cpp.o.provides.build: CMakeFi
 
 CMakeFiles/main.dir/src/tree/headernode.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/tree/headernode.cpp.o: src/tree/headernode.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa6/CMakeFiles $(CMAKE_PROGRESS_13)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa7/CMakeFiles $(CMAKE_PROGRESS_13)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/src/tree/headernode.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/tree/headernode.cpp.o -c /home/cuca/Downloads/compiladores/etapa6/src/tree/headernode.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/tree/headernode.cpp.o -c /home/cuca/Downloads/compiladores/etapa7/src/tree/headernode.cpp
 
 CMakeFiles/main.dir/src/tree/headernode.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/tree/headernode.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa6/src/tree/headernode.cpp > CMakeFiles/main.dir/src/tree/headernode.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa7/src/tree/headernode.cpp > CMakeFiles/main.dir/src/tree/headernode.cpp.i
 
 CMakeFiles/main.dir/src/tree/headernode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/tree/headernode.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa6/src/tree/headernode.cpp -o CMakeFiles/main.dir/src/tree/headernode.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa7/src/tree/headernode.cpp -o CMakeFiles/main.dir/src/tree/headernode.cpp.s
 
 CMakeFiles/main.dir/src/tree/headernode.cpp.o.requires:
 .PHONY : CMakeFiles/main.dir/src/tree/headernode.cpp.o.requires
@@ -316,17 +316,17 @@ CMakeFiles/main.dir/src/tree/headernode.cpp.o.provides.build: CMakeFiles/main.di
 
 CMakeFiles/main.dir/src/tree/functiondefinitionnode.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/tree/functiondefinitionnode.cpp.o: src/tree/functiondefinitionnode.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa6/CMakeFiles $(CMAKE_PROGRESS_14)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa7/CMakeFiles $(CMAKE_PROGRESS_14)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/src/tree/functiondefinitionnode.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/tree/functiondefinitionnode.cpp.o -c /home/cuca/Downloads/compiladores/etapa6/src/tree/functiondefinitionnode.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/tree/functiondefinitionnode.cpp.o -c /home/cuca/Downloads/compiladores/etapa7/src/tree/functiondefinitionnode.cpp
 
 CMakeFiles/main.dir/src/tree/functiondefinitionnode.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/tree/functiondefinitionnode.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa6/src/tree/functiondefinitionnode.cpp > CMakeFiles/main.dir/src/tree/functiondefinitionnode.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa7/src/tree/functiondefinitionnode.cpp > CMakeFiles/main.dir/src/tree/functiondefinitionnode.cpp.i
 
 CMakeFiles/main.dir/src/tree/functiondefinitionnode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/tree/functiondefinitionnode.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa6/src/tree/functiondefinitionnode.cpp -o CMakeFiles/main.dir/src/tree/functiondefinitionnode.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa7/src/tree/functiondefinitionnode.cpp -o CMakeFiles/main.dir/src/tree/functiondefinitionnode.cpp.s
 
 CMakeFiles/main.dir/src/tree/functiondefinitionnode.cpp.o.requires:
 .PHONY : CMakeFiles/main.dir/src/tree/functiondefinitionnode.cpp.o.requires
@@ -339,17 +339,17 @@ CMakeFiles/main.dir/src/tree/functiondefinitionnode.cpp.o.provides.build: CMakeF
 
 CMakeFiles/main.dir/src/tree/assignmentnode.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/tree/assignmentnode.cpp.o: src/tree/assignmentnode.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa6/CMakeFiles $(CMAKE_PROGRESS_15)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa7/CMakeFiles $(CMAKE_PROGRESS_15)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/src/tree/assignmentnode.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/tree/assignmentnode.cpp.o -c /home/cuca/Downloads/compiladores/etapa6/src/tree/assignmentnode.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/tree/assignmentnode.cpp.o -c /home/cuca/Downloads/compiladores/etapa7/src/tree/assignmentnode.cpp
 
 CMakeFiles/main.dir/src/tree/assignmentnode.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/tree/assignmentnode.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa6/src/tree/assignmentnode.cpp > CMakeFiles/main.dir/src/tree/assignmentnode.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa7/src/tree/assignmentnode.cpp > CMakeFiles/main.dir/src/tree/assignmentnode.cpp.i
 
 CMakeFiles/main.dir/src/tree/assignmentnode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/tree/assignmentnode.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa6/src/tree/assignmentnode.cpp -o CMakeFiles/main.dir/src/tree/assignmentnode.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa7/src/tree/assignmentnode.cpp -o CMakeFiles/main.dir/src/tree/assignmentnode.cpp.s
 
 CMakeFiles/main.dir/src/tree/assignmentnode.cpp.o.requires:
 .PHONY : CMakeFiles/main.dir/src/tree/assignmentnode.cpp.o.requires
@@ -362,17 +362,17 @@ CMakeFiles/main.dir/src/tree/assignmentnode.cpp.o.provides.build: CMakeFiles/mai
 
 CMakeFiles/main.dir/src/tree/inputnode.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/tree/inputnode.cpp.o: src/tree/inputnode.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa6/CMakeFiles $(CMAKE_PROGRESS_16)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa7/CMakeFiles $(CMAKE_PROGRESS_16)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/src/tree/inputnode.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/tree/inputnode.cpp.o -c /home/cuca/Downloads/compiladores/etapa6/src/tree/inputnode.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/tree/inputnode.cpp.o -c /home/cuca/Downloads/compiladores/etapa7/src/tree/inputnode.cpp
 
 CMakeFiles/main.dir/src/tree/inputnode.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/tree/inputnode.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa6/src/tree/inputnode.cpp > CMakeFiles/main.dir/src/tree/inputnode.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa7/src/tree/inputnode.cpp > CMakeFiles/main.dir/src/tree/inputnode.cpp.i
 
 CMakeFiles/main.dir/src/tree/inputnode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/tree/inputnode.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa6/src/tree/inputnode.cpp -o CMakeFiles/main.dir/src/tree/inputnode.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa7/src/tree/inputnode.cpp -o CMakeFiles/main.dir/src/tree/inputnode.cpp.s
 
 CMakeFiles/main.dir/src/tree/inputnode.cpp.o.requires:
 .PHONY : CMakeFiles/main.dir/src/tree/inputnode.cpp.o.requires
@@ -385,17 +385,17 @@ CMakeFiles/main.dir/src/tree/inputnode.cpp.o.provides.build: CMakeFiles/main.dir
 
 CMakeFiles/main.dir/src/tree/outputnode.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/tree/outputnode.cpp.o: src/tree/outputnode.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa6/CMakeFiles $(CMAKE_PROGRESS_17)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa7/CMakeFiles $(CMAKE_PROGRESS_17)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/src/tree/outputnode.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/tree/outputnode.cpp.o -c /home/cuca/Downloads/compiladores/etapa6/src/tree/outputnode.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/tree/outputnode.cpp.o -c /home/cuca/Downloads/compiladores/etapa7/src/tree/outputnode.cpp
 
 CMakeFiles/main.dir/src/tree/outputnode.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/tree/outputnode.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa6/src/tree/outputnode.cpp > CMakeFiles/main.dir/src/tree/outputnode.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa7/src/tree/outputnode.cpp > CMakeFiles/main.dir/src/tree/outputnode.cpp.i
 
 CMakeFiles/main.dir/src/tree/outputnode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/tree/outputnode.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa6/src/tree/outputnode.cpp -o CMakeFiles/main.dir/src/tree/outputnode.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa7/src/tree/outputnode.cpp -o CMakeFiles/main.dir/src/tree/outputnode.cpp.s
 
 CMakeFiles/main.dir/src/tree/outputnode.cpp.o.requires:
 .PHONY : CMakeFiles/main.dir/src/tree/outputnode.cpp.o.requires
@@ -408,17 +408,17 @@ CMakeFiles/main.dir/src/tree/outputnode.cpp.o.provides.build: CMakeFiles/main.di
 
 CMakeFiles/main.dir/src/tree/returnnode.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/tree/returnnode.cpp.o: src/tree/returnnode.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa6/CMakeFiles $(CMAKE_PROGRESS_18)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa7/CMakeFiles $(CMAKE_PROGRESS_18)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/src/tree/returnnode.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/tree/returnnode.cpp.o -c /home/cuca/Downloads/compiladores/etapa6/src/tree/returnnode.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/tree/returnnode.cpp.o -c /home/cuca/Downloads/compiladores/etapa7/src/tree/returnnode.cpp
 
 CMakeFiles/main.dir/src/tree/returnnode.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/tree/returnnode.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa6/src/tree/returnnode.cpp > CMakeFiles/main.dir/src/tree/returnnode.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa7/src/tree/returnnode.cpp > CMakeFiles/main.dir/src/tree/returnnode.cpp.i
 
 CMakeFiles/main.dir/src/tree/returnnode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/tree/returnnode.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa6/src/tree/returnnode.cpp -o CMakeFiles/main.dir/src/tree/returnnode.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa7/src/tree/returnnode.cpp -o CMakeFiles/main.dir/src/tree/returnnode.cpp.s
 
 CMakeFiles/main.dir/src/tree/returnnode.cpp.o.requires:
 .PHONY : CMakeFiles/main.dir/src/tree/returnnode.cpp.o.requires
@@ -431,17 +431,17 @@ CMakeFiles/main.dir/src/tree/returnnode.cpp.o.provides.build: CMakeFiles/main.di
 
 CMakeFiles/main.dir/src/tree/functioncallnode.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/tree/functioncallnode.cpp.o: src/tree/functioncallnode.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa6/CMakeFiles $(CMAKE_PROGRESS_19)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa7/CMakeFiles $(CMAKE_PROGRESS_19)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/src/tree/functioncallnode.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/tree/functioncallnode.cpp.o -c /home/cuca/Downloads/compiladores/etapa6/src/tree/functioncallnode.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/tree/functioncallnode.cpp.o -c /home/cuca/Downloads/compiladores/etapa7/src/tree/functioncallnode.cpp
 
 CMakeFiles/main.dir/src/tree/functioncallnode.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/tree/functioncallnode.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa6/src/tree/functioncallnode.cpp > CMakeFiles/main.dir/src/tree/functioncallnode.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa7/src/tree/functioncallnode.cpp > CMakeFiles/main.dir/src/tree/functioncallnode.cpp.i
 
 CMakeFiles/main.dir/src/tree/functioncallnode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/tree/functioncallnode.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa6/src/tree/functioncallnode.cpp -o CMakeFiles/main.dir/src/tree/functioncallnode.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa7/src/tree/functioncallnode.cpp -o CMakeFiles/main.dir/src/tree/functioncallnode.cpp.s
 
 CMakeFiles/main.dir/src/tree/functioncallnode.cpp.o.requires:
 .PHONY : CMakeFiles/main.dir/src/tree/functioncallnode.cpp.o.requires
@@ -454,17 +454,17 @@ CMakeFiles/main.dir/src/tree/functioncallnode.cpp.o.provides.build: CMakeFiles/m
 
 CMakeFiles/main.dir/src/tree/ifnode.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/tree/ifnode.cpp.o: src/tree/ifnode.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa6/CMakeFiles $(CMAKE_PROGRESS_20)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa7/CMakeFiles $(CMAKE_PROGRESS_20)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/src/tree/ifnode.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/tree/ifnode.cpp.o -c /home/cuca/Downloads/compiladores/etapa6/src/tree/ifnode.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/tree/ifnode.cpp.o -c /home/cuca/Downloads/compiladores/etapa7/src/tree/ifnode.cpp
 
 CMakeFiles/main.dir/src/tree/ifnode.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/tree/ifnode.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa6/src/tree/ifnode.cpp > CMakeFiles/main.dir/src/tree/ifnode.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa7/src/tree/ifnode.cpp > CMakeFiles/main.dir/src/tree/ifnode.cpp.i
 
 CMakeFiles/main.dir/src/tree/ifnode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/tree/ifnode.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa6/src/tree/ifnode.cpp -o CMakeFiles/main.dir/src/tree/ifnode.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa7/src/tree/ifnode.cpp -o CMakeFiles/main.dir/src/tree/ifnode.cpp.s
 
 CMakeFiles/main.dir/src/tree/ifnode.cpp.o.requires:
 .PHONY : CMakeFiles/main.dir/src/tree/ifnode.cpp.o.requires
@@ -477,17 +477,17 @@ CMakeFiles/main.dir/src/tree/ifnode.cpp.o.provides.build: CMakeFiles/main.dir/sr
 
 CMakeFiles/main.dir/src/tree/whilenode.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/tree/whilenode.cpp.o: src/tree/whilenode.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa6/CMakeFiles $(CMAKE_PROGRESS_21)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa7/CMakeFiles $(CMAKE_PROGRESS_21)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/src/tree/whilenode.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/tree/whilenode.cpp.o -c /home/cuca/Downloads/compiladores/etapa6/src/tree/whilenode.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/tree/whilenode.cpp.o -c /home/cuca/Downloads/compiladores/etapa7/src/tree/whilenode.cpp
 
 CMakeFiles/main.dir/src/tree/whilenode.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/tree/whilenode.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa6/src/tree/whilenode.cpp > CMakeFiles/main.dir/src/tree/whilenode.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa7/src/tree/whilenode.cpp > CMakeFiles/main.dir/src/tree/whilenode.cpp.i
 
 CMakeFiles/main.dir/src/tree/whilenode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/tree/whilenode.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa6/src/tree/whilenode.cpp -o CMakeFiles/main.dir/src/tree/whilenode.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa7/src/tree/whilenode.cpp -o CMakeFiles/main.dir/src/tree/whilenode.cpp.s
 
 CMakeFiles/main.dir/src/tree/whilenode.cpp.o.requires:
 .PHONY : CMakeFiles/main.dir/src/tree/whilenode.cpp.o.requires
@@ -500,17 +500,17 @@ CMakeFiles/main.dir/src/tree/whilenode.cpp.o.provides.build: CMakeFiles/main.dir
 
 CMakeFiles/main.dir/src/tree/blocknode.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/tree/blocknode.cpp.o: src/tree/blocknode.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa6/CMakeFiles $(CMAKE_PROGRESS_22)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa7/CMakeFiles $(CMAKE_PROGRESS_22)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/src/tree/blocknode.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/tree/blocknode.cpp.o -c /home/cuca/Downloads/compiladores/etapa6/src/tree/blocknode.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/tree/blocknode.cpp.o -c /home/cuca/Downloads/compiladores/etapa7/src/tree/blocknode.cpp
 
 CMakeFiles/main.dir/src/tree/blocknode.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/tree/blocknode.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa6/src/tree/blocknode.cpp > CMakeFiles/main.dir/src/tree/blocknode.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa7/src/tree/blocknode.cpp > CMakeFiles/main.dir/src/tree/blocknode.cpp.i
 
 CMakeFiles/main.dir/src/tree/blocknode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/tree/blocknode.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa6/src/tree/blocknode.cpp -o CMakeFiles/main.dir/src/tree/blocknode.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa7/src/tree/blocknode.cpp -o CMakeFiles/main.dir/src/tree/blocknode.cpp.s
 
 CMakeFiles/main.dir/src/tree/blocknode.cpp.o.requires:
 .PHONY : CMakeFiles/main.dir/src/tree/blocknode.cpp.o.requires
@@ -523,17 +523,17 @@ CMakeFiles/main.dir/src/tree/blocknode.cpp.o.provides.build: CMakeFiles/main.dir
 
 CMakeFiles/main.dir/src/tree/expression/expressionnode.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/tree/expression/expressionnode.cpp.o: src/tree/expression/expressionnode.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa6/CMakeFiles $(CMAKE_PROGRESS_23)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa7/CMakeFiles $(CMAKE_PROGRESS_23)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/src/tree/expression/expressionnode.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/tree/expression/expressionnode.cpp.o -c /home/cuca/Downloads/compiladores/etapa6/src/tree/expression/expressionnode.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/tree/expression/expressionnode.cpp.o -c /home/cuca/Downloads/compiladores/etapa7/src/tree/expression/expressionnode.cpp
 
 CMakeFiles/main.dir/src/tree/expression/expressionnode.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/tree/expression/expressionnode.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa6/src/tree/expression/expressionnode.cpp > CMakeFiles/main.dir/src/tree/expression/expressionnode.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa7/src/tree/expression/expressionnode.cpp > CMakeFiles/main.dir/src/tree/expression/expressionnode.cpp.i
 
 CMakeFiles/main.dir/src/tree/expression/expressionnode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/tree/expression/expressionnode.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa6/src/tree/expression/expressionnode.cpp -o CMakeFiles/main.dir/src/tree/expression/expressionnode.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa7/src/tree/expression/expressionnode.cpp -o CMakeFiles/main.dir/src/tree/expression/expressionnode.cpp.s
 
 CMakeFiles/main.dir/src/tree/expression/expressionnode.cpp.o.requires:
 .PHONY : CMakeFiles/main.dir/src/tree/expression/expressionnode.cpp.o.requires
@@ -546,17 +546,17 @@ CMakeFiles/main.dir/src/tree/expression/expressionnode.cpp.o.provides.build: CMa
 
 CMakeFiles/main.dir/src/tree/expression/identifiernode.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/tree/expression/identifiernode.cpp.o: src/tree/expression/identifiernode.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa6/CMakeFiles $(CMAKE_PROGRESS_24)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa7/CMakeFiles $(CMAKE_PROGRESS_24)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/src/tree/expression/identifiernode.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/tree/expression/identifiernode.cpp.o -c /home/cuca/Downloads/compiladores/etapa6/src/tree/expression/identifiernode.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/tree/expression/identifiernode.cpp.o -c /home/cuca/Downloads/compiladores/etapa7/src/tree/expression/identifiernode.cpp
 
 CMakeFiles/main.dir/src/tree/expression/identifiernode.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/tree/expression/identifiernode.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa6/src/tree/expression/identifiernode.cpp > CMakeFiles/main.dir/src/tree/expression/identifiernode.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa7/src/tree/expression/identifiernode.cpp > CMakeFiles/main.dir/src/tree/expression/identifiernode.cpp.i
 
 CMakeFiles/main.dir/src/tree/expression/identifiernode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/tree/expression/identifiernode.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa6/src/tree/expression/identifiernode.cpp -o CMakeFiles/main.dir/src/tree/expression/identifiernode.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa7/src/tree/expression/identifiernode.cpp -o CMakeFiles/main.dir/src/tree/expression/identifiernode.cpp.s
 
 CMakeFiles/main.dir/src/tree/expression/identifiernode.cpp.o.requires:
 .PHONY : CMakeFiles/main.dir/src/tree/expression/identifiernode.cpp.o.requires
@@ -569,17 +569,17 @@ CMakeFiles/main.dir/src/tree/expression/identifiernode.cpp.o.provides.build: CMa
 
 CMakeFiles/main.dir/src/tree/expression/literalnode.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/tree/expression/literalnode.cpp.o: src/tree/expression/literalnode.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa6/CMakeFiles $(CMAKE_PROGRESS_25)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa7/CMakeFiles $(CMAKE_PROGRESS_25)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/src/tree/expression/literalnode.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/tree/expression/literalnode.cpp.o -c /home/cuca/Downloads/compiladores/etapa6/src/tree/expression/literalnode.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/tree/expression/literalnode.cpp.o -c /home/cuca/Downloads/compiladores/etapa7/src/tree/expression/literalnode.cpp
 
 CMakeFiles/main.dir/src/tree/expression/literalnode.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/tree/expression/literalnode.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa6/src/tree/expression/literalnode.cpp > CMakeFiles/main.dir/src/tree/expression/literalnode.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa7/src/tree/expression/literalnode.cpp > CMakeFiles/main.dir/src/tree/expression/literalnode.cpp.i
 
 CMakeFiles/main.dir/src/tree/expression/literalnode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/tree/expression/literalnode.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa6/src/tree/expression/literalnode.cpp -o CMakeFiles/main.dir/src/tree/expression/literalnode.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa7/src/tree/expression/literalnode.cpp -o CMakeFiles/main.dir/src/tree/expression/literalnode.cpp.s
 
 CMakeFiles/main.dir/src/tree/expression/literalnode.cpp.o.requires:
 .PHONY : CMakeFiles/main.dir/src/tree/expression/literalnode.cpp.o.requires
@@ -592,17 +592,17 @@ CMakeFiles/main.dir/src/tree/expression/literalnode.cpp.o.provides.build: CMakeF
 
 CMakeFiles/main.dir/src/tree/expression/operationnode.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/tree/expression/operationnode.cpp.o: src/tree/expression/operationnode.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa6/CMakeFiles $(CMAKE_PROGRESS_26)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cuca/Downloads/compiladores/etapa7/CMakeFiles $(CMAKE_PROGRESS_26)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/src/tree/expression/operationnode.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/tree/expression/operationnode.cpp.o -c /home/cuca/Downloads/compiladores/etapa6/src/tree/expression/operationnode.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/tree/expression/operationnode.cpp.o -c /home/cuca/Downloads/compiladores/etapa7/src/tree/expression/operationnode.cpp
 
 CMakeFiles/main.dir/src/tree/expression/operationnode.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/tree/expression/operationnode.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa6/src/tree/expression/operationnode.cpp > CMakeFiles/main.dir/src/tree/expression/operationnode.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cuca/Downloads/compiladores/etapa7/src/tree/expression/operationnode.cpp > CMakeFiles/main.dir/src/tree/expression/operationnode.cpp.i
 
 CMakeFiles/main.dir/src/tree/expression/operationnode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/tree/expression/operationnode.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa6/src/tree/expression/operationnode.cpp -o CMakeFiles/main.dir/src/tree/expression/operationnode.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cuca/Downloads/compiladores/etapa7/src/tree/expression/operationnode.cpp -o CMakeFiles/main.dir/src/tree/expression/operationnode.cpp.s
 
 CMakeFiles/main.dir/src/tree/expression/operationnode.cpp.o.requires:
 .PHONY : CMakeFiles/main.dir/src/tree/expression/operationnode.cpp.o.requires
@@ -710,6 +710,6 @@ CMakeFiles/main.dir/clean:
 CMakeFiles/main.dir/depend: src/scanner/scanner.cpp
 CMakeFiles/main.dir/depend: src/parser/parser.cpp
 CMakeFiles/main.dir/depend: src/parser/parser.hpp
-	cd /home/cuca/Downloads/compiladores/etapa6 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cuca/Downloads/compiladores/etapa6 /home/cuca/Downloads/compiladores/etapa6 /home/cuca/Downloads/compiladores/etapa6 /home/cuca/Downloads/compiladores/etapa6 /home/cuca/Downloads/compiladores/etapa6/CMakeFiles/main.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/cuca/Downloads/compiladores/etapa7 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cuca/Downloads/compiladores/etapa7 /home/cuca/Downloads/compiladores/etapa7 /home/cuca/Downloads/compiladores/etapa7 /home/cuca/Downloads/compiladores/etapa7 /home/cuca/Downloads/compiladores/etapa7/CMakeFiles/main.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/main.dir/depend
 

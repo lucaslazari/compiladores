@@ -33,14 +33,14 @@
 /* "%code requires" blocks.  */
 
 /* Line 2068 of yacc.c  */
-#line 37 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 37 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
 
 class FunctionDefinitionNode;
 
 
 
 /* Line 2068 of yacc.c  */
-#line 44 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.hpp"
+#line 44 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.hpp"
 
 /* Tokens.  */
 #ifndef YYTOKENTYPE
@@ -85,7 +85,7 @@ typedef union YYSTYPE
 {
 
 /* Line 2068 of yacc.c  */
-#line 41 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.y"
+#line 41 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.y"
 
   Node* node;
   FunctionDefinitionNode* funcNode;
@@ -98,7 +98,7 @@ typedef union YYSTYPE
 
 
 /* Line 2068 of yacc.c  */
-#line 102 "/home/cuca/Downloads/compiladores/etapa5/src/parser/parser.hpp"
+#line 102 "/home/cuca/Downloads/compiladores/etapa7/src/parser/parser.hpp"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */

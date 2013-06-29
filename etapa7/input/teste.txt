@@ -1,9 +1,11 @@
 a: inteiro;
-minha_funcao : inteiro ()
-{
+
+minha_funcao : inteiro () {
 b: inteiro;
 
-enquanto (a > b) { 
+enquanto (a > b) {
+  b: flutuante;
+		 
   a = 1;
 } 
 
