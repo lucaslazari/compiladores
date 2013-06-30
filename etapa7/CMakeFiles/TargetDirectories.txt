@@ -1,1 +1,0 @@
-/home/cuca/Downloads/compiladores/etapa7/CMakeFiles/main.dir
