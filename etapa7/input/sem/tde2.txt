@@ -1,0 +1,9 @@
+/* Verificação de Tipos */
+a:inteiro;
+g:flutuante()
+{
+}
+f:inteiro()
+{
+a = g() + 10;
+}

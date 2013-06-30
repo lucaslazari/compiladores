@@ -1,0 +1,9 @@
+/* EscopoAninhado: aninhamento duplo com variável global */
+f:inteiro()
+{
+{
+{
+global = 'a';
+}
+}
+}

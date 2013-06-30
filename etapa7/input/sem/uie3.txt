@@ -1,0 +1,8 @@
+/* Uso Correto: função */
+g:inteiro()
+{
+}
+f:inteiro()
+{
+g = 10;
+}

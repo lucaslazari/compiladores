@@ -1,0 +1,7 @@
+/* Uso Correto: inteiro */
+a:inteiro;
+f:inteiro()
+{
+a = 10;
+a = 1.0;
+}

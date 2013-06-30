@@ -1,0 +1,5 @@
+/* Declarações: função recursiva */
+f:inteiro()
+{
+f();
+}

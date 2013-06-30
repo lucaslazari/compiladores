@@ -1,0 +1,11 @@
+/* Argumentos e Parâmetros */
+a:inteiro;
+b:inteiro;
+c:inteiro;
+g:inteiro(x:inteiro, y:inteiro, z:inteiro)
+{
+}
+f:inteiro()
+{
+g(a, b, c);
+}

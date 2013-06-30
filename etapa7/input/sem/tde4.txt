@@ -1,0 +1,7 @@
+/* Tipos */
+b:caractere[10];
+a:caractere;
+f:inteiro()
+{
+b[a] = '2';
+}

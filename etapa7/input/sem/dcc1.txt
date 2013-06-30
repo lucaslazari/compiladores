@@ -1,0 +1,8 @@
+/* Declarações: uso de função declarada previamente */
+f:inteiro()
+{
+}
+g:inteiro()
+{
+f();
+}

@@ -1,0 +1,6 @@
+minha_funcao : inteiro ()
+{
+{
+x = 10;
+}
+}

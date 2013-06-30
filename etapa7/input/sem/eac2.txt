@@ -1,0 +1,14 @@
+/* EscopoAninhado: aninhamento duplo com variável global */
+global:inteiro;
+a:inteiro;
+f:inteiro()
+{
+{
+a=10;
+{
+global = 10;
+}
+global = 11;
+}
+global = 12;
+}

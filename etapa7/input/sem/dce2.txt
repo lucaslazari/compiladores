@@ -1,0 +1,5 @@
+/* Declarações: falta */
+f:inteiro()
+{
+g();
+}

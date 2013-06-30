@@ -1,0 +1,6 @@
+/* Declarações: dupla declaração */
+a:inteiro;
+a:inteiro;
+f:inteiro()
+{
+}

@@ -1,0 +1,7 @@
+/* Uso Correto: vetor */
+a:caractere[10];
+f:inteiro()
+{
+a[0] = 'c';
+a[0] = 10;
+}

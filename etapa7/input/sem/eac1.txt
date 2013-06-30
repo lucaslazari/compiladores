@@ -1,0 +1,16 @@
+/* EscopoAninhado: aninhamento triplo dentro da função f */
+f:inteiro()
+{
+a:inteiro;
+{
+b:flutuante;
+{
+a = 4;
+{
+b = 5.1;
+}
+}
+b = 4.3;
+}
+a = 10;
+}

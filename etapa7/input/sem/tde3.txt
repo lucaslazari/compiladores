@@ -1,0 +1,9 @@
+/* Tipos */
+a:flutuante;
+b:inteiro[10];
+f:inteiro()
+{
+a = 10.2;
+b[a] = 20;
+b[1.2] = 10;
+}

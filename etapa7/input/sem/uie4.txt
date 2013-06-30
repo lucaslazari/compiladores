@@ -1,0 +1,7 @@
+/* Uso Correto: flutuante */
+a:flutuante;
+f:inteiro()
+{
+a = 1.2;
+a = 10;
+}

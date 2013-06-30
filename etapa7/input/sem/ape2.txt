@@ -1,0 +1,10 @@
+/* Argumentos e Parâmetros */
+a:inteiro;
+g:inteiro(a:inteiro, b:flutuante)
+{
+}
+f:inteiro()
+{
+a = 3.2;
+g(a, 1);
+}
