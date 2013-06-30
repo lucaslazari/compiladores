@@ -4,7 +4,7 @@
 #include "expression/expressionnode.h"
 #include "expression/identifiernode.h"
 
-AssignmentNode::AssignmentNode(Symbol *varAssigned, Node* expressionAssigned):
+AssignmentNode::AssignmentNode(Symbol* varAssigned, Node* expressionAssigned):
 	Node("Atribuicao", Common::NT_ASSIGNMENT), varSym(varAssigned) {
 
 	this->addChild(expressionAssigned);
@@ -24,7 +24,7 @@ AssignmentNode::AssignmentNode(Symbol *varAssigned, Node* expressionAssigned):
 
 }
 
-AssignmentNode::AssignmentNode(Symbol *varAssigned, std::vector<Node*>* expressionIndexList, Node* expressionAssigned):
+AssignmentNode::AssignmentNode(Symbol* varAssigned, std::vector<Node*>* expressionIndexList, Node* expressionAssigned):
 	Node("Atribuicao", Common::NT_ASSIGNMENT), varSym(varAssigned) {
 
 	this->addChildren(expressionIndexList);
@@ -78,7 +78,7 @@ void AssignmentNode::generateILOCCode(Node* context) {
 		Symbol* symbol = Scope::getSymbol(this->varSym->getText());
 		Node* symbolScope = Scope::getScope(this->varSym->getText());
 		Node* expressionAssigned = this->children->at(0);
-		std::string registerBaseAddress = (symbolScope->getNodeType() == Common::NT_PROGRAM) ? "bss" : "fp";
+		std::string registerBaseAddress = (symbolScope->getNodeType() == Common::NT_PROGRAM) ? "rBSS" : "rFP";
 		std::stringstream symbolOffsetStr;
 		symbolOffsetStr << symbol->getOffset();
 
@@ -88,6 +88,5 @@ void AssignmentNode::generateILOCCode(Node* context) {
 
 		ILOC* instruction = new ILOC(Common::ILOC_STOREAI, expressionAssigned->getLastRegister(), "", registerBaseAddress, symbolOffsetStr.str());
 		this->addInstruction(instruction);
-
 	}
 }

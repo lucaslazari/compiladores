@@ -9,7 +9,7 @@
 class AssignmentNode : public Node {
 
 public:
-	AssignmentNode(Symbol *varAssigned, Node* expressionAssigned);
+	AssignmentNode(Symbol* varAssigned, Node* expressionAssigned);
 	AssignmentNode(Symbol* varAssigned, std::vector<Node*>* expressionIndexList, Node* expressionAssigned);
 	void printSourceCode(const std::string& end);
 	void generateILOCCode(Node* context);
