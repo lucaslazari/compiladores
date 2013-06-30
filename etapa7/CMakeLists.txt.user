@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 2.7.1, 2013-06-29T01:20:55. -->
+<!-- Written by QtCreator 2.7.1, 2013-06-30T01:20:50. -->
 <qtcreator>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -150,7 +150,7 @@
     </valuelist>
     <value type="int" key="CMakeProjectManager.BaseEnvironmentBase">2</value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguation.Title">main</value>
-    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.Arguments">input/sem/dcc1.txt input/sem/dcc1.i</value>
+    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.Arguments">input/sem/tde1.txt input/sem/tde1.i</value>
     <value type="bool" key="CMakeProjectManager.CMakeRunConfiguration.UseTerminal">false</value>
     <valuelist type="QVariantList" key="CMakeProjectManager.CMakeRunConfiguration.UserEnvironmentChanges"/>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory"></value>

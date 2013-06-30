@@ -6,11 +6,13 @@ OperationNode::OperationNode(const Common::OperationType& operationType, Node* l
 
 	Common::DataType dataTypeExprLeft, dataTypeExprRight;
 
+
 	if (leftSide != NULL) {
 		this->addChild(leftSide);
 		ExpressionNode* left = dynamic_cast<ExpressionNode*>(leftSide);
 		dataTypeExprLeft = left->getDataType();
 	}
+
 
 	if (rightSide != NULL) {
 		this->addChild(rightSide);
@@ -25,6 +27,8 @@ OperationNode::OperationNode(const Common::OperationType& operationType, Node* l
 			this->dataType = dataTypeExprLeft;
 	} else if (leftSide != NULL)
 		this->dataType = dataTypeExprLeft;
+
+
 
 	this->generateILOCCode(NULL);
 }

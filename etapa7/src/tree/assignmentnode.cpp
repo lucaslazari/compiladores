@@ -9,6 +9,14 @@ AssignmentNode::AssignmentNode(Symbol *varAssigned, Node* expressionAssigned):
 
 	this->addChild(expressionAssigned);
 
+	ExpressionNode* expr = dynamic_cast<ExpressionNode*>(expressionAssigned);
+
+	printf("esq: %d\ndir: %d\n", varAssigned->getDataType(), expr->getDataType());
+
+	if () {
+
+	}
+
 	if (this->hasDeclaration(varAssigned)) {
 		this->varSym = varAssigned;
 		this->generateILOCCode(NULL);
@@ -24,6 +32,15 @@ AssignmentNode::AssignmentNode(Symbol *varAssigned, std::vector<Node*>* expressi
 
 	if (this->hasDeclaration(varAssigned)) {
 		this->varSym = varAssigned;
+
+		for (int i = 0; i < expressionIndexList->size(); i++) {
+			ExpressionNode* expr = dynamic_cast<ExpressionNode*>(expressionIndexList->at(i));
+
+			if (expr->getDataType() != Common::INT) {
+				yyerror("vector index must be of type 'inteiro'");
+			}
+		}
+
 		this->generateILOCCode(NULL);
 	}
 }

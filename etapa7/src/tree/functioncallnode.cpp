@@ -3,7 +3,10 @@
 #include <stdio.h>
 
 FunctionCallNode::FunctionCallNode(Symbol* functionSym, std::vector<Node*>* children):
-	Node("Chamada de funcao", Common::NT_FUNCTION_CALL, children), funSym(functionSym) {
+	//Node("Chamada de funcao", Common::NT_FUNCTION_CALL, children), funSym(functionSym) {
+	ExpressionNode("Chamada de funcao", Common::EX_IDENTIFIER), symbol(functionSym) {
+
+	this->addChildren(children);
 
 	this->hasDeclaration(functionSym);
 
@@ -19,7 +22,7 @@ bool FunctionCallNode::hasDeclaration(Symbol* sym) {
 }
 
 void FunctionCallNode::printSourceCode(const std::string& end) {
-	fprintf(this->flexOut, "%s", this->funSym->getText().c_str());
+	fprintf(this->flexOut, "%s", this->symbol->getText().c_str());
 	fprintf(this->flexOut, "%s", "(");
 	for (std::vector<Node*>::iterator it = this->children->begin(); it != this->children->end(); it++)
 		(*it)->printSourceCode("");

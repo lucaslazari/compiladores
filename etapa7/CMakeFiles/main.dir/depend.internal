@@ -130,6 +130,10 @@ CMakeFiles/main.dir/src/tree/expression/operationnode.cpp.o
 CMakeFiles/main.dir/src/tree/functioncallnode.cpp.o
  /home/cuca/Downloads/compiladores/etapa7/src/tree/../iloc.h
  /home/cuca/Downloads/compiladores/etapa7/src/tree/common.h
+ /home/cuca/Downloads/compiladores/etapa7/src/tree/expression/../../symbol.h
+ /home/cuca/Downloads/compiladores/etapa7/src/tree/expression/../common.h
+ /home/cuca/Downloads/compiladores/etapa7/src/tree/expression/../node.h
+ /home/cuca/Downloads/compiladores/etapa7/src/tree/expression/expressionnode.h
  /home/cuca/Downloads/compiladores/etapa7/src/tree/functioncallnode.cpp
  /home/cuca/Downloads/compiladores/etapa7/src/tree/functioncallnode.h
  /home/cuca/Downloads/compiladores/etapa7/src/tree/node.h

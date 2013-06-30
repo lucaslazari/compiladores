@@ -211,7 +211,7 @@ atribuicao: TK_IDENTIFICADOR '=' expressao ';' { $$ = new AssignmentNode($1, $3)
 	;
 
 vetor_dimensoes: vetor_dimensoes '[' expressao ']' { $1->push_back($3); }
-	| '[' expressao ']' { $$ = new ExpressionList(); $$->push_back($2); }
+        | '[' expressao ']' { $$ = new ExpressionList(); $$->push_back($2); }
 	;
 
 entrada: TK_PR_ENTRADA TK_IDENTIFICADOR ';' { $$ = new InputNode($2->getText()); }
@@ -237,7 +237,7 @@ controle_fluxo: TK_PR_SE '(' expressao ')' TK_PR_ENTAO comando { $$ = new IfNode
 	;
 
 expressao: TK_IDENTIFICADOR { $$ = new IdentifierNode($1); }
-	| TK_IDENTIFICADOR vetor_dimensoes { $$ = new IdentifierNode($1, $2); }
+        | TK_IDENTIFICADOR vetor_dimensoes { $$ = new IdentifierNode($1, $2); }
 	| TK_LIT_INTEIRO { $$ = new LiteralNode($1->getText(), Common::INT); }
 	| TK_LIT_FLUTUANTE { $$ = new LiteralNode($1->getText(), Common::FLOAT); }
 	| TK_LIT_FALSO { $$ = new LiteralNode($1->getText(), Common::BOOL); }

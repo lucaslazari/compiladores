@@ -129,6 +129,10 @@ CMakeFiles/main.dir/src/tree/expression/operationnode.cpp.o: src/symbol.h
 
 CMakeFiles/main.dir/src/tree/functioncallnode.cpp.o: src/tree/../iloc.h
 CMakeFiles/main.dir/src/tree/functioncallnode.cpp.o: src/tree/common.h
+CMakeFiles/main.dir/src/tree/functioncallnode.cpp.o: src/tree/expression/../../symbol.h
+CMakeFiles/main.dir/src/tree/functioncallnode.cpp.o: src/tree/expression/../common.h
+CMakeFiles/main.dir/src/tree/functioncallnode.cpp.o: src/tree/expression/../node.h
+CMakeFiles/main.dir/src/tree/functioncallnode.cpp.o: src/tree/expression/expressionnode.h
 CMakeFiles/main.dir/src/tree/functioncallnode.cpp.o: src/tree/functioncallnode.cpp
 CMakeFiles/main.dir/src/tree/functioncallnode.cpp.o: src/tree/functioncallnode.h
 CMakeFiles/main.dir/src/tree/functioncallnode.cpp.o: src/tree/node.h

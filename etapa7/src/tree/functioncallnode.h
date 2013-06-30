@@ -4,8 +4,9 @@
 #include <string>
 #include <vector>
 #include "node.h"
+#include "expression/expressionnode.h"
 
-class FunctionCallNode : public Node {
+class FunctionCallNode : public ExpressionNode {
 
 public:
 	FunctionCallNode(Symbol* functionSym, std::vector<Node*>* children);
@@ -14,7 +15,7 @@ public:
 	bool hasDeclaration(Symbol* sym);
 
 private:
-	Symbol* funSym;
+	Symbol* symbol;
 };
 
 #endif // FUNCTIONCALLNODE_H

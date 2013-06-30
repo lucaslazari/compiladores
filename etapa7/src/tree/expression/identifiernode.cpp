@@ -19,6 +19,7 @@ IdentifierNode::IdentifierNode(Symbol* symbol, std::vector<Node*>* expressionLis
 
 	this->addChildren(expressionList);
 
+
 	if (this->hasDeclaration(symbol)) {
 		Symbol* sym = Scope::getSymbol(symbol->getText());
 		this->dataType = sym->getDataType();
