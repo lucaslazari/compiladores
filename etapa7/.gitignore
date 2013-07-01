@@ -1,0 +1,8 @@
+main
+src/parser/parser.hpp
+src/parser/parser.cpp
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+install_manifest.txt
