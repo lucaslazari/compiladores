@@ -3,7 +3,6 @@
 #include <stdio.h>
 
 FunctionCallNode::FunctionCallNode(Symbol* functionSym, std::vector<Node*>* children):
-	//Node("Chamada de funcao", Common::NT_FUNCTION_CALL, children), funSym(functionSym) {
 	ExpressionNode("Chamada de funcao", Common::EX_IDENTIFIER), symbol(functionSym) {
 
 	this->addChildren(children);

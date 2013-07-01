@@ -1,47 +1,58 @@
 #include "assignmentnode.h"
 #include <stdio.h>
 #include <sstream>
+#include <iostream>
 #include "expression/expressionnode.h"
 #include "expression/identifiernode.h"
 
-AssignmentNode::AssignmentNode(Symbol* varAssigned, Node* expressionAssigned):
-	Node("Atribuicao", Common::NT_ASSIGNMENT), varSym(varAssigned) {
+AssignmentNode::AssignmentNode(const std::string &varAssigned, Node* expressionAssigned):
+	Node("Atribuicao", Common::NT_ASSIGNMENT), varName(varAssigned) {
 
 	this->addChild(expressionAssigned);
 
+
+	Symbol* symbol = Scope::getSymbol(this->varName);
 	ExpressionNode* expr = dynamic_cast<ExpressionNode*>(expressionAssigned);
 
-	printf("esq: %d\ndir: %d\n", varAssigned->getDataType(), expr->getDataType());
-
-	if () {
-
-	}
-
-	if (this->hasDeclaration(varAssigned)) {
-		this->varSym = varAssigned;
-		this->generateILOCCode(NULL);
+	if (symbol != NULL && this->hasDeclaration(symbol)) {
+		if (symbol->getTokenType() != Common::VARIABLE && symbol->getTokenType() != Common::VECTOR_VAR) {
+			yyerror("invalid operation.");
+		}	else if (symbol->getDataType() != expr->getDataType()) {
+			yyerror("variable assignment must be of equivalent data types");
+		} else {
+			this->generateILOCCode(NULL);
+		}
+	} else {
+		yyerror("identifier not declared");
 	}
 
 }
 
-AssignmentNode::AssignmentNode(Symbol* varAssigned, std::vector<Node*>* expressionIndexList, Node* expressionAssigned):
-	Node("Atribuicao", Common::NT_ASSIGNMENT), varSym(varAssigned) {
+AssignmentNode::AssignmentNode(const std::string &varAssigned, std::vector<Node*>* expressionIndexList, Node* expressionAssigned):
+	Node("Atribuicao", Common::NT_ASSIGNMENT), varName(varAssigned) {
 
 	this->addChildren(expressionIndexList);
 	this->addChild(expressionAssigned);
 
-	if (this->hasDeclaration(varAssigned)) {
-		this->varSym = varAssigned;
+	Symbol* symbol = Scope::getSymbol(this->varName);
+	ExpressionNode* expr = dynamic_cast<ExpressionNode*>(expressionAssigned);
 
-		for (int i = 0; i < expressionIndexList->size(); i++) {
-			ExpressionNode* expr = dynamic_cast<ExpressionNode*>(expressionIndexList->at(i));
+	if (symbol->getDataType() != expr->getDataType()) {
+		yyerror("variable assignment must be of equivalent data types");
+	} else {
+		if (this->hasDeclaration(symbol)) {
+			this->varName = varAssigned;
 
-			if (expr->getDataType() != Common::INT) {
-				yyerror("vector index must be of type 'inteiro'");
+			for (int i = 0; i < expressionIndexList->size(); i++) {
+				ExpressionNode* expr = dynamic_cast<ExpressionNode*>(expressionIndexList->at(i));
+
+				if (expr->getDataType() != Common::INT) {
+					yyerror("vector index must be of type 'inteiro'");
+				}
 			}
-		}
 
-		this->generateILOCCode(NULL);
+			this->generateILOCCode(NULL);
+		}
 	}
 }
 
@@ -56,12 +67,12 @@ bool AssignmentNode::hasDeclaration(Symbol* sym) {
 
 void AssignmentNode::printSourceCode(const std::string& end) {
 	if (this->children->size() == 1) {
-		fprintf(this->flexOut, "%s", this->varSym->getText().c_str());
+		fprintf(this->flexOut, "%s", this->varName.c_str());
 		fprintf(this->flexOut, "%s", " = ");
 		this->children->at(0)->printSourceCode("");
 		fprintf(this->flexOut, "%s", end.c_str());
 	} else {
-		fprintf(this->flexOut, "%s", this->varSym->getText().c_str());
+		fprintf(this->flexOut, "%s", this->varName.c_str());
 		for (unsigned int i = 0; i < this->children->size() - 1; i++) {
 			fprintf(this->flexOut, "%s", "[");
 			this->children->at(i)->printSourceCode("");
@@ -75,8 +86,8 @@ void AssignmentNode::printSourceCode(const std::string& end) {
 
 void AssignmentNode::generateILOCCode(Node* context) {
 	if (this->children->size() == 1) { // Variable
-		Symbol* symbol = Scope::getSymbol(this->varSym->getText());
-		Node* symbolScope = Scope::getScope(this->varSym->getText());
+		Symbol* symbol = Scope::getSymbol(this->varName);
+		Node* symbolScope = Scope::getScope(this->varName);
 		Node* expressionAssigned = this->children->at(0);
 		std::string registerBaseAddress = (symbolScope->getNodeType() == Common::NT_PROGRAM) ? "rBSS" : "rFP";
 		std::stringstream symbolOffsetStr;

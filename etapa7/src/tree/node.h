@@ -77,6 +77,7 @@ private:
 	std::string falseLabel;
 	std::string nextLabel;
 
+
 };
 
 #endif // NODE_H

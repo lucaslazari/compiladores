@@ -206,8 +206,8 @@ seq_comando: seq_comando comando { $1->push_back($2); }
 	| { $$ = new CommandList(); }
 	;
 
-atribuicao: TK_IDENTIFICADOR '=' expressao ';' { $$ = new AssignmentNode($1, $3); }
-        | TK_IDENTIFICADOR vetor_dimensoes '=' expressao ';' { $$ = new AssignmentNode($1, $2, $4); }
+atribuicao: TK_IDENTIFICADOR '=' expressao ';' { $$ = new AssignmentNode($1->getText(), $3); }
+        | TK_IDENTIFICADOR vetor_dimensoes '=' expressao ';' { $$ = new AssignmentNode($1->getText(), $2, $4); }
 	;
 
 vetor_dimensoes: vetor_dimensoes '[' expressao ']' { $1->push_back($3); }
