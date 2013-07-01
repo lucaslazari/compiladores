@@ -17,6 +17,10 @@ ILOC::ILOC(Common::ILOC_OperationType type, const std::string& label, const std:
 	this->isLabelSet = true;
 }
 
+ILOC::ILOC(std::string& line) {
+	// TODO
+}
+
 bool ILOC::hasLabel() {
 	return this->isLabelSet;
 }
