@@ -6,6 +6,7 @@
 #include <tr1/unordered_map>
 #include "tree/common.h"
 #include "tree/node.h"
+#include "tree/vardeclarationnode.h"
 #include "symbol.h"
 
 class Scope {
@@ -21,6 +22,7 @@ public:
 	static void addSymbol(Symbol* symbol);
 	static Symbol* getSymbol(const std::string& token);
 	static int scopeCount();
+	static void setParams(const std::string &funcName, std::vector<Node*>* params);
 
 private:
 	static std::deque<Node*> scopes;

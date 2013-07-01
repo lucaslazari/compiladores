@@ -55,7 +55,6 @@ public:
 
 	std::vector<ILOC*> instructions;
 
-
 protected:
 	std::string dataTypeToString(const Common::DataType& dataType);
 	std::string operationTypeToString(const Common::OperationType& operationType);

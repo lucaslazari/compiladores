@@ -45,4 +45,8 @@ void HeaderNode::printSourceCode(const std::string& end) {
 	fprintf(this->flexOut, "%s", ")");
 }
 
+
+
 void HeaderNode::generateILOCCode(Node* context) {}
+
+

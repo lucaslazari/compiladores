@@ -56,6 +56,7 @@ CMakeFiles/main.dir/src/scope.cpp.o
  /home/cuca/Downloads/compiladores/etapa7/src/tree/../iloc.h
  /home/cuca/Downloads/compiladores/etapa7/src/tree/common.h
  /home/cuca/Downloads/compiladores/etapa7/src/tree/node.h
+ /home/cuca/Downloads/compiladores/etapa7/src/tree/vardeclarationnode.h
 CMakeFiles/main.dir/src/symbol.cpp.o
  /home/cuca/Downloads/compiladores/etapa7/src/symbol.cpp
  /home/cuca/Downloads/compiladores/etapa7/src/symbol.h
@@ -77,6 +78,7 @@ CMakeFiles/main.dir/src/tree/assignmentnode.cpp.o
  src/symbol.h
  src/tree/common.h
  src/tree/node.h
+ src/tree/vardeclarationnode.h
 CMakeFiles/main.dir/src/tree/blocknode.cpp.o
  /home/cuca/Downloads/compiladores/etapa7/src/tree/../iloc.h
  /home/cuca/Downloads/compiladores/etapa7/src/tree/blocknode.cpp
@@ -87,6 +89,7 @@ CMakeFiles/main.dir/src/tree/blocknode.cpp.o
  src/symbol.h
  src/tree/common.h
  src/tree/node.h
+ src/tree/vardeclarationnode.h
 CMakeFiles/main.dir/src/tree/expression/expressionnode.cpp.o
  /home/cuca/Downloads/compiladores/etapa7/src/tree/expression/../../iloc.h
  /home/cuca/Downloads/compiladores/etapa7/src/tree/expression/../../symbol.h
@@ -102,11 +105,13 @@ CMakeFiles/main.dir/src/tree/expression/identifiernode.cpp.o
  /home/cuca/Downloads/compiladores/etapa7/src/tree/expression/../../symbol.h
  /home/cuca/Downloads/compiladores/etapa7/src/tree/expression/../../tree/common.h
  /home/cuca/Downloads/compiladores/etapa7/src/tree/expression/../../tree/node.h
+ /home/cuca/Downloads/compiladores/etapa7/src/tree/expression/../../tree/vardeclarationnode.h
  /home/cuca/Downloads/compiladores/etapa7/src/tree/expression/../common.h
  /home/cuca/Downloads/compiladores/etapa7/src/tree/expression/../node.h
  /home/cuca/Downloads/compiladores/etapa7/src/tree/expression/expressionnode.h
  /home/cuca/Downloads/compiladores/etapa7/src/tree/expression/identifiernode.cpp
  /home/cuca/Downloads/compiladores/etapa7/src/tree/expression/identifiernode.h
+ src/scope.h
 CMakeFiles/main.dir/src/tree/expression/literalnode.cpp.o
  /home/cuca/Downloads/compiladores/etapa7/src/tree/expression/../../iloc.h
  /home/cuca/Downloads/compiladores/etapa7/src/tree/expression/../../symbol.h
@@ -141,6 +146,7 @@ CMakeFiles/main.dir/src/tree/functioncallnode.cpp.o
  src/symbol.h
  src/tree/common.h
  src/tree/node.h
+ src/tree/vardeclarationnode.h
 CMakeFiles/main.dir/src/tree/functiondefinitionnode.cpp.o
  /home/cuca/Downloads/compiladores/etapa7/src/tree/../iloc.h
  /home/cuca/Downloads/compiladores/etapa7/src/tree/blocknode.h
@@ -154,6 +160,7 @@ CMakeFiles/main.dir/src/tree/functiondefinitionnode.cpp.o
  src/symbol.h
  src/tree/common.h
  src/tree/node.h
+ src/tree/vardeclarationnode.h
 CMakeFiles/main.dir/src/tree/headernode.cpp.o
  /home/cuca/Downloads/compiladores/etapa7/src/tree/../iloc.h
  /home/cuca/Downloads/compiladores/etapa7/src/tree/common.h
@@ -164,6 +171,7 @@ CMakeFiles/main.dir/src/tree/headernode.cpp.o
  src/symbol.h
  src/tree/common.h
  src/tree/node.h
+ src/tree/vardeclarationnode.h
 CMakeFiles/main.dir/src/tree/ifnode.cpp.o
  /home/cuca/Downloads/compiladores/etapa7/src/tree/../iloc.h
  /home/cuca/Downloads/compiladores/etapa7/src/tree/common.h
@@ -209,6 +217,7 @@ CMakeFiles/main.dir/src/tree/programnode.cpp.o
  src/symbol.h
  src/tree/common.h
  src/tree/node.h
+ src/tree/vardeclarationnode.h
 CMakeFiles/main.dir/src/tree/returnnode.cpp.o
  /home/cuca/Downloads/compiladores/etapa7/src/tree/../iloc.h
  /home/cuca/Downloads/compiladores/etapa7/src/tree/common.h
@@ -227,6 +236,7 @@ CMakeFiles/main.dir/src/tree/vardeclarationnode.cpp.o
  src/symbol.h
  src/tree/common.h
  src/tree/node.h
+ src/tree/vardeclarationnode.h
 CMakeFiles/main.dir/src/tree/vectordeclarationnode.cpp.o
  /home/cuca/Downloads/compiladores/etapa7/src/tree/../iloc.h
  /home/cuca/Downloads/compiladores/etapa7/src/tree/common.h
@@ -237,6 +247,7 @@ CMakeFiles/main.dir/src/tree/vectordeclarationnode.cpp.o
  src/symbol.h
  src/tree/common.h
  src/tree/node.h
+ src/tree/vardeclarationnode.h
 CMakeFiles/main.dir/src/tree/whilenode.cpp.o
  /home/cuca/Downloads/compiladores/etapa7/src/tree/../iloc.h
  /home/cuca/Downloads/compiladores/etapa7/src/tree/common.h

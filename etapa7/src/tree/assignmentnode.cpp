@@ -37,11 +37,12 @@ AssignmentNode::AssignmentNode(const std::string &varAssigned, std::vector<Node*
 	Symbol* symbol = Scope::getSymbol(this->varName);
 	ExpressionNode* expr = dynamic_cast<ExpressionNode*>(expressionAssigned);
 
-	if (symbol->getDataType() != expr->getDataType()) {
-		yyerror("variable assignment must be of equivalent data types");
-	} else {
-		if (this->hasDeclaration(symbol)) {
-			this->varName = varAssigned;
+	if (symbol != NULL && this->hasDeclaration(symbol)) {
+		if (symbol->getTokenType() != Common::VARIABLE && symbol->getTokenType() != Common::VECTOR_VAR) {
+			yyerror("invalid operation.");
+		}	else if (symbol->getDataType() != expr->getDataType()) {
+			yyerror("variable assignment must be of equivalent data types");
+		} else {
 
 			for (int i = 0; i < expressionIndexList->size(); i++) {
 				ExpressionNode* expr = dynamic_cast<ExpressionNode*>(expressionIndexList->at(i));
@@ -53,7 +54,27 @@ AssignmentNode::AssignmentNode(const std::string &varAssigned, std::vector<Node*
 
 			this->generateILOCCode(NULL);
 		}
+	} else {
+		yyerror("identifier not declared");
 	}
+
+	/*
+	if (symbol->getDataType() != expr->getDataType()) {
+		yyerror("variable assignment must be of equivalent data types");
+	} else {
+		if (this->hasDeclaration(symbol)) {
+
+			for (int i = 0; i < expressionIndexList->size(); i++) {
+				ExpressionNode* expr = dynamic_cast<ExpressionNode*>(expressionIndexList->at(i));
+
+				if (expr->getDataType() != Common::INT) {
+					yyerror("vector index must be of type 'inteiro'");
+				}
+			}
+
+			this->generateILOCCode(NULL);
+		}
+	}*/
 }
 
 bool AssignmentNode::hasDeclaration(Symbol* sym) {

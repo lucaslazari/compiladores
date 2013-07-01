@@ -81,3 +81,16 @@ Symbol* Scope::getSymbol(const std::string& token) {
 int Scope::scopeCount() {
 	return Scope::count;
 }
+
+void Scope::setParams(const std::string &funcName, std::vector<Node*>* params) {
+	Symbol * sym = Scope::getSymbol(funcName);
+	std::vector<Common::DataType> *vecParams = new std::vector<Common::DataType>();
+
+	for (std::vector<Node*>::iterator it = params->begin(); it != params->end(); it++) {
+		VarDeclarationNode* param = dynamic_cast<VarDeclarationNode*>((*it));
+
+		vecParams->push_back(param->getDataType());
+	}
+
+	sym->setParams(vecParams);
+}

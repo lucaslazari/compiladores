@@ -66,3 +66,13 @@ int Symbol::getDataTypeSize(Common::DataType dt) {
 
 	}
 }
+
+std::vector<Common::DataType> *Symbol::getParams()
+{
+	return params;
+}
+
+void Symbol::setParams(std::vector<Common::DataType> *value)
+{
+	params = value;
+}

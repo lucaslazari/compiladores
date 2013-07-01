@@ -1,5 +1,5 @@
 /* Argumentos e Parâmetros */
-a:inteiro;
+a:flutuante;
 g:inteiro(a:inteiro, b:flutuante)
 {
 }

@@ -55,6 +55,7 @@ CMakeFiles/main.dir/src/scope.cpp.o: src/symbol.h
 CMakeFiles/main.dir/src/scope.cpp.o: src/tree/../iloc.h
 CMakeFiles/main.dir/src/scope.cpp.o: src/tree/common.h
 CMakeFiles/main.dir/src/scope.cpp.o: src/tree/node.h
+CMakeFiles/main.dir/src/scope.cpp.o: src/tree/vardeclarationnode.h
 
 CMakeFiles/main.dir/src/symbol.cpp.o: src/symbol.cpp
 CMakeFiles/main.dir/src/symbol.cpp.o: src/symbol.h
@@ -76,6 +77,7 @@ CMakeFiles/main.dir/src/tree/assignmentnode.cpp.o: src/scope.h
 CMakeFiles/main.dir/src/tree/assignmentnode.cpp.o: src/symbol.h
 CMakeFiles/main.dir/src/tree/assignmentnode.cpp.o: src/tree/common.h
 CMakeFiles/main.dir/src/tree/assignmentnode.cpp.o: src/tree/node.h
+CMakeFiles/main.dir/src/tree/assignmentnode.cpp.o: src/tree/vardeclarationnode.h
 
 CMakeFiles/main.dir/src/tree/blocknode.cpp.o: src/tree/../iloc.h
 CMakeFiles/main.dir/src/tree/blocknode.cpp.o: src/tree/blocknode.cpp
@@ -86,6 +88,7 @@ CMakeFiles/main.dir/src/tree/blocknode.cpp.o: src/scope.h
 CMakeFiles/main.dir/src/tree/blocknode.cpp.o: src/symbol.h
 CMakeFiles/main.dir/src/tree/blocknode.cpp.o: src/tree/common.h
 CMakeFiles/main.dir/src/tree/blocknode.cpp.o: src/tree/node.h
+CMakeFiles/main.dir/src/tree/blocknode.cpp.o: src/tree/vardeclarationnode.h
 
 CMakeFiles/main.dir/src/tree/expression/expressionnode.cpp.o: src/tree/expression/../../iloc.h
 CMakeFiles/main.dir/src/tree/expression/expressionnode.cpp.o: src/tree/expression/../../symbol.h
@@ -101,11 +104,13 @@ CMakeFiles/main.dir/src/tree/expression/identifiernode.cpp.o: src/tree/expressio
 CMakeFiles/main.dir/src/tree/expression/identifiernode.cpp.o: src/tree/expression/../../symbol.h
 CMakeFiles/main.dir/src/tree/expression/identifiernode.cpp.o: src/tree/expression/../../tree/common.h
 CMakeFiles/main.dir/src/tree/expression/identifiernode.cpp.o: src/tree/expression/../../tree/node.h
+CMakeFiles/main.dir/src/tree/expression/identifiernode.cpp.o: src/tree/expression/../../tree/vardeclarationnode.h
 CMakeFiles/main.dir/src/tree/expression/identifiernode.cpp.o: src/tree/expression/../common.h
 CMakeFiles/main.dir/src/tree/expression/identifiernode.cpp.o: src/tree/expression/../node.h
 CMakeFiles/main.dir/src/tree/expression/identifiernode.cpp.o: src/tree/expression/expressionnode.h
 CMakeFiles/main.dir/src/tree/expression/identifiernode.cpp.o: src/tree/expression/identifiernode.cpp
 CMakeFiles/main.dir/src/tree/expression/identifiernode.cpp.o: src/tree/expression/identifiernode.h
+CMakeFiles/main.dir/src/tree/expression/identifiernode.cpp.o: src/scope.h
 
 CMakeFiles/main.dir/src/tree/expression/literalnode.cpp.o: src/tree/expression/../../iloc.h
 CMakeFiles/main.dir/src/tree/expression/literalnode.cpp.o: src/tree/expression/../../symbol.h
@@ -140,6 +145,7 @@ CMakeFiles/main.dir/src/tree/functioncallnode.cpp.o: src/scope.h
 CMakeFiles/main.dir/src/tree/functioncallnode.cpp.o: src/symbol.h
 CMakeFiles/main.dir/src/tree/functioncallnode.cpp.o: src/tree/common.h
 CMakeFiles/main.dir/src/tree/functioncallnode.cpp.o: src/tree/node.h
+CMakeFiles/main.dir/src/tree/functioncallnode.cpp.o: src/tree/vardeclarationnode.h
 
 CMakeFiles/main.dir/src/tree/functiondefinitionnode.cpp.o: src/tree/../iloc.h
 CMakeFiles/main.dir/src/tree/functiondefinitionnode.cpp.o: src/tree/blocknode.h
@@ -153,6 +159,7 @@ CMakeFiles/main.dir/src/tree/functiondefinitionnode.cpp.o: src/scope.h
 CMakeFiles/main.dir/src/tree/functiondefinitionnode.cpp.o: src/symbol.h
 CMakeFiles/main.dir/src/tree/functiondefinitionnode.cpp.o: src/tree/common.h
 CMakeFiles/main.dir/src/tree/functiondefinitionnode.cpp.o: src/tree/node.h
+CMakeFiles/main.dir/src/tree/functiondefinitionnode.cpp.o: src/tree/vardeclarationnode.h
 
 CMakeFiles/main.dir/src/tree/headernode.cpp.o: src/tree/../iloc.h
 CMakeFiles/main.dir/src/tree/headernode.cpp.o: src/tree/common.h
@@ -163,6 +170,7 @@ CMakeFiles/main.dir/src/tree/headernode.cpp.o: src/scope.h
 CMakeFiles/main.dir/src/tree/headernode.cpp.o: src/symbol.h
 CMakeFiles/main.dir/src/tree/headernode.cpp.o: src/tree/common.h
 CMakeFiles/main.dir/src/tree/headernode.cpp.o: src/tree/node.h
+CMakeFiles/main.dir/src/tree/headernode.cpp.o: src/tree/vardeclarationnode.h
 
 CMakeFiles/main.dir/src/tree/ifnode.cpp.o: src/tree/../iloc.h
 CMakeFiles/main.dir/src/tree/ifnode.cpp.o: src/tree/common.h
@@ -208,6 +216,7 @@ CMakeFiles/main.dir/src/tree/programnode.cpp.o: src/scope.h
 CMakeFiles/main.dir/src/tree/programnode.cpp.o: src/symbol.h
 CMakeFiles/main.dir/src/tree/programnode.cpp.o: src/tree/common.h
 CMakeFiles/main.dir/src/tree/programnode.cpp.o: src/tree/node.h
+CMakeFiles/main.dir/src/tree/programnode.cpp.o: src/tree/vardeclarationnode.h
 
 CMakeFiles/main.dir/src/tree/returnnode.cpp.o: src/tree/../iloc.h
 CMakeFiles/main.dir/src/tree/returnnode.cpp.o: src/tree/common.h
@@ -226,6 +235,7 @@ CMakeFiles/main.dir/src/tree/vardeclarationnode.cpp.o: src/scope.h
 CMakeFiles/main.dir/src/tree/vardeclarationnode.cpp.o: src/symbol.h
 CMakeFiles/main.dir/src/tree/vardeclarationnode.cpp.o: src/tree/common.h
 CMakeFiles/main.dir/src/tree/vardeclarationnode.cpp.o: src/tree/node.h
+CMakeFiles/main.dir/src/tree/vardeclarationnode.cpp.o: src/tree/vardeclarationnode.h
 
 CMakeFiles/main.dir/src/tree/vectordeclarationnode.cpp.o: src/tree/../iloc.h
 CMakeFiles/main.dir/src/tree/vectordeclarationnode.cpp.o: src/tree/common.h
@@ -236,6 +246,7 @@ CMakeFiles/main.dir/src/tree/vectordeclarationnode.cpp.o: src/scope.h
 CMakeFiles/main.dir/src/tree/vectordeclarationnode.cpp.o: src/symbol.h
 CMakeFiles/main.dir/src/tree/vectordeclarationnode.cpp.o: src/tree/common.h
 CMakeFiles/main.dir/src/tree/vectordeclarationnode.cpp.o: src/tree/node.h
+CMakeFiles/main.dir/src/tree/vectordeclarationnode.cpp.o: src/tree/vardeclarationnode.h
 
 CMakeFiles/main.dir/src/tree/whilenode.cpp.o: src/tree/../iloc.h
 CMakeFiles/main.dir/src/tree/whilenode.cpp.o: src/tree/common.h

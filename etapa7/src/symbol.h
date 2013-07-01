@@ -3,6 +3,8 @@
 
 #include <string>
 #include "tree/common.h"
+#include <vector>
+
 
 class Symbol {
 
@@ -22,12 +24,16 @@ public:
 	int getOffset();
 	static int getDataTypeSize(Common::DataType dt);
 
+	std::vector<Common::DataType> *getParams();
+	void setParams(std::vector<Common::DataType> *value);
+
 private:
 	std::string text;
 	Common::TokenType tokenType;
 	Common::DataType dataType;
 	std::string value;
 	int offset;
+	std::vector<Common::DataType>* params;
 };
 
 #endif // SYMBOL_H

@@ -18,67 +18,19 @@ tree/common.h
 symbol.h
 /home/cuca/Downloads/compiladores/etapa7/src/tree/../symbol.h
 
-/home/cuca/Downloads/compiladores/etapa7/src/tree/assignmentnode.cpp
-assignmentnode.h
-/home/cuca/Downloads/compiladores/etapa7/src/tree/assignmentnode.h
-stdio.h
--
-sstream
--
-iostream
--
-expression/expressionnode.h
-/home/cuca/Downloads/compiladores/etapa7/src/tree/expression/expressionnode.h
-expression/identifiernode.h
-/home/cuca/Downloads/compiladores/etapa7/src/tree/expression/identifiernode.h
-
-/home/cuca/Downloads/compiladores/etapa7/src/tree/assignmentnode.h
-string
--
-vector
--
-node.h
-/home/cuca/Downloads/compiladores/etapa7/src/tree/node.h
-scope.h
-/home/cuca/Downloads/compiladores/etapa7/src/tree/scope.h
-
 /home/cuca/Downloads/compiladores/etapa7/src/tree/common.h
 string
 -
 tr1/unordered_map
 -
 
-/home/cuca/Downloads/compiladores/etapa7/src/tree/expression/../../iloc.h
-string
--
-vector
--
-tr1/unordered_map
--
-tree/common.h
-/home/cuca/Downloads/compiladores/etapa7/src/tree/expression/../../tree/common.h
-symbol.h
-/home/cuca/Downloads/compiladores/etapa7/src/tree/expression/../../symbol.h
-
-/home/cuca/Downloads/compiladores/etapa7/src/tree/expression/../../scope.h
-deque
--
-vector
--
-tr1/unordered_map
--
-tree/common.h
-/home/cuca/Downloads/compiladores/etapa7/src/tree/expression/../../tree/common.h
-tree/node.h
-/home/cuca/Downloads/compiladores/etapa7/src/tree/expression/../../tree/node.h
-symbol.h
-/home/cuca/Downloads/compiladores/etapa7/src/tree/expression/../../symbol.h
-
 /home/cuca/Downloads/compiladores/etapa7/src/tree/expression/../../symbol.h
 string
 -
 tree/common.h
 /home/cuca/Downloads/compiladores/etapa7/src/tree/expression/../../tree/common.h
+vector
+-
 
 /home/cuca/Downloads/compiladores/etapa7/src/tree/expression/../common.h
 string
@@ -110,19 +62,25 @@ string
 ../../symbol.h
 /home/cuca/Downloads/compiladores/etapa7/src/tree/expression/../../symbol.h
 
-/home/cuca/Downloads/compiladores/etapa7/src/tree/expression/identifiernode.h
+/home/cuca/Downloads/compiladores/etapa7/src/tree/functioncallnode.cpp
+functioncallnode.h
+/home/cuca/Downloads/compiladores/etapa7/src/tree/functioncallnode.h
+scope.h
+/home/cuca/Downloads/compiladores/etapa7/src/tree/scope.h
+iostream
+-
+stdio.h
+-
+
+/home/cuca/Downloads/compiladores/etapa7/src/tree/functioncallnode.h
 string
 -
 vector
 -
-expressionnode.h
+node.h
+/home/cuca/Downloads/compiladores/etapa7/src/tree/node.h
+expression/expressionnode.h
 /home/cuca/Downloads/compiladores/etapa7/src/tree/expression/expressionnode.h
-../../symbol.h
-/home/cuca/Downloads/compiladores/etapa7/src/tree/expression/../../symbol.h
-../../scope.h
-/home/cuca/Downloads/compiladores/etapa7/src/tree/expression/../../scope.h
-../../iloc.h
-/home/cuca/Downloads/compiladores/etapa7/src/tree/expression/../../iloc.h
 
 /home/cuca/Downloads/compiladores/etapa7/src/tree/node.h
 vector
@@ -149,6 +107,8 @@ tree/common.h
 src/tree/common.h
 tree/node.h
 src/tree/node.h
+tree/vardeclarationnode.h
+src/tree/vardeclarationnode.h
 symbol.h
 src/symbol.h
 
@@ -157,6 +117,8 @@ string
 -
 tree/common.h
 src/tree/common.h
+vector
+-
 
 src/tree/common.h
 string
@@ -177,4 +139,14 @@ symbol.h
 src/tree/symbol.h
 ../iloc.h
 src/tree/../iloc.h
+
+src/tree/vardeclarationnode.h
+string
+-
+node.h
+src/tree/node.h
+scope.h
+src/tree/scope.h
+common.h
+src/tree/common.h
 

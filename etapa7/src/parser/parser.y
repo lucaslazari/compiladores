@@ -125,7 +125,7 @@ class FunctionDefinitionNode;
 /* Regras (e ações) da gramática da Linguagem K */
 
 // criada a regra s para conseguir chamar a impressão da árvore
-s : { $<node>$ = new ProgramNode(); } programa { $$ = $<node>1; $$->print(0); $$->generateILOCCode(NULL); $$->printILOC(yyout); /*$$->printSourceCode("");*/ /*$$->printILOC();*/ }
+s : { $<node>$ = new ProgramNode(); } programa { $$ = $<node>1; /*$$->print(0);*/ $$->generateILOCCode(NULL); $$->printILOC(yyout); /*$$->printSourceCode("");*/ /*$$->printILOC();*/ }
 	;
 
 programa: programa decl_global { $<node>0->addChild($2); }
@@ -170,7 +170,7 @@ chamada_funcao: TK_IDENTIFICADOR '(' lista_expressoes ')' { $$ = new FunctionCal
 	;
 
 /* Function header - begin */
-cabecalho: TK_IDENTIFICADOR ':' tipo_var '(' { $<node>$ = new HeaderNode($1->getText(), $3); } lista_parametros ')' { $$ = $<node>5; $$->addChildren($6); }
+cabecalho: TK_IDENTIFICADOR ':' tipo_var '(' { $<node>$ = new HeaderNode($1->getText(), $3); } lista_parametros ')' { $$ = $<node>5; $$->addChildren($6); Scope::setParams($1->getText(), $6) }
 	;
 
 lista_parametros: lista_parametros_nao_vazia { $$ = $1; }

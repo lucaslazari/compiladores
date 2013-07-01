@@ -1,5 +1,6 @@
 #include "functioncallnode.h"
 #include "scope.h"
+#include <iostream>
 #include <stdio.h>
 
 FunctionCallNode::FunctionCallNode(Symbol* functionSym, std::vector<Node*>* children):
@@ -7,8 +8,25 @@ FunctionCallNode::FunctionCallNode(Symbol* functionSym, std::vector<Node*>* chil
 
 	this->addChildren(children);
 
-	this->hasDeclaration(functionSym);
+	if(!this->hasDeclaration(functionSym)) {
+		yyerror("function not declared");
+	} else {
+		Symbol * funDeclSym = Scope::getSymbol(functionSym->getText());
+		std::vector<Common::DataType> * params = funDeclSym->getParams();
 
+		if (params->size() != children->size()) {
+			yyerror("number of parameters doesn't match");
+		} else {
+
+			for (int i = 0; i < params->size(); i++) {
+				ExpressionNode* call = dynamic_cast<ExpressionNode*>(children->at(i));
+
+				if (params->at(i) != call->getDataType()) {
+					yyerror("parameters type doesn't match");
+				}
+			}
+		}
+	}
 }
 
 bool FunctionCallNode::hasDeclaration(Symbol* sym) {
