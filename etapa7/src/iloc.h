@@ -16,6 +16,7 @@ class ILOC {
 public:
 	ILOC(Common::ILOC_OperationType type, const std::string& src1, const std::string& src2, const std::string& dst1, const std::string& dst2);
 	ILOC(Common::ILOC_OperationType type, const std::string& label, const std::string& src1, const std::string& src2, const std::string& dst1, const std::string& dst2);
+	ILOC(std::string& line);
 	std::string codeline();
 	static void initRegisters();
 	static std::string* getRegister(const std::string& identifierName);

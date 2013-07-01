@@ -43,5 +43,6 @@ ${BASE_SOURCE_DIR}/tree/blocknode.cpp
 ${BASE_SOURCE_DIR}/tree/expression/expressionnode.cpp
 ${BASE_SOURCE_DIR}/tree/expression/identifiernode.cpp
 ${BASE_SOURCE_DIR}/tree/expression/literalnode.cpp
-${BASE_SOURCE_DIR}/tree/expression/operationnode.cpp)
+${BASE_SOURCE_DIR}/tree/expression/operationnode.cpp
+${BASE_SOURCE_DIR}/optimizer/optimizer.cpp)
 TARGET_LINK_LIBRARIES(main ${FLEX_LIBRARIES})

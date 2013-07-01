@@ -1,6 +1,7 @@
 #include "programnode.h"
 #include <stdio.h>
 #include <sstream>
+#include "../optimizer/optimizer.h"
 
 ProgramNode::ProgramNode(): Node("Programa", Common::NT_PROGRAM) {
 	this->isNewScope = true;
@@ -21,6 +22,7 @@ void ProgramNode::generateILOCCode(Node* context) {
 		this->instructions.insert( this->instructions.end(), instr.begin(), instr.end() );
 	}
 	this->execSupportCode();
+	Optimizer::setInstructions(this->instructions);
 }
 
 void ProgramNode::execSupportCode() {
